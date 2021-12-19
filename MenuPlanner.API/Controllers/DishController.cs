@@ -29,7 +29,7 @@ namespace MenuPlanner.API.Controllers
         public ActionResult Create([FromBody] CreateDishDto dish)
         {
             _dishService.Create(dish);
-            return Ok(dish.Name);
+            return Ok(dish.date);
         }
 
     }
