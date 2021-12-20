@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MenuPlanner.API.Entities;
+using MenuPlanner.API.Exceptions;
 using MenuPlanner.API.Models.Dishes;
 using System;
 using System.Collections.Generic;
@@ -19,12 +20,14 @@ namespace MenuPlanner.API.Services
             _mapper = mapper;
         }
 
-        public void Create(CreateDishDto dishDto)
+        public int Create(CreateDishDto dishDto)
         {
             Dish dish = _mapper.Map<Dish>(dishDto);
 
             _context.Dishes.Add(dish);
             _context.SaveChanges();
+
+            return dish.Id;
         }
 
         public DishDto Get(int id)
@@ -32,7 +35,7 @@ namespace MenuPlanner.API.Services
             Dish dish = _context.Dishes.FirstOrDefault(d => d.Id == id);
 
             if(dish == null)
-                throw new Exception("dish not found");
+                throw new NotFoundException("Dish not found");
 
             DishDto dishDto = _mapper.Map<DishDto>(dish);
             return dishDto;

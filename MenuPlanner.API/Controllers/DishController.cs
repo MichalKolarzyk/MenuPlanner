@@ -21,12 +21,12 @@ namespace MenuPlanner.API.Controllers
         [HttpPost]
         public ActionResult Create([FromBody] CreateDishDto dish)
         {
-            _dishService.Create(dish);
-            return Ok(dish.date);
+            int id = _dishService.Create(dish);
+            return Ok(id);
         }
 
-        [HttpGet("{id}")]
-        public ActionResult<DishDto> Get([FromRoute] int id)
+        [HttpGet]
+        public ActionResult<DishDto> Get([FromQuery] int id)
         {
             DishDto dishDto = _dishService.Get(id);
 

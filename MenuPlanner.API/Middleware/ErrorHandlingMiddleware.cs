@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using MenuPlanner.API.Exceptions;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,12 @@ namespace MenuPlanner.API.Middleware
             {
                 await next.Invoke(context);
             }
-            catch(Exception e)
+            catch (NotFoundException notFoundException)
+            {
+                context.Response.StatusCode = 404;
+                await context.Response.WriteAsync(notFoundException.Message);
+            }
+            catch (Exception e)
             {
                 context.Response.StatusCode = 500;
                 await context.Response.WriteAsync(e.Message);

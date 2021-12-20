@@ -4,7 +4,7 @@ namespace MenuPlanner.API.Services
 {
     public interface IDishService
     {
-        void Create(CreateDishDto dish);
+        int Create(CreateDishDto dish);
         DishDto Get(int id);
     }
 }
