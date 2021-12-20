@@ -33,6 +33,7 @@ namespace MenuPlanner.API
             services.AddScoped<IDishService, DishService>();
             services.AddScoped<IRecipeService, RecipeService>();
             services.AddScoped<IStepService, StepService>();
+            services.AddScoped<IUnitService, UnitService>();
 
             services.AddScoped<ErrorHandlingMiddleware>();
 
