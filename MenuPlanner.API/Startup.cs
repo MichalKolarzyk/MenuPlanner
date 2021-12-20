@@ -31,6 +31,8 @@ namespace MenuPlanner.API
             services.AddDbContext<MenuPlannerDbContext>();
             services.AddAutoMapper(this.GetType().Assembly);
             services.AddScoped<IDishService, DishService>();
+            services.AddScoped<IRecipeService, RecipeService>();
+            services.AddScoped<IStepService, StepService>();
 
             services.AddScoped<ErrorHandlingMiddleware>();
 

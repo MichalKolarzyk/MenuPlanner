@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace MenuPlanner.API.Models.Steps
 {
-    public class StepDto
+    public class CreateStepDto
     {
-        public int Id { get; set; }
+        public int Position { get; set; }
         public string Description { get; set; }
     }
 }

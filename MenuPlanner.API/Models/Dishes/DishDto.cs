@@ -13,6 +13,5 @@ namespace MenuPlanner.API.Models.Dishes
         public DateTime Date { get; set; }
         public float Portions { get; set; }
         public RecipeDto Recipe { get; set; }
-        public UserDto User { get; set; }
     }
 }

@@ -7,6 +7,7 @@ namespace MenuPlanner.API.Models.Units
 {
     public class UnitDto
     {
+        public int Id { get; set; }
         public string Symbol { get; set; }
     }
 }

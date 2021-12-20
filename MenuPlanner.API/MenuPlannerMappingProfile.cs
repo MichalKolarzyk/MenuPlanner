@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using MenuPlanner.API.Entities;
 using MenuPlanner.API.Models.Dishes;
+using MenuPlanner.API.Models.Recipes;
+using MenuPlanner.API.Models.Steps;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +16,13 @@ namespace MenuPlanner.API
         {
             CreateMap<CreateDishDto, Dish>();
             CreateMap<Dish, DishDto>();
+
+            CreateMap<CreateRecipeDto, Recipe>();
+            CreateMap<Recipe, RecipeDto>();
+
+            CreateMap<CreateStepDto, Step>();
+            CreateMap<Step, StepDto>();
+
         }
     }
 }
