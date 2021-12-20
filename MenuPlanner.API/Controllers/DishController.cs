@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace MenuPlanner.API.Controllers
 {
     [ApiController]
-    [Route("api/dish")]
+    [Route("api/[controller]")]
     public class DishController : Controller
     {
         IDishService _dishService;
@@ -18,18 +18,19 @@ namespace MenuPlanner.API.Controllers
             _dishService = dishService;
         }
 
-        [HttpGet]
-        public ActionResult Get([FromQuery] int id)
-        {
-            int newId = id;
-            return Ok(newId);
-        }
-
         [HttpPost]
         public ActionResult Create([FromBody] CreateDishDto dish)
         {
             _dishService.Create(dish);
             return Ok(dish.date);
+        }
+
+        [HttpGet("{id}")]
+        public ActionResult<DishDto> Get([FromRoute] int id)
+        {
+            DishDto dishDto = _dishService.Get(id);
+
+            return Ok(dishDto);
         }
 
     }
