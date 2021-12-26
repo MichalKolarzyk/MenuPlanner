@@ -3,6 +3,7 @@ using MenuPlanner.API.Entities;
 using MenuPlanner.API.Models.Dishes;
 using MenuPlanner.API.Models.Recipes;
 using MenuPlanner.API.Models.Steps;
+using MenuPlanner.API.Models.Tags;
 using MenuPlanner.API.Models.Units;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,9 @@ namespace MenuPlanner.API
             CreateMap<CreateUnitDto, Unit>();
             CreateMap<Unit, UnitDto>();
 
+            CreateMap<CreateTagDto, Tag>();
+            CreateMap<UpdateTagDto, Tag>();
+            CreateMap<Tag, TagDto>();
         }
     }
 }

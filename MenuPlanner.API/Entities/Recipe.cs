@@ -11,5 +11,6 @@ namespace MenuPlanner.API.Entities
         public virtual User Author { get; set; }
         public virtual List<Ingredient> Ingredients { get; set; }
         public virtual List<Step> Setps { get; set; }
+        public virtual ICollection<Tag> Tags { get; set; }
     }
 }

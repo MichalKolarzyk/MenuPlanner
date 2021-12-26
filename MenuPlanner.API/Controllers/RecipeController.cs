@@ -22,17 +22,32 @@ namespace MenuPlanner.API.Controllers
         [HttpPost]
         public ActionResult<int> Create(CreateRecipeDto recipeDto)
         {
-            int id =_recipeService.Create(recipeDto);
+            int id = _recipeService.Create(recipeDto);
 
             return Ok(id);
         }
 
         [HttpGet]
-        public ActionResult<RecipeDto> Get([FromQuery]int id)
+        public ActionResult<RecipeDto> Get([FromQuery] int id)
         {
             RecipeDto recipe = _recipeService.Get(id);
 
             return Ok(recipe);
+        }
+
+        [HttpPut("{recipeId}/tags/{tagId}")]
+        public ActionResult AddTag([FromRoute] int recipeId, [FromRoute] int tagId)
+        {
+            _recipeService.AddTag(recipeId, tagId);
+            return Ok(tagId);
+        }
+
+
+        [HttpDelete("{recipeId}/tags/{tagId}")]
+        public ActionResult RemoveTag([FromRoute] int recipeId, [FromRoute] int tagId)
+        {
+            _recipeService.RemoveTag(recipeId, tagId);
+            return NoContent();
         }
     }
 }

@@ -17,6 +17,7 @@ namespace MenuPlanner.API.Entities
         public DbSet<Step> Steps { get; set; }
         public DbSet<Unit> Units { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Tag> Tags { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

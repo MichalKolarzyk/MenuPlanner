@@ -34,7 +34,7 @@ namespace MenuPlanner.API.Controllers
         {
             _stepService.Delete(id);
 
-            return Ok();
+            return NoContent();
         }
 
     }

@@ -29,7 +29,7 @@ namespace MenuPlanner.API.Controllers
         public ActionResult Delete([FromQuery] int id)
         {
             _unitService.Delete(id);
-            return Ok();
+            return NoContent();
         }
 
     }

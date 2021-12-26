@@ -35,17 +35,55 @@ namespace MenuPlanner.API.Services
         {
             Recipe recipe = _context.Recipes
                 .Include(r => r.Setps)
+                .Include(r => r.Ingredients)
+                .Include(r => r.Tags)
                 .FirstOrDefault(r => r.Id == id);
 
             if (recipe == null)
                 throw new NotFoundException("Recipe not found");
+
 
             RecipeDto recipeDto = _mapper.Map<RecipeDto>(recipe);
 
             return recipeDto;
         }
 
+        public void AddTag(int recipeId, int tagId)
+        {
+            Tag tag = GetTag(tagId);
 
+            Recipe recipe = GetRecipe(recipeId);
 
+            recipe.Tags.Add(tag);
+            _context.SaveChanges();
+        }
+
+        public void RemoveTag(int recipeId, int tagId)
+        {
+            Tag tag = GetTag(tagId);
+
+            Recipe recipe = GetRecipe(recipeId);
+
+            recipe.Tags.Remove(tag);
+            _context.SaveChanges();
+        }
+
+        private Tag GetTag(int tagId)
+        {
+            Tag tag = _context.Tags.FirstOrDefault(t => t.Id == tagId);
+            if (tag == null)
+                throw new NotFoundException("tag not found");
+            return tag;
+        }
+
+        private Recipe GetRecipe(int recipeId)
+        {
+            Recipe recipe = _context.Recipes
+                .Include(r => r.Tags)
+                .FirstOrDefault(r => r.Id == recipeId);
+            if (recipe == null)
+                throw new NotFoundException("recipe not found");
+            return recipe;
+        }
     }
 }
