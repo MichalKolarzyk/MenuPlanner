@@ -2,6 +2,7 @@ using FluentValidation;
 using FluentValidation.AspNetCore;
 using MenuPlanner.API.Entities;
 using MenuPlanner.API.Middleware;
+using MenuPlanner.API.Models.Products;
 using MenuPlanner.API.Models.Role;
 using MenuPlanner.API.Models.Tags;
 using MenuPlanner.API.Models.Users;
@@ -88,6 +89,7 @@ namespace MenuPlanner.API
             services.AddScoped<IValidator<CreateRoleDto>, CreateRoleDtoValidator>();
             services.AddScoped<IValidator<CreateTagDto>, CreateTagDtoValidator>();
             services.AddScoped<IValidator<CreateUserDto>, RegisterUserDtoValidator>();
+            services.AddScoped<IValidator<CreateProductDto>, CreateProductDtoValidator>();
 
             services.AddScoped<ErrorHandlingMiddleware>();
 
