@@ -1,6 +1,5 @@
-﻿using AutoMapper;
-using MenuPlanner.API.Models.Steps;
-using MenuPlanner.API.Services;
+﻿using MenuPlanner.API.Models.Ingredients;
+using MenuPlanner.API.Services.IngredientServices;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -12,22 +11,20 @@ namespace MenuPlanner.API.Controllers
 {
     [ApiController]
     [Route("api/recipe/{recipeId}/[controller]")]
-    public class StepController : Controller
+    public class IngredientController : Controller
     {
-        private readonly IStepService _stepService;
+        private readonly IIngredientService _ingredientService;
 
-        public StepController(IStepService stepService)
+        public IngredientController(IIngredientService ingredientService)
         {
-            _stepService = stepService;
+            _ingredientService = ingredientService;
         }
-
 
         [HttpPost]
         [Authorize("Creator")]
-        public ActionResult Create([FromRoute] int recipeId, [FromBody]CreateStepDto stepDto)
+        public ActionResult Add([FromRoute] int recipeId, CreateIngredientDto ingredientDto)
         {
-            int id = _stepService.Create(recipeId, stepDto);
-
+            int id =_ingredientService.Add(recipeId, ingredientDto);
             return Ok(id);
         }
 
@@ -35,8 +32,7 @@ namespace MenuPlanner.API.Controllers
         [Authorize("Creator")]
         public ActionResult Delete([FromQuery] int id)
         {
-            _stepService.Delete(id);
-
+            _ingredientService.Delete(id);
             return NoContent();
         }
 

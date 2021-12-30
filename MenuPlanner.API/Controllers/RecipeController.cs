@@ -1,5 +1,6 @@
 ﻿using MenuPlanner.API.Models.Recipes;
 using MenuPlanner.API.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ namespace MenuPlanner.API.Controllers
         }
 
         [HttpPost]
+        [Authorize("Creator")]
         public ActionResult<int> Create(CreateRecipeDto recipeDto)
         {
             int id = _recipeService.Create(recipeDto);
@@ -36,6 +38,7 @@ namespace MenuPlanner.API.Controllers
         }
 
         [HttpPut("{recipeId}/tags/{tagId}")]
+        [Authorize("Creator")]
         public ActionResult AddTag([FromRoute] int recipeId, [FromRoute] int tagId)
         {
             _recipeService.AddTag(recipeId, tagId);
@@ -44,6 +47,7 @@ namespace MenuPlanner.API.Controllers
 
 
         [HttpDelete("{recipeId}/tags/{tagId}")]
+        [Authorize("Creator")]
         public ActionResult RemoveTag([FromRoute] int recipeId, [FromRoute] int tagId)
         {
             _recipeService.RemoveTag(recipeId, tagId);

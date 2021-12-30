@@ -10,6 +10,7 @@ namespace MenuPlanner.API.Models.Ingredients
     {
         public int Id { get; set; }
         public float Quantity { get; set; }
-        public virtual ProductDto Product { get; set; }
+        public string ProductName { get; set; }
+        public int ProductId { get; set; }
     }
 }

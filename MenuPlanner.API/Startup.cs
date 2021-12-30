@@ -8,6 +8,7 @@ using MenuPlanner.API.Models.Users;
 using MenuPlanner.API.Services;
 using MenuPlanner.API.Services.AccountServices;
 using MenuPlanner.API.Services.HttpContextServices;
+using MenuPlanner.API.Services.IngredientServices;
 using MenuPlanner.API.Services.ProductServices;
 using MenuPlanner.API.Validators;
 using Microsoft.AspNetCore.Builder;
@@ -59,6 +60,13 @@ namespace MenuPlanner.API
                 };
             });
 
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("Admin", builder => builder.RequireRole("Admin"));
+                options.AddPolicy("Creator", builder => builder.RequireRole("Admin","Creator"));
+                options.AddPolicy("Viewer", builder => builder.RequireRole("Admin","Creator","Viewer"));
+            });
+
             services.AddAuthorization();
             services.AddDbContext<MenuPlannerDbContext>();
             services.AddAutoMapper(this.GetType().Assembly);
@@ -70,6 +78,7 @@ namespace MenuPlanner.API
             services.AddScoped<IRoleService, RoleService>();
             services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IIngredientService, IngredientService>();
             services.AddScoped<IHttpContextService, HttpContextService>();
 
             services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();

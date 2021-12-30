@@ -38,7 +38,7 @@ namespace MenuPlanner.API.Services
         {
             Recipe recipe = _context.Recipes
                 .Include(r => r.Setps)
-                .Include(r => r.Ingredients)
+                .Include(r => r.Ingredients).ThenInclude(i => i.Product)
                 .Include(r => r.Tags)
                 .FirstOrDefault(r => r.Id == id);
 

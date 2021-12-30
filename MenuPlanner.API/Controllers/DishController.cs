@@ -1,5 +1,6 @@
 ﻿using MenuPlanner.API.Models.Dishes;
 using MenuPlanner.API.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,7 @@ namespace MenuPlanner.API.Controllers
         }
 
         [HttpPost]
+        [Authorize("Viewer")]
         public ActionResult Create([FromBody] CreateDishDto dish)
         {
             int id = _dishService.Create(dish);
@@ -26,6 +28,7 @@ namespace MenuPlanner.API.Controllers
         }
 
         [HttpGet]
+        [Authorize("Viewer")]
         public ActionResult<DishResponse> Get([FromBody] DishRequest request)
         {
             DishResponse response = _dishService.Get(request);

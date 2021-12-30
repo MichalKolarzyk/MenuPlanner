@@ -21,7 +21,7 @@ namespace MenuPlanner.API.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles ="Admin")]
+        [Authorize("Admin")]
         public ActionResult Create([FromBody] CreateTagDto tagDto)
         {
             int id = _tagService.Create(tagDto);
@@ -29,7 +29,7 @@ namespace MenuPlanner.API.Controllers
         }
 
         [HttpDelete]
-        [Authorize(Roles = "Admin")]
+        [Authorize("Admin")]
         public ActionResult Delete([FromQuery] int id)
         {
             _tagService.Delete(id);
@@ -44,7 +44,7 @@ namespace MenuPlanner.API.Controllers
         }
 
         [HttpPut]
-        [Authorize(Roles = "Admin")]
+        [Authorize("Admin")]
         public ActionResult Update(UpdateTagDto tagDto)
         {
             _tagService.Update(tagDto);

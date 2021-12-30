@@ -7,7 +7,6 @@ namespace MenuPlanner.API.Models.Ingredients
 {
     public class CreateIngredientDto
     {
-        public int DishId { get; set; }
         public int ProductId { get; set; }
         public float Quantity { get; set; }
     }

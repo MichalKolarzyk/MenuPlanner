@@ -22,7 +22,7 @@ namespace MenuPlanner.API.Controllers
         }
 
         [HttpPost]
-        [Authorize]
+        [Authorize("Admin")]
         public ActionResult Create([FromBody] CreateRoleDto roleDto)
         {
             int id = _service.Create(roleDto);
@@ -30,6 +30,7 @@ namespace MenuPlanner.API.Controllers
         }
 
         [HttpGet]
+        [Authorize("Admin")]
         public ActionResult<IEnumerable<RoleDto>> GetAll()
         {
             IEnumerable<RoleDto> result = _service.GetAll();
@@ -37,6 +38,7 @@ namespace MenuPlanner.API.Controllers
         }
 
         [HttpDelete]
+        [Authorize("Admin")]
         public ActionResult Remove([FromQuery]int id)
         {
             _service.Delete(id);

@@ -20,7 +20,7 @@ namespace MenuPlanner.API.Controllers
             _unitService = unitService;
         }
         [HttpPost]
-        [Authorize(Roles ="Admin")]
+        [Authorize("Admin")]
         public ActionResult Create([FromBody] CreateUnitDto unitDto)
         {
             int id =_unitService.Create(unitDto);
@@ -28,7 +28,7 @@ namespace MenuPlanner.API.Controllers
         }
 
         [HttpDelete]
-        [Authorize(Roles = "Admin")]
+        [Authorize("Admin")]
         public ActionResult Delete([FromQuery] int id)
         {
             _unitService.Delete(id);
@@ -36,6 +36,7 @@ namespace MenuPlanner.API.Controllers
         }
 
         [HttpGet]
+        [Authorize("Viewer")]
         public ActionResult<IEnumerable<UnitDto>> GetAll()
         {
             return Ok(_unitService.GetAll());

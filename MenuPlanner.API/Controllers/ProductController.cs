@@ -22,15 +22,15 @@ namespace MenuPlanner.API.Controllers
         }
 
         [HttpPost]
-        //[Authorize(Roles = "Creator")]
+        [Authorize("Creator")]
         public ActionResult Create([FromBody] CreateProductDto productDto)
         {
-            int id =_productService.Create(productDto);
+            int id = _productService.Create(productDto);
             return Ok(id);
         }
 
         [HttpDelete]
-        //[Authorize(Roles = "Creator")]
+        [Authorize("Creator")]
         public ActionResult Delete([FromQuery] int id)
         {
             _productService.Delete(id);
@@ -39,7 +39,7 @@ namespace MenuPlanner.API.Controllers
 
 
         [HttpGet]
-        //[Authorize(Roles = "Viewer")]
+        [Authorize("Viewer")]
         public ActionResult<PagedResponse<ProductDto>> Get(ProductRequest request)
         {
             PagedResponse<ProductDto> productResponse = _productService.Get(request);
