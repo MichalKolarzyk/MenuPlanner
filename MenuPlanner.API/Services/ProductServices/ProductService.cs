@@ -3,6 +3,7 @@ using MenuPlanner.API.Abstracts;
 using MenuPlanner.API.Entities;
 using MenuPlanner.API.Exceptions;
 using MenuPlanner.API.Models.Products;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,6 +48,7 @@ namespace MenuPlanner.API.Services.ProductServices
         public PagedResponse<ProductDto> Get(ProductRequest request)
         {
             var baseQuery = _context.Products
+                .Include(p => p.Unit)
                 .Where(p => p.Name.ToLower().Contains(request.SearchPhrase));
 
             var products = baseQuery

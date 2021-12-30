@@ -11,6 +11,6 @@ namespace MenuPlanner.API.Models.Products
         public int Id { get; set; }
         public string Name { get; set; }
         public float KcalPerUnit { get; set; }
-        public UnitDto Unit { get; set; }
+        public string UnitSymbol { get; set; }
     }
 }
