@@ -6,5 +6,6 @@ namespace MenuPlanner.API.Services.AccountServices
     {
         string GenerateToken(LoginDto loginDto);
         void Register(CreateUserDto userDto);
+        void ChangeRole(int userId, int newRoleId);
     }
 }

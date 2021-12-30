@@ -80,5 +80,15 @@ namespace MenuPlanner.API.Services.AccountServices
             var tokenHandler = new JwtSecurityTokenHandler();
             return tokenHandler.WriteToken(token);
         }
+
+        public void ChangeRole(int userId, int newRoleId)
+        {
+            User user =_context.Users.FirstOrDefault(u => u.Id == userId);
+            if (user == null)
+                throw new NotFoundException("User not exists.");
+
+            user.RoleId = newRoleId;
+            _context.SaveChanges();
+        }
     }
 }

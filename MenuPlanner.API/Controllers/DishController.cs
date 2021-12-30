@@ -26,11 +26,11 @@ namespace MenuPlanner.API.Controllers
         }
 
         [HttpGet]
-        public ActionResult<DishDto> Get([FromQuery] int id)
+        public ActionResult<DishResponse> Get([FromBody] DishRequest request)
         {
-            DishDto dishDto = _dishService.Get(id);
+            DishResponse response = _dishService.Get(request);
 
-            return Ok(dishDto);
+            return Ok(response);
         }
 
     }

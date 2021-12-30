@@ -10,6 +10,5 @@ namespace MenuPlanner.API.Models.Dishes
     {
         public DateTime From { get; set; }
         public int Days { get; set; }
-        public IEnumerable<DishDto> Dishes { get; set; }
     }
 }

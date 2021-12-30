@@ -8,6 +8,7 @@ using MenuPlanner.API.Models.Users;
 using MenuPlanner.API.Services;
 using MenuPlanner.API.Services.AccountServices;
 using MenuPlanner.API.Services.HttpContextServices;
+using MenuPlanner.API.Services.ProductServices;
 using MenuPlanner.API.Validators;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -68,6 +69,7 @@ namespace MenuPlanner.API
             services.AddScoped<ITagService, TagSevice>();
             services.AddScoped<IRoleService, RoleService>();
             services.AddScoped<IAccountService, AccountService>();
+            services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IHttpContextService, HttpContextService>();
 
             services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();

@@ -1,5 +1,6 @@
 ﻿using MenuPlanner.API.Models.Users;
 using MenuPlanner.API.Services.AccountServices;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,14 @@ namespace MenuPlanner.API.Controllers
         {
             string token = _accountService.GenerateToken(loginDto);
             return Ok(token);
+        }
+
+        [HttpPut("role")]
+        [Authorize(Roles ="Admin")]
+        public ActionResult ChangeRole([FromQuery] int userId,[FromQuery] int newRoleId)
+        {
+            _accountService.ChangeRole(userId, newRoleId);
+            return Ok();
         }
 
     }

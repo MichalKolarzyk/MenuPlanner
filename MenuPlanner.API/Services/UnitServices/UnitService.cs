@@ -2,6 +2,7 @@
 using MenuPlanner.API.Entities;
 using MenuPlanner.API.Exceptions;
 using MenuPlanner.API.Models.Units;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,5 +41,11 @@ namespace MenuPlanner.API.Services
             _context.SaveChanges();
         }
 
+        public IEnumerable<UnitDto> GetAll()
+        {
+            IEnumerable<Unit> units = _context.Units;
+
+            return _mapper.Map<IEnumerable<UnitDto>>(units);
+        }
     }
 }

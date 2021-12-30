@@ -1,5 +1,6 @@
 ﻿using MenuPlanner.API.Models.Tags;
 using MenuPlanner.API.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ namespace MenuPlanner.API.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles ="Admin")]
         public ActionResult Create([FromBody] CreateTagDto tagDto)
         {
             int id = _tagService.Create(tagDto);
@@ -27,6 +29,7 @@ namespace MenuPlanner.API.Controllers
         }
 
         [HttpDelete]
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete([FromQuery] int id)
         {
             _tagService.Delete(id);
@@ -41,6 +44,7 @@ namespace MenuPlanner.API.Controllers
         }
 
         [HttpPut]
+        [Authorize(Roles = "Admin")]
         public ActionResult Update(UpdateTagDto tagDto)
         {
             _tagService.Update(tagDto);

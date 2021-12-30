@@ -51,5 +51,25 @@ namespace MenuPlanner.API.Services
             return dishDto;
 
         }
+
+        public DishResponse Get(DishRequest request)
+        {
+            int? userId = _httpContextService.UserId;
+            DateTime from = request.From;
+            DateTime to = request.From.AddDays(request.Days);
+
+            IEnumerable<Dish> dishes = _context.Dishes
+                    .Where(d => d.UserId == userId)
+                    .Where(d => d.Date >= from)
+                    .Where(d => d.Date <= to)
+                    .Include(d => d.Recipe);
+
+            IEnumerable<DishDto> dishesDto = _mapper.Map<IEnumerable<DishDto>>(dishes);
+
+            DishResponse dishResponse = new DishResponse();
+            dishResponse.DishesDto = dishesDto.ToList();
+
+            return dishResponse;
+        }
     }
 }
