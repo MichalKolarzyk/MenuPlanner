@@ -2,6 +2,7 @@
 using MenuPlanner.API.Entities;
 using MenuPlanner.API.Exceptions;
 using MenuPlanner.API.Models.Recipes;
+using MenuPlanner.API.Services.HttpContextServices;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -14,17 +15,19 @@ namespace MenuPlanner.API.Services
     {
         private readonly MenuPlannerDbContext _context;
         private readonly IMapper _mapper;
+        private readonly IHttpContextService _httpContextService;
 
-        public RecipeService(MenuPlannerDbContext context, IMapper mapper)
+        public RecipeService(MenuPlannerDbContext context, IMapper mapper, IHttpContextService httpContextService)
         {
             _context = context;
             _mapper = mapper;
+            _httpContextService = httpContextService;
         }
 
         public int Create(CreateRecipeDto recipeDto)
         {
             Recipe recipe = _mapper.Map<Recipe>(recipeDto);
-            recipe.AuthorId = 1;
+            recipe.AuthorId = _httpContextService.UserId;
             _context.Recipes.Add(recipe);
             _context.SaveChanges();
 

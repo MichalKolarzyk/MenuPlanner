@@ -2,9 +2,11 @@
 using MenuPlanner.API.Entities;
 using MenuPlanner.API.Models.Dishes;
 using MenuPlanner.API.Models.Recipes;
+using MenuPlanner.API.Models.Role;
 using MenuPlanner.API.Models.Steps;
 using MenuPlanner.API.Models.Tags;
 using MenuPlanner.API.Models.Units;
+using MenuPlanner.API.Models.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +33,12 @@ namespace MenuPlanner.API
             CreateMap<CreateTagDto, Tag>();
             CreateMap<UpdateTagDto, Tag>();
             CreateMap<Tag, TagDto>();
+
+            CreateMap<CreateRoleDto, Role>();
+            CreateMap<Role, RoleDto>();
+
+            CreateMap<CreateUserDto, User>();
+            CreateMap<User, UserDto>();
         }
     }
 }

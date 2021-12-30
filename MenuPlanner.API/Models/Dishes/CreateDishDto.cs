@@ -9,7 +9,6 @@ namespace MenuPlanner.API.Models.Dishes
     public class CreateDishDto
     {
         public int RecipeId { get; set; }
-        public int UserId { get; set; }
         public DateTime Date { get; set; }
         public float Portions { get; set; }
     }

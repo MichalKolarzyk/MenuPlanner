@@ -1,15 +1,26 @@
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using MenuPlanner.API.Entities;
 using MenuPlanner.API.Middleware;
+using MenuPlanner.API.Models.Role;
+using MenuPlanner.API.Models.Tags;
+using MenuPlanner.API.Models.Users;
 using MenuPlanner.API.Services;
+using MenuPlanner.API.Services.AccountServices;
+using MenuPlanner.API.Services.HttpContextServices;
+using MenuPlanner.API.Validators;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace MenuPlanner.API
@@ -28,6 +39,26 @@ namespace MenuPlanner.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            AuthenticationSettings authenticationSettings = new AuthenticationSettings();
+            Configuration.GetSection("Authentication").Bind(authenticationSettings);
+            services.AddAuthentication(option =>
+            {
+                option.DefaultAuthenticateScheme = "Bearer";
+                option.DefaultScheme = "Bearer";
+                option.DefaultChallengeScheme = "Bearer";
+            }).AddJwtBearer(cfg =>
+            {
+                cfg.RequireHttpsMetadata = false;
+                cfg.SaveToken = true;
+                cfg.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidIssuer = authenticationSettings.JwtIssuer,
+                    ValidAudience = authenticationSettings.JwtIssuer,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(authenticationSettings.JwtKey)),
+                };
+            });
+
+            services.AddAuthorization();
             services.AddDbContext<MenuPlannerDbContext>();
             services.AddAutoMapper(this.GetType().Assembly);
             services.AddScoped<IDishService, DishService>();
@@ -35,12 +66,25 @@ namespace MenuPlanner.API
             services.AddScoped<IStepService, StepService>();
             services.AddScoped<IUnitService, UnitService>();
             services.AddScoped<ITagService, TagSevice>();
+            services.AddScoped<IRoleService, RoleService>();
+            services.AddScoped<IAccountService, AccountService>();
+            services.AddScoped<IHttpContextService, HttpContextService>();
+
+            services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
+
+            services.AddSingleton(authenticationSettings);
+
+            services.AddScoped<IValidator<CreateRoleDto>, CreateRoleDtoValidator>();
+            services.AddScoped<IValidator<CreateTagDto>, CreateTagDtoValidator>();
+            services.AddScoped<IValidator<CreateUserDto>, RegisterUserDtoValidator>();
 
             services.AddScoped<ErrorHandlingMiddleware>();
 
             services.AddControllers();
+            services.AddFluentValidation();
             services.AddSwaggerGen();
 
+            services.AddHttpContextAccessor();
             services.AddRazorPages();
 
         }
@@ -62,7 +106,7 @@ namespace MenuPlanner.API
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseAuthentication();
 
             app.UseSwagger();
             app.UseSwaggerUI(c =>
