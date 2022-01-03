@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using MenuPlanner.API.Abstracts;
 using MenuPlanner.API.Entities;
 using MenuPlanner.API.Exceptions;
 using MenuPlanner.API.Models.Recipes;
@@ -34,23 +35,6 @@ namespace MenuPlanner.API.Services
             return recipe.Id;
         }
 
-        public RecipeDto Get(int id)
-        {
-            Recipe recipe = _context.Recipes
-                .Include(r => r.Setps)
-                .Include(r => r.Ingredients).ThenInclude(i => i.Product)
-                .Include(r => r.Tags)
-                .FirstOrDefault(r => r.Id == id);
-
-            if (recipe == null)
-                throw new NotFoundException("Recipe not found");
-
-
-            RecipeDto recipeDto = _mapper.Map<RecipeDto>(recipe);
-
-            return recipeDto;
-        }
-
         public void AddTag(int recipeId, int tagId)
         {
             Tag tag = GetTag(tagId);
@@ -77,6 +61,26 @@ namespace MenuPlanner.API.Services
             if (tag == null)
                 throw new NotFoundException("tag not found");
             return tag;
+        }
+
+        public PagedResponse<RecipeDto> Get(RecipeRequest request)
+        {
+            var baseQuery = _context.Recipes
+                .Include(r => r.Setps)
+                .Include(r => r.Ingredients).ThenInclude(i => i.Product)
+                .Include(r => r.Tags)
+                .Where(r => r.Name.ToLower().Contains(request.SearchPhrase));
+
+            var recipes = baseQuery
+                .Skip(request.PageSize * (request.PageNumber - 1))
+                .Take(request.PageSize)
+                .ToList();
+
+            int totalItemCount = baseQuery.Count();
+            var recipeDtos = _mapper.Map<List<RecipeDto>>(recipes);
+
+            var response = new PagedResponse<RecipeDto>(recipeDtos, totalItemCount, request.PageSize, request.PageNumber);
+            return response;
         }
 
         private Recipe GetRecipe(int recipeId)

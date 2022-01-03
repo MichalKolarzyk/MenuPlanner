@@ -1,4 +1,5 @@
-﻿using MenuPlanner.API.Models.Recipes;
+﻿using MenuPlanner.API.Abstracts;
+using MenuPlanner.API.Models.Recipes;
 
 namespace MenuPlanner.API.Services
 {
@@ -6,7 +7,7 @@ namespace MenuPlanner.API.Services
     {
         void AddTag(int recipeId, int tagId);
         int Create(CreateRecipeDto recipeDto);
-        RecipeDto Get(int id);
         void RemoveTag(int recipeId, int tagId);
+        PagedResponse<RecipeDto> Get(RecipeRequest request);
     }
 }

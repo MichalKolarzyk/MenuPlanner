@@ -1,4 +1,5 @@
-﻿using MenuPlanner.API.Models.Recipes;
+﻿using MenuPlanner.API.Abstracts;
+using MenuPlanner.API.Models.Recipes;
 using MenuPlanner.API.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -30,12 +31,12 @@ namespace MenuPlanner.API.Controllers
         }
 
         [HttpGet]
-        public ActionResult<RecipeDto> Get([FromQuery] int id)
+        public ActionResult<PagedResponse<RecipeDto>> Get([FromBody] RecipeRequest request)
         {
-            RecipeDto recipe = _recipeService.Get(id);
-
-            return Ok(recipe);
+            PagedResponse<RecipeDto> response = _recipeService.Get(request);
+            return Ok(response);
         }
+
 
         [HttpPut("{recipeId}/tags/{tagId}")]
         [Authorize("Creator")]
