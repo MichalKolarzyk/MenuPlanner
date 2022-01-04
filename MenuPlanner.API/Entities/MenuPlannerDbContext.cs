@@ -10,14 +10,12 @@ namespace MenuPlanner.API.Entities
 {
     public class MenuPlannerDbContext : DbContext
     {
-        private string _connectionString
+        private string _connectionString;
         public MenuPlannerDbContext(IConfiguration configuration)
         {
             _connectionString = configuration.GetConnectionString("DefaultConnection");
         }
 
-
-        //private string _connectionString = "Server=LAPTOP-L1T0L126;Database=MenuPlanner.db;Trusted_Connection=True";
         public DbSet<Dish> Dishes { get; set; }
         public DbSet<Ingredient> Ingredients { get; set; }
         public DbSet<Product> Products { get; set; }
