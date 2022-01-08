@@ -6,5 +6,6 @@ namespace MenuPlanner.API.Services
     {
         int Create(CreateDishDto dish);
         DishResponse Get(DishRequest request);
+        DishDto Get(int id);
     }
 }

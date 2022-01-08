@@ -9,5 +9,6 @@ namespace MenuPlanner.API.Services
         int Create(CreateUnitDto unitDto);
         void Delete(int id);
         IEnumerable<UnitDto> GetAll();
+        UnitDto Get(int id);
     }
 }

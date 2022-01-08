@@ -59,7 +59,12 @@ namespace MenuPlanner.API.Services
             _context.Update(tag);
             _context.SaveChanges();
         }
-
+        public TagDto Get(int id)
+        {
+            Tag tag = GetTag(id);
+            TagDto tagDto = _mapper.Map<TagDto>(tag);
+            return tagDto;
+        }
 
         private Tag GetTag(int id)
         {
@@ -68,5 +73,7 @@ namespace MenuPlanner.API.Services
                 throw new NotFoundException("Tag not found");
             return tag;
         }
+
+
     }
 }

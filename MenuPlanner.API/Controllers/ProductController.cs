@@ -26,7 +26,7 @@ namespace MenuPlanner.API.Controllers
         public ActionResult Create([FromBody] CreateProductDto productDto)
         {
             int id = _productService.Create(productDto);
-            return Ok(id);
+            return Created($"api/product/{id}", null);
         }
 
         [HttpDelete]
@@ -44,6 +44,14 @@ namespace MenuPlanner.API.Controllers
         {
             PagedResponse<ProductDto> productResponse = _productService.Get(request);
             return Ok(productResponse);
+        }
+
+        [HttpGet("{id}")]
+        [Authorize("Viewer")]
+        public ActionResult<ProductDto> Get([FromRoute] int id)
+        {
+            ProductDto productDto = _productService.Get(id);
+            return Ok(productDto);
         }
     }
 }

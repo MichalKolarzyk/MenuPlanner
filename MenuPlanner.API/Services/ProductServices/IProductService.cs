@@ -8,5 +8,6 @@ namespace MenuPlanner.API.Services.ProductServices
         int Create(CreateProductDto productDto);
         void Delete(int productId);
         PagedResponse<ProductDto> Get(ProductRequest request);
+        ProductDto Get(int id);
     }
 }

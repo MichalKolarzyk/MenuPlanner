@@ -82,6 +82,19 @@ namespace MenuPlanner.API.Services
             var response = new PagedResponse<RecipeDto>(recipeDtos, totalItemCount, request.PageSize, request.PageNumber);
             return response;
         }
+        public RecipeDto Get(int id)
+        {
+            Recipe recipe = _context.Recipes
+                .Include(r => r.Tags)
+                .Include(r => r.Ingredients)
+                .Include(r => r.Setps)
+                .FirstOrDefault(r => r.Id == id);
+            if (recipe == null)
+                throw new NotFoundException("recipe not found");
+            RecipeDto recipeDto = _mapper.Map<RecipeDto>(recipe);
+            return recipeDto;
+        }
+
 
         private Recipe GetRecipe(int recipeId)
         {
@@ -92,5 +105,7 @@ namespace MenuPlanner.API.Services
                 throw new NotFoundException("recipe not found");
             return recipe;
         }
+
+
     }
 }
