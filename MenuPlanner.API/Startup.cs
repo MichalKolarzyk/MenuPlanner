@@ -99,12 +99,18 @@ namespace MenuPlanner.API
 
             services.AddHttpContextAccessor();
             services.AddRazorPages();
+            services.AddCors(options =>
+                options.AddPolicy("FrontEndClient", builder => builder.AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowAnyOrigin()
+            ));
 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseCors("FrontEndClient");
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

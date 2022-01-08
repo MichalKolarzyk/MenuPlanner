@@ -11,7 +11,9 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
+using NLog;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 
 namespace MenuPlanner.API.Services.AccountServices
 {
@@ -19,22 +21,26 @@ namespace MenuPlanner.API.Services.AccountServices
     {
         private readonly MenuPlannerDbContext _context;
         private readonly IMapper _mapper;
+        private readonly ILogger<AccountService> _logger;
         private readonly IPasswordHasher<User> _passwordHasher;
         private readonly AuthenticationSettings _authenticationSettings;
 
         public AccountService(MenuPlannerDbContext context,
             IMapper mapper, 
+            ILogger<AccountService> logger,
             IPasswordHasher<User> passwordHasher, 
             AuthenticationSettings authenticationSettings)
         {
             _context = context;
             _mapper = mapper;
+            _logger = logger;
             _passwordHasher = passwordHasher;
             _authenticationSettings = authenticationSettings;
         }
 
         public void Register(CreateUserDto userDto)
         {
+
             User user = _mapper.Map<User>(userDto);
 
             string hashPassword = _passwordHasher.HashPassword(user, userDto.Password);
@@ -42,6 +48,8 @@ namespace MenuPlanner.API.Services.AccountServices
 
             _context.Users.Add(user);
             _context.SaveChanges();
+
+            _logger.LogInformation($"User with id {user.Id} has been registered");
         }
 
         public string GenerateToken(LoginDto loginDto)
@@ -89,6 +97,8 @@ namespace MenuPlanner.API.Services.AccountServices
 
             user.RoleId = newRoleId;
             _context.SaveChanges();
+
+            _logger.LogInformation($"User with id {userId} has changed role to {user.RoleId}");
         }
     }
 }
