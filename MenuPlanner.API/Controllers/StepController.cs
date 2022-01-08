@@ -28,14 +28,22 @@ namespace MenuPlanner.API.Controllers
         {
             int id = _stepService.Create(recipeId, stepDto);
 
-            return Ok(id);
+            return Created($"/api/recipe/{recipeId}/step/{id}", null);
+        }
+
+        [HttpGet("{id}")]
+        [Authorize("Viewer")]
+        public ActionResult<StepDto> Get([FromRoute] int recipeId, [FromRoute] int id)
+        {
+            StepDto stepDto = _stepService.Get(recipeId, id);
+            return stepDto;
         }
 
         [HttpDelete]
         [Authorize("Creator")]
-        public ActionResult Delete([FromQuery] int id)
+        public ActionResult Delete([FromRoute] int recipeId, [FromQuery] int id)
         {
-            _stepService.Delete(id);
+            _stepService.Delete(recipeId, id);
 
             return NoContent();
         }

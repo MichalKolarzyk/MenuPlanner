@@ -23,8 +23,8 @@ namespace MenuPlanner.API.Controllers
         [Authorize("Admin")]
         public ActionResult Create([FromBody] CreateUnitDto unitDto)
         {
-            int id =_unitService.Create(unitDto);
-            return Ok(id);
+            int id = _unitService.Create(unitDto);
+            return Created($"/api/unit/{id}", null);
         }
 
         [HttpDelete]
@@ -37,9 +37,17 @@ namespace MenuPlanner.API.Controllers
 
         [HttpGet]
         [Authorize("Viewer")]
-        public ActionResult<IEnumerable<UnitDto>> GetAll()
+        public ActionResult<IEnumerable<UnitDto>> Get()
         {
             return Ok(_unitService.GetAll());
+        }
+
+        [HttpGet("{id}")]
+        [Authorize("Viewer")]
+        public ActionResult<UnitDto> Get(int id)
+        {
+            UnitDto unitDto = _unitService.Get(id);
+            return Ok(unitDto);
         }
 
     }

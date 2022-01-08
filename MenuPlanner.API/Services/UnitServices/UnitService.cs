@@ -41,6 +41,16 @@ namespace MenuPlanner.API.Services
             _context.SaveChanges();
         }
 
+        public UnitDto Get(int id)
+        {
+            Unit unit = _context.Units.FirstOrDefault(u => u.Id == id);
+            if (unit == null)
+                throw new NotFoundException("Unit not found");
+
+            UnitDto unitDto = _mapper.Map<UnitDto>(unit);
+            return unitDto;
+        }
+
         public IEnumerable<UnitDto> GetAll()
         {
             IEnumerable<Unit> units = _context.Units;

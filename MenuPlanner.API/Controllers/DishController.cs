@@ -14,7 +14,7 @@ namespace MenuPlanner.API.Controllers
     public class DishController : Controller
     {
         IDishService _dishService;
-        public DishController(IDishService dishService)
+        public DishController(IDishService dishService) 
         {
             _dishService = dishService;
         }
@@ -24,7 +24,7 @@ namespace MenuPlanner.API.Controllers
         public ActionResult Create([FromBody] CreateDishDto dish)
         {
             int id = _dishService.Create(dish);
-            return Ok(id);
+            return Created($"/api/dish/{id}", null);
         }
 
         [HttpGet]
@@ -36,5 +36,12 @@ namespace MenuPlanner.API.Controllers
             return Ok(response);
         }
 
+        [HttpGet("{id}")]
+        [Authorize("Viewer")]
+        public ActionResult<DishDto> Get([FromRoute] int id)
+        {
+            DishDto dishDto = _dishService.Get(id);
+            return Ok(dishDto);
+        }
     }
 }

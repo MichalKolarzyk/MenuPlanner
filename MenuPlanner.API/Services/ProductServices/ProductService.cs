@@ -36,10 +36,7 @@ namespace MenuPlanner.API.Services.ProductServices
 
         public void Delete(int productId)
         {
-            Product product = _context.Products.FirstOrDefault(p => p.Id == productId);
-
-            if (product == null)
-                throw new NotFoundException("Product not found.");
+            Product product = GetById(productId);
 
             _context.Products.Remove(product);
             _context.SaveChanges();
@@ -63,5 +60,24 @@ namespace MenuPlanner.API.Services.ProductServices
             return response;
         }
 
+        public ProductDto Get(int id)
+        {
+            Product product = GetById(id);
+            ProductDto productDto = _mapper.Map<ProductDto>(product);
+            return productDto;
+        }
+
+
+        private Product GetById(int id)
+        {
+            Product product = _context.Products
+                .Include(p => p.Unit)
+                .FirstOrDefault(p => p.Id == id);
+
+            if (product == null)
+                throw new NotFoundException("Product not found.");
+
+            return product;
+        }
     }
 }

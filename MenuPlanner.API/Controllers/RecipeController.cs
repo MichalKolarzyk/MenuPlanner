@@ -26,15 +26,23 @@ namespace MenuPlanner.API.Controllers
         public ActionResult<int> Create(CreateRecipeDto recipeDto)
         {
             int id = _recipeService.Create(recipeDto);
-
-            return Ok(id);
+            return Created($"/api/recipe/{id}", null);
         }
 
         [HttpGet]
+        [Authorize("Viewer")]
         public ActionResult<PagedResponse<RecipeDto>> Get([FromBody] RecipeRequest request)
         {
             PagedResponse<RecipeDto> response = _recipeService.Get(request);
             return Ok(response);
+        }
+
+        [HttpGet("{id}")]
+        [Authorize("Viewer")]
+        public ActionResult<RecipeDto> Get([FromRoute] int id)
+        {
+            RecipeDto recipeDto = _recipeService.Get(id);
+            return Ok(recipeDto);
         }
 
 

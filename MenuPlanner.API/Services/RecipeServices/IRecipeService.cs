@@ -9,5 +9,6 @@ namespace MenuPlanner.API.Services
         int Create(CreateRecipeDto recipeDto);
         void RemoveTag(int recipeId, int tagId);
         PagedResponse<RecipeDto> Get(RecipeRequest request);
+        RecipeDto Get(int id);
     }
 }
