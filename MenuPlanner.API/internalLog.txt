@@ -112,3 +112,21 @@
 2022-01-09 12:50:30.0733 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
 2022-01-09 12:50:30.0827 Info Configuration initialized.
 2022-01-09 12:50:30.0827 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-09 18:19:51.9417 Info Message Template Auto Format enabled
+2022-01-09 18:19:51.9417 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-09 18:19:51.9750 Info Adding target FileTarget(Name=allfile)
+2022-01-09 18:19:51.9750 Info Adding target FileTarget(Name=exceptions)
+2022-01-09 18:19:51.9750 Info Adding target FileTarget(Name=request-time)
+2022-01-09 18:19:51.9952 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-09 18:19:52.0075 Info Configuration initialized.
+2022-01-09 18:19:52.0075 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-09 18:20:35.6788 Info AppDomain Shutting down. Logger closing...
+2022-01-09 18:20:35.7023 Info Logger has been shut down.
+2022-01-09 18:20:39.2532 Info Message Template Auto Format enabled
+2022-01-09 18:20:39.2532 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-09 18:20:39.2849 Info Adding target FileTarget(Name=allfile)
+2022-01-09 18:20:39.2849 Info Adding target FileTarget(Name=exceptions)
+2022-01-09 18:20:39.2849 Info Adding target FileTarget(Name=request-time)
+2022-01-09 18:20:39.3031 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-09 18:20:39.3140 Info Configuration initialized.
+2022-01-09 18:20:39.3140 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
