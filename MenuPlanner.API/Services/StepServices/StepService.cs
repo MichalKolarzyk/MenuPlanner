@@ -37,16 +37,34 @@ namespace MenuPlanner.API.Services
         }
         
         
-        public void Delete(int id)
+        public void Delete(int recipeId, int id)
         {
+            Recipe recipe = _context.Recipes.FirstOrDefault(r => r.Id == recipeId);
+            if (recipe == null)
+                throw new NotFoundException("Recipe not found");
+
             Step step =_context.Steps.FirstOrDefault(s => s.Id == id);
 
-            if (step == null)
+            if (step == null || recipe.Id != step.RecipeId)
                 throw new NotFoundException("Step not found");
 
             _context.Steps.Remove(step);
             _context.SaveChanges();
         }
 
+        public StepDto Get(int recipeId, int id)
+        {
+            Recipe recipe = _context.Recipes.FirstOrDefault(r => r.Id == recipeId);
+            if (recipe == null)
+                throw new NotFoundException("Recipe not found");
+
+            Step step = _context.Steps.FirstOrDefault(s => s.Id == id);
+
+            if (step == null || recipe.Id != step.RecipeId)
+                throw new NotFoundException("Step not found");
+
+            StepDto stepDto = _mapper.Map<StepDto>(step);
+            return stepDto;
+        }
     }
 }

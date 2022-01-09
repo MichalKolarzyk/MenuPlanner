@@ -24,15 +24,23 @@ namespace MenuPlanner.API.Controllers
         [Authorize("Creator")]
         public ActionResult Add([FromRoute] int recipeId, CreateIngredientDto ingredientDto)
         {
-            int id =_ingredientService.Add(recipeId, ingredientDto);
-            return Ok(id);
+            int id = _ingredientService.Add(recipeId, ingredientDto);
+            return Created($"/api/recipe/{recipeId}/ingredient/{id}", null);
+        }
+
+        [HttpGet("{id}")]
+        [Authorize("Viewer")]
+        public ActionResult<IngredientDto> Get([FromRoute] int recipeId, [FromRoute] int id)
+        {
+            IngredientDto ingredientDto = _ingredientService.Get(recipeId, id);
+            return Ok(ingredientDto);
         }
 
         [HttpDelete]
         [Authorize("Creator")]
-        public ActionResult Delete([FromQuery] int id)
+        public ActionResult Delete([FromRoute] int recipeId, [FromQuery] int id)
         {
-            _ingredientService.Delete(id);
+            _ingredientService.Delete(recipeId, id);
             return NoContent();
         }
 

@@ -25,7 +25,7 @@ namespace MenuPlanner.API.Controllers
         public ActionResult Create([FromBody] CreateTagDto tagDto)
         {
             int id = _tagService.Create(tagDto);
-            return Ok(id);
+            return Created($"/api/tag/{id}",null);
         }
 
         [HttpDelete]
@@ -37,10 +37,19 @@ namespace MenuPlanner.API.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<TagDto>> GetAll()
+        [Authorize("Viewer")]
+        public ActionResult<IEnumerable<TagDto>> Get()
         {
             var result = _tagService.GetAll();
             return Ok(result);
+        }
+
+        [HttpGet("{id}")]
+        [Authorize("Viewer")]
+        public ActionResult<TagDto> Get([FromRoute] int id)
+        {
+            TagDto tagDto = _tagService.Get(id);
+            return Ok(tagDto);
         }
 
         [HttpPut]

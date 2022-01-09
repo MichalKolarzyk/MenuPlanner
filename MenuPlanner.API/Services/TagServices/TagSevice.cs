@@ -2,6 +2,8 @@
 using MenuPlanner.API.Entities;
 using MenuPlanner.API.Exceptions;
 using MenuPlanner.API.Models.Tags;
+using Microsoft.Extensions.Logging;
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,19 +15,21 @@ namespace MenuPlanner.API.Services
     {
         private readonly MenuPlannerDbContext _context;
         private readonly IMapper _mapper;
+        private readonly ILogger<ITagService> _logger;
 
-        public TagSevice(MenuPlannerDbContext context, IMapper mapper)
+        public TagSevice(MenuPlannerDbContext context, IMapper mapper, ILogger<ITagService> logger)
         {
             _context = context;
             _mapper = mapper;
+            _logger = logger;
         }
 
         public IEnumerable<TagDto> GetAll()
         {
+            _logger.LogInformation("Get all tags");
+
             List<Tag> tags =_context.Tags.ToList();
-
             List<TagDto> tagsDto = _mapper.Map<List<TagDto>>(tags);
-
             return tagsDto;
         }
 
@@ -55,7 +59,12 @@ namespace MenuPlanner.API.Services
             _context.Update(tag);
             _context.SaveChanges();
         }
-
+        public TagDto Get(int id)
+        {
+            Tag tag = GetTag(id);
+            TagDto tagDto = _mapper.Map<TagDto>(tag);
+            return tagDto;
+        }
 
         private Tag GetTag(int id)
         {
@@ -64,5 +73,7 @@ namespace MenuPlanner.API.Services
                 throw new NotFoundException("Tag not found");
             return tag;
         }
+
+
     }
 }

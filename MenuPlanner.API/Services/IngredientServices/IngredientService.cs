@@ -37,14 +37,33 @@ namespace MenuPlanner.API.Services.IngredientServices
             return ingredient.Id;
         }
 
-        public void Delete(int id)
+        public void Delete(int recipeId, int id)
         {
-            Ingredient ingredient = _context.Ingredients.FirstOrDefault(i => i.Id == id);
-            if (ingredient == null)
-                throw new NotFoundException("Ingredient not found");
+            Ingredient ingredient = GetById(recipeId, id);
 
             _context.Ingredients.Remove(ingredient);
             _context.SaveChanges();
+        }
+
+        public IngredientDto Get(int recipeId, int id)
+        {
+            Ingredient ingredient = GetById(recipeId, id);
+
+            IngredientDto ingredientDto = _mapper.Map<IngredientDto>(ingredient);
+            return ingredientDto;
+        }
+
+        private Ingredient GetById(int recipeId, int id)
+        {
+            Recipe recipe = _context.Recipes.FirstOrDefault(i => i.Id == recipeId);
+            if (recipe == null)
+                throw new NotFoundException("Recipe not found");
+
+            Ingredient ingredient = _context.Ingredients.FirstOrDefault(i => i.Id == id && i.RecipeId == recipeId);
+            if (ingredient == null || recipe.Id != ingredient.RecipeId)
+                throw new NotFoundException("Ingredient not found");
+
+            return ingredient;
         }
     }
 }

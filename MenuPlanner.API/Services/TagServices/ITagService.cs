@@ -9,5 +9,6 @@ namespace MenuPlanner.API.Services
         void Delete(int id);
         IEnumerable<TagDto> GetAll();
         void Update(UpdateTagDto tagDto);
+        TagDto Get(int id);
     }
 }
