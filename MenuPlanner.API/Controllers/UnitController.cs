@@ -34,6 +34,13 @@ namespace MenuPlanner.API.Controllers
             _unitService.Delete(id);
             return NoContent();
         }
+        [HttpPut]
+        [Authorize("Admin")]
+        public ActionResult Update([FromBody] UpdateUnitDto unitDto)
+        {
+            _unitService.Update(unitDto);
+            return Ok();
+        }
 
         [HttpGet]
         [Authorize("Viewer")]

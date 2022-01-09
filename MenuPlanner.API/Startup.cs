@@ -5,6 +5,7 @@ using MenuPlanner.API.Middleware;
 using MenuPlanner.API.Models.Products;
 using MenuPlanner.API.Models.Role;
 using MenuPlanner.API.Models.Tags;
+using MenuPlanner.API.Models.Units;
 using MenuPlanner.API.Models.Users;
 using MenuPlanner.API.Services;
 using MenuPlanner.API.Services.AccountServices;
@@ -90,6 +91,7 @@ namespace MenuPlanner.API
             services.AddScoped<IValidator<CreateTagDto>, CreateTagDtoValidator>();
             services.AddScoped<IValidator<CreateUserDto>, RegisterUserDtoValidator>();
             services.AddScoped<IValidator<CreateProductDto>, CreateProductDtoValidator>();
+            services.AddScoped<IValidator<CreateUnitDto>, CreateUnitDtoValidator>();
 
             services.AddScoped<ErrorHandlingMiddleware>();
 
