@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MenuPlanner.API.Services.TrustedUserServices
 {
-    public class TrustedUserService
+    public class TrustedUserService : ITrustedUserService
     {
         private readonly MenuPlannerDbContext _context;
         private readonly IHttpContextService _httpContextService;
@@ -23,9 +23,16 @@ namespace MenuPlanner.API.Services.TrustedUserServices
             _mapper = mapper;
         }
 
-        public bool IsTrusted(int otherUserId)
+        public bool IsTrusted(int? otherUserId)
         {
+            if (otherUserId == null)
+                return false;
+
+
             int? userId = _httpContextService.UserId;
+            if (otherUserId == userId)
+                return true;
+
             bool trustedByYou = _context.TrustedUsers.Any(rel => rel.UserId == userId && rel.TrustedId == otherUserId);
             bool youTrustedByHim = _context.TrustedUsers.Any(rel => rel.UserId == otherUserId && rel.TrustedId == userId);
             bool result = trustedByYou && youTrustedByHim;

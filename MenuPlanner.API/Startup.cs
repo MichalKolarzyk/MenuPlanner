@@ -13,6 +13,7 @@ using MenuPlanner.API.Services.HttpContextServices;
 using MenuPlanner.API.Services.IngredientServices;
 using MenuPlanner.API.Services.InvitationServices;
 using MenuPlanner.API.Services.ProductServices;
+using MenuPlanner.API.Services.TrustedUserServices;
 using MenuPlanner.API.Validators;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -84,6 +85,7 @@ namespace MenuPlanner.API
             services.AddScoped<IIngredientService, IngredientService>();
             services.AddScoped<IInvitationService, InvitationService>();
             services.AddScoped<IHttpContextService, HttpContextService>();
+            services.AddScoped<ITrustedUserService, TrustedUserService>();
 
             services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
 

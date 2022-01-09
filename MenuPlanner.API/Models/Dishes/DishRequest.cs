@@ -10,5 +10,6 @@ namespace MenuPlanner.API.Models.Dishes
     {
         public DateTime From { get; set; }
         public int Days { get; set; }
+        public List<int?> UsersIds { get; set; } = new List<int?>();
     }
 }
