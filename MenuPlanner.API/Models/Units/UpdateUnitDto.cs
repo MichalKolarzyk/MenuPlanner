@@ -5,8 +5,9 @@ using System.Threading.Tasks;
 
 namespace MenuPlanner.API.Models.Units
 {
-    public class CreateUnitDto
+    public class UpdateUnitDto
     {
+        public int Id { get; set; }
         public string Symbol { get; set; }
         public string Description { get; set; }
     }

@@ -57,5 +57,16 @@ namespace MenuPlanner.API.Services
 
             return _mapper.Map<IEnumerable<UnitDto>>(units);
         }
+
+        public void Update(UpdateUnitDto unitDto)
+        {
+            Unit unit = _mapper.Map<Unit>(unitDto);
+            bool exist = _context.Units.Any(u => u.Id == unitDto.Id);
+            if (exist == false)
+                throw new NotFoundException("Unit not found");
+
+            _context.Update(unit);
+            _context.SaveChanges();
+        }
     }
 }
