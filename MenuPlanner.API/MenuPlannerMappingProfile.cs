@@ -33,6 +33,7 @@ namespace MenuPlanner.API
             CreateMap<Step, StepDto>();
 
             CreateMap<CreateUnitDto, Unit>();
+            CreateMap<UpdateUnitDto, Unit>();
             CreateMap<Unit, UnitDto>();
 
             CreateMap<CreateTagDto, Tag>();
@@ -44,7 +45,6 @@ namespace MenuPlanner.API
 
             CreateMap<CreateUserDto, User>();
             CreateMap<User, UserDto>();
-
 
             CreateMap<CreateIngredientDto, Ingredient>();
             CreateMap<Ingredient, IngredientDto>();

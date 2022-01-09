@@ -10,5 +10,6 @@ namespace MenuPlanner.API.Services
         void Delete(int id);
         IEnumerable<UnitDto> GetAll();
         UnitDto Get(int id);
+        void Update(UpdateUnitDto unitDto);
     }
 }

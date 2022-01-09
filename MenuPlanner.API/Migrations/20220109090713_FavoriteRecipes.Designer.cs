@@ -4,14 +4,16 @@ using MenuPlanner.API.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace MenuPlanner.API.Migrations
 {
     [DbContext(typeof(MenuPlannerDbContext))]
-    partial class MenuPlannerDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220109090713_FavoriteRecipes")]
+    partial class FavoriteRecipes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -45,28 +47,6 @@ namespace MenuPlanner.API.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Dishes");
-                });
-
-            modelBuilder.Entity("MenuPlanner.API.Entities.FavoriteRecipe", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int?>("RecipeId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("RecipeId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("FavoriteRecipes");
                 });
 
             modelBuilder.Entity("MenuPlanner.API.Entities.Ingredient", b =>
@@ -290,21 +270,6 @@ namespace MenuPlanner.API.Migrations
                         .HasForeignKey("RecipeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("MenuPlanner.API.Entities.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
-
-                    b.Navigation("Recipe");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("MenuPlanner.API.Entities.FavoriteRecipe", b =>
-                {
-                    b.HasOne("MenuPlanner.API.Entities.Recipe", "Recipe")
-                        .WithMany()
-                        .HasForeignKey("RecipeId");
 
                     b.HasOne("MenuPlanner.API.Entities.User", "User")
                         .WithMany()
