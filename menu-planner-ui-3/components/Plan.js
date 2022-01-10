@@ -3,10 +3,10 @@ import React from 'react'
 const Plan = () => {
   return (
     <div className="bg-gray-100">
-      <div className="overflow-auto rounded-lg shadow">
+      <div className="overflow-auto rounded-lg border border-black shadow">
         <table className="w-full">
-          <thead className="bg-red-400 border-b-2 border-gray-200">
-            <tr>
+          <thead className="bg-red-400 border-b-2 border-black">
+            <tr >
               <th className="p-3 text-sm font-semibold tracking-wide text-left"></th>
               <th className="p-3 text-sm font-semibold tracking-wide text-left">Użytkownik</th>
               <th className="p-3 text-sm font-semibold whitespace-nowrap tracking-wide text-left">I Śniadanie</th>
