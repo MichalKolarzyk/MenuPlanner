@@ -9,6 +9,7 @@ using MenuPlanner.API.Models.Units;
 using MenuPlanner.API.Models.Users;
 using MenuPlanner.API.Services;
 using MenuPlanner.API.Services.AccountServices;
+using MenuPlanner.API.Services.FavoriteRecipeServices;
 using MenuPlanner.API.Services.HttpContextServices;
 using MenuPlanner.API.Services.IngredientServices;
 using MenuPlanner.API.Services.InvitationServices;
@@ -86,6 +87,7 @@ namespace MenuPlanner.API
             services.AddScoped<IInvitationService, InvitationService>();
             services.AddScoped<IHttpContextService, HttpContextService>();
             services.AddScoped<ITrustedUserService, TrustedUserService>();
+            services.AddScoped<IFavoriteRecipeService, FavoriteRecipeService>();
 
             services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
 
