@@ -1,7 +1,19 @@
 import React, { useState, useEffect } from 'react';
 
 const Plan = () => {
-  
+  const [days, setDays] = useState([]);
+
+  const fetchData = () => {
+    fetch('http://localhost:3000/data/dummyAPI.json')
+      .then(response => response.json())
+      .then(data => setDays(data))
+  }
+
+  useEffect(()=>{
+    fetchData();
+  },[])
+
+  console.log(days);
   return (
     <div className="bg-gray-100">
       <div className="overflow-auto rounded-lg border border-black shadow">
@@ -18,15 +30,17 @@ const Plan = () => {
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-100">
-            <tr className="bg-gray-50">
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Poniedziałek</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap font-bold">Michał</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Omlet</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Hummus</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Kebab</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Lekki deser</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Pizza</td>
-            </tr>
+            {days.map((day) => (
+              <tr className="bg-gray-50">
+                <td className="p-3 text-sm text-gray-700 whitespace-nowrap">{day.day}</td>
+                <td className="p-3 text-sm text-gray-700 whitespace-nowrap font-bold">{day.user}</td>
+                <td className="p-3 text-sm text-gray-700 whitespace-nowrap">{day.firstMeal}</td>
+                <td className="p-3 text-sm text-gray-700 whitespace-nowrap">{day.secondMeal}</td>
+                <td className="p-3 text-sm text-gray-700 whitespace-nowrap">{day.lunch}</td>
+                <td className="p-3 text-sm text-gray-700 whitespace-nowrap">{day.dessert}</td>
+                <td className="p-3 text-sm text-gray-700 whitespace-nowrap">{day.dinner}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
