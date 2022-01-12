@@ -1,0 +1,20 @@
+[
+  {
+    "day": "poniedziałek",
+    "user": "Michał",
+    "firstMeal": "Omlet",
+    "secondMeal": "Jajka na twardo",
+    "lunch": "Sałatka vege",
+    "dessert": "Ciasto",
+    "dinner": "Zupka"
+  },
+  {
+    "day": "wtorek",
+    "user": "Angela",
+    "firstMeal": "Koktail",
+    "secondMeal": "Sałatka",
+    "lunch": "Zupka",
+    "dessert": "Sernik",
+    "dinner": "nic ;)"
+  }
+]

@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 
 const Plan = () => {
+  
   return (
     <div className="bg-gray-100">
       <div className="overflow-auto rounded-lg border border-black shadow">
@@ -20,87 +21,6 @@ const Plan = () => {
             <tr className="bg-gray-50">
               <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Poniedziałek</td>
               <td className="p-3 text-sm text-gray-700 whitespace-nowrap font-bold">Michał</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Omlet</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Hummus</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Kebab</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Lekki deser</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Pizza</td>
-            </tr>
-            <tr className="bg-red-100">
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Poniedziałek</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap font-bold">Angela</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Omlet</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Hummus</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Kebab</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Lekki deser</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Pizza</td>
-            </tr>
-            <tr className="bg-gray-50">
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Wtorek</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap font-bold">Michał</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Omlet</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Hummus</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Kebab</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Lekki deser</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Pizza</td>
-            </tr>
-            <tr className="bg-red-100">
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Wtorek</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap font-bold">Angela</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Omlet</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Hummus</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Kebab</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Lekki deser</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Pizza</td>
-            </tr>
-            <tr className="bg-gray-50">
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Środa</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap font-bold">Michał</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Omlet</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Hummus</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Kebab</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Lekki deser</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Pizza</td>
-            </tr>
-            <tr className="bg-red-100">
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Środa</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap font-bold">Angela</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Omlet</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Hummus</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Kebab</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Lekki deser</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Pizza</td>
-            </tr>
-            <tr className="bg-gray-50">
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Czwartek</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap font-bold">Michał</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Omlet</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Hummus</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Kebab</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Lekki deser</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Pizza</td>
-            </tr>
-            <tr className="bg-red-100">
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Czwartek</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap font-bold">Angela</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Omlet</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Hummus</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Kebab</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Lekki deser</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Pizza</td>
-            </tr>
-            <tr className="bg-gray-50">
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Piątek</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap font-bold">Michał</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Omlet</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Hummus</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Kebab</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Lekki deser</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Pizza</td>
-            </tr>
-            <tr className="bg-red-100">
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Piątek</td>
-              <td className="p-3 text-sm text-gray-700 whitespace-nowrap font-bold">Angela</td>
               <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Omlet</td>
               <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Hummus</td>
               <td className="p-3 text-sm text-gray-700 whitespace-nowrap">Kebab</td>
