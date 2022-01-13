@@ -20,6 +20,9 @@ namespace MenuPlanner.API.Controllers
             _accountService = accountService;
         }
 
+        /// <summary>
+        /// Rejestrstracja nowego użytkownika
+        /// </summary>
         [HttpPost("register")]
         public ActionResult RegisterUser([FromBody] CreateUserDto userDto)
         {
@@ -27,6 +30,11 @@ namespace MenuPlanner.API.Controllers
             return Ok();
         }
 
+        /// <summary>
+        /// Logowanie istniejącego użytkownika
+        /// </summary>
+        /// <param name="loginDto"></param>
+        /// <returns></returns>
         [HttpPost("login")]
         public ActionResult Login([FromBody] LoginDto loginDto)
         {
@@ -34,6 +42,15 @@ namespace MenuPlanner.API.Controllers
             return Ok(token);
         }
 
+        /// <summary>
+        /// Zmiana roli użytkownika.
+        /// </summary>
+        /// <param name="userId">Id użytkownika którego rola ma zostać zmieniona</param>
+        /// <param name="newRoleId">Id nowej roli</param>
+        /// <returns></returns>
+        /// <remarks>
+        /// Rola: Admin
+        /// </remarks>
         [HttpPut("role")]
         [Authorize(Roles ="Admin")]
         public ActionResult ChangeRole([FromQuery] int userId,[FromQuery] int newRoleId)

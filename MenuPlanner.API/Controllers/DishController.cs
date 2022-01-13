@@ -19,6 +19,9 @@ namespace MenuPlanner.API.Controllers
             _dishService = dishService;
         }
 
+        /// <summary>
+        /// Stworzenie nowego dania.
+        /// </summary>
         [HttpPost]
         [Authorize("Viewer")]
         public ActionResult Create([FromBody] CreateDishDto dish)
@@ -27,6 +30,19 @@ namespace MenuPlanner.API.Controllers
             return Created($"/api/dish/{id}", null);
         }
 
+        /// <summary>
+        /// Pobranie listy dań
+        /// </summary>
+        /// <remarks>
+        /// Role: Viewer 
+        /// 
+        /// from: pobiera dania od tej daty
+        /// 
+        /// days: pobiera dania do daty from + ilość dni podanych w tym parametrze
+        /// 
+        /// usersIds: pobiera dania dla użytkowników podanych w tej liście
+        /// 
+        /// </remarks>
         [HttpGet]
         [Authorize("Viewer")]
         public ActionResult<DishResponse> Get([FromBody] DishRequest request)
@@ -36,6 +52,11 @@ namespace MenuPlanner.API.Controllers
             return Ok(response);
         }
 
+        /// <summary>
+        /// Pobranie dania
+        /// </summary>
+        /// <param name="id">Id pobieranego dania</param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         [Authorize("Viewer")]
         public ActionResult<DishDto> Get([FromRoute] int id)
