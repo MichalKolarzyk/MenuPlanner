@@ -31,7 +31,7 @@ const Plan = () => {
           </thead>
           <tbody className="divide-y divide-gray-100">
             {days.map((day) => (
-              <tr className="bg-gray-50">
+              <tr className="bg-gray-50" key={day.day}>
                 <td className="p-3 text-sm text-gray-700 whitespace-nowrap">{day.day}</td>
                 <td className="p-3 text-sm text-gray-700 whitespace-nowrap font-bold">{day.user}</td>
                 <td className="p-3 text-sm text-gray-700 whitespace-nowrap">{day.firstMeal}</td>
