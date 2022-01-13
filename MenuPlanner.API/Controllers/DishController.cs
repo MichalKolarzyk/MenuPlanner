@@ -48,7 +48,6 @@ namespace MenuPlanner.API.Controllers
         public ActionResult<DishResponse> Get([FromBody] DishRequest request)
         {
             DishResponse response = _dishService.Get(request);
-
             return Ok(response);
         }
 

@@ -44,7 +44,5 @@ namespace MenuPlanner.API.Controllers
             _service.Delete(id);
             return NoContent();
         }
-
-
     }
 }
