@@ -20,6 +20,12 @@ namespace MenuPlanner.API.Controllers
             _ingredientService = ingredientService;
         }
 
+        /// <summary>
+        /// Dodaj składnik do przepisu
+        /// </summary>
+        /// <param name="recipeId">Id przepisu</param>
+        /// <param name="ingredientDto">Składnik</param>
+        /// <returns></returns>
         [HttpPost]
         [Authorize("Creator")]
         public ActionResult Add([FromRoute] int recipeId, CreateIngredientDto ingredientDto)
@@ -28,6 +34,12 @@ namespace MenuPlanner.API.Controllers
             return Created($"/api/recipe/{recipeId}/ingredient/{id}", null);
         }
 
+        /// <summary>
+        /// Pobierz składnik z przepisu
+        /// </summary>
+        /// <param name="recipeId">Id przepisu</param>
+        /// <param name="id">Id składnika</param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         [Authorize("Viewer")]
         public ActionResult<IngredientDto> Get([FromRoute] int recipeId, [FromRoute] int id)
@@ -36,6 +48,12 @@ namespace MenuPlanner.API.Controllers
             return Ok(ingredientDto);
         }
 
+        /// <summary>
+        /// Usuń składnik z przepisu
+        /// </summary>
+        /// <param name="recipeId">Id przepisu</param>
+        /// <param name="id">Id usówanego składnika</param>
+        /// <returns></returns>
         [HttpDelete]
         [Authorize("Creator")]
         public ActionResult Delete([FromRoute] int recipeId, [FromQuery] int id)

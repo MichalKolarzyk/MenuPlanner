@@ -20,6 +20,11 @@ namespace MenuPlanner.API.Controllers
             _favoriteRecipeService = favoriteRecipeService;
         }
 
+        /// <summary>
+        /// Dodaj przepis do ulubionych dla zalogowanego użytkownika.
+        /// </summary>
+        /// <param name="id">Id przepisu</param>
+        /// <returns></returns>
         [HttpPost]
         [Authorize("Viewer")]
         public ActionResult Create([FromQuery] int id)
@@ -28,6 +33,11 @@ namespace MenuPlanner.API.Controllers
             return Ok();
         }
 
+        /// <summary>
+        /// Usuń przepis z ulubionych dla zalogowanego użytkownika
+        /// </summary>
+        /// <param name="id">Id przepisu</param>
+        /// <returns></returns>
         [HttpDelete]
         [Authorize("Viewer")]
         public ActionResult Remove([FromQuery] int id)
@@ -36,6 +46,10 @@ namespace MenuPlanner.API.Controllers
             return NoContent();
         }
 
+        /// <summary>
+        /// Pobierz listę wszystkich ulubionych przepisów użytkownika
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Authorize("Viewer")]
         public ActionResult<IEnumerable<RecipeDto>> Get()
