@@ -1,13 +1,19 @@
 import React from "react";
-import Header from './components/Header';
-import Plan from './components/Plan';
+import Home from "./container/Home";
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom"
+
 
 function App() {
   return (
     <div>
       <div className='p-5 h-screen'>
-        <Header />
-        <Plan />
+        <Home />
       </div>
     </div>
   );
