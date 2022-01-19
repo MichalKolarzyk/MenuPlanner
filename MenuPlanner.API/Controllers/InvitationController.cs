@@ -20,7 +20,7 @@ namespace MenuPlanner.API.Controllers
         }
 
         /// <summary>
-        /// Zaproś użytkownika
+        /// Zaproś użytkownika. ("Viewer")
         /// </summary>
         /// <param name="email">Adres email użytkownika</param>
         /// <returns></returns>
@@ -33,7 +33,7 @@ namespace MenuPlanner.API.Controllers
         }
 
         /// <summary>
-        /// Zaakceptuj zaproszenie
+        /// Zaakceptuj zaproszenie. ("Viewer")
         /// </summary>
         /// <param name="id">Id zaproszenia</param>
         /// <returns></returns>
@@ -46,7 +46,7 @@ namespace MenuPlanner.API.Controllers
         }
 
         /// <summary>
-        /// Odżuć zaproszenie
+        /// Odżuć zaproszenie. ("Viewer")
         /// </summary>
         /// <param name="id">Id zaproszenia</param>
         /// <returns></returns>

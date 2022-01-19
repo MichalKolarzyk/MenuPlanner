@@ -21,6 +21,11 @@ namespace MenuPlanner.API.Controllers
             _service = service;
         }
 
+        /// <summary>
+        /// Utworzenie nowej roli. (Admin)
+        /// </summary>
+        /// <param name="roleDto"></param>
+        /// <returns></returns>
         [HttpPost]
         [Authorize("Admin")]
         public ActionResult Create([FromBody] CreateRoleDto roleDto)
@@ -29,6 +34,10 @@ namespace MenuPlanner.API.Controllers
             return Ok(id);
         }
 
+        /// <summary>
+        /// Pobranie wszystkich roli. (Admin)
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Authorize("Admin")]
         public ActionResult<IEnumerable<RoleDto>> GetAll()
@@ -37,6 +46,11 @@ namespace MenuPlanner.API.Controllers
             return Ok(result);
         }
 
+        /// <summary>
+        /// Usunięcie roli. (Admin)
+        /// </summary>
+        /// <param name="id">Id roli</param>
+        /// <returns></returns>
         [HttpDelete]
         [Authorize("Admin")]
         public ActionResult Remove([FromQuery]int id)

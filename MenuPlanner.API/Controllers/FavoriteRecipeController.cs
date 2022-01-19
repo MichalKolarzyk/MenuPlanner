@@ -21,7 +21,7 @@ namespace MenuPlanner.API.Controllers
         }
 
         /// <summary>
-        /// Dodaj przepis do ulubionych dla zalogowanego użytkownika.
+        /// Dodaj przepis do ulubionych dla zalogowanego użytkownika. ("Viewer")
         /// </summary>
         /// <param name="id">Id przepisu</param>
         /// <returns></returns>
@@ -34,7 +34,7 @@ namespace MenuPlanner.API.Controllers
         }
 
         /// <summary>
-        /// Usuń przepis z ulubionych dla zalogowanego użytkownika
+        /// Usuń przepis z ulubionych dla zalogowanego użytkownika. ("Viewer")
         /// </summary>
         /// <param name="id">Id przepisu</param>
         /// <returns></returns>
@@ -47,7 +47,7 @@ namespace MenuPlanner.API.Controllers
         }
 
         /// <summary>
-        /// Pobierz listę wszystkich ulubionych przepisów użytkownika
+        /// Pobierz listę wszystkich ulubionych przepisów użytkownika. ("Viewer")
         /// </summary>
         /// <returns></returns>
         [HttpGet]

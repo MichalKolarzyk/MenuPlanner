@@ -21,6 +21,11 @@ namespace MenuPlanner.API.Controllers
             _recipeService = recipeService;
         }
 
+        /// <summary>
+        /// Utwórz recepturę. (Creator)
+        /// </summary>
+        /// <param name="recipeDto"></param>
+        /// <returns></returns>
         [HttpPost]
         [Authorize("Creator")]
         public ActionResult<int> Create(CreateRecipeDto recipeDto)
@@ -29,6 +34,11 @@ namespace MenuPlanner.API.Controllers
             return Created($"/api/recipe/{id}", null);
         }
 
+        /// <summary>
+        /// Pobierz listę receptur. (Viewer)
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [HttpGet]
         [Authorize("Viewer")]
         public ActionResult<PagedResponse<RecipeDto>> Get([FromBody] RecipeRequest request)
@@ -37,6 +47,12 @@ namespace MenuPlanner.API.Controllers
             return Ok(response);
         }
 
+
+        /// <summary>
+        /// Pobierz wybraną recepturę. (Viewer)
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         [Authorize("Viewer")]
         public ActionResult<RecipeDto> Get([FromRoute] int id)
@@ -45,7 +61,12 @@ namespace MenuPlanner.API.Controllers
             return Ok(recipeDto);
         }
 
-
+        /// <summary>
+        /// Dodaj tag do receptury. (Creator)
+        /// </summary>
+        /// <param name="recipeId">Id receptury</param>
+        /// <param name="tagId">Id tagu</param>
+        /// <returns></returns>
         [HttpPut("{recipeId}/tags/{tagId}")]
         [Authorize("Creator")]
         public ActionResult AddTag([FromRoute] int recipeId, [FromRoute] int tagId)
@@ -55,6 +76,12 @@ namespace MenuPlanner.API.Controllers
         }
 
 
+        /// <summary>
+        /// Usuń tag z wybranej receptury. (Creator)
+        /// </summary>
+        /// <param name="recipeId">Id receptury</param>
+        /// <param name="tagId">Id tagu</param>
+        /// <returns></returns>
         [HttpDelete("{recipeId}/tags/{tagId}")]
         [Authorize("Creator")]
         public ActionResult RemoveTag([FromRoute] int recipeId, [FromRoute] int tagId)

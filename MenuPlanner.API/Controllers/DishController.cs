@@ -20,7 +20,7 @@ namespace MenuPlanner.API.Controllers
         }
 
         /// <summary>
-        /// Stworzenie nowego dania.
+        /// Stworzenie nowego dania. ("Viewer")
         /// </summary>
         [HttpPost]
         [Authorize("Viewer")]
@@ -31,7 +31,7 @@ namespace MenuPlanner.API.Controllers
         }
 
         /// <summary>
-        /// Pobranie listy dań
+        /// Pobranie listy dań. ("Viewer")
         /// </summary>
         /// <remarks>
         /// Role: Viewer 
@@ -52,7 +52,7 @@ namespace MenuPlanner.API.Controllers
         }
 
         /// <summary>
-        /// Pobranie dania
+        /// Pobranie dania. ("Viewer")
         /// </summary>
         /// <param name="id">Id pobieranego dania</param>
         /// <returns></returns>

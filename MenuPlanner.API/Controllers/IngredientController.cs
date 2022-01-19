@@ -21,7 +21,7 @@ namespace MenuPlanner.API.Controllers
         }
 
         /// <summary>
-        /// Dodaj składnik do przepisu
+        /// Dodaj składnik do przepisu. ("Creator")
         /// </summary>
         /// <param name="recipeId">Id przepisu</param>
         /// <param name="ingredientDto">Składnik</param>
@@ -35,7 +35,7 @@ namespace MenuPlanner.API.Controllers
         }
 
         /// <summary>
-        /// Pobierz składnik z przepisu
+        /// Pobierz składnik z przepisu. ("Viewer")
         /// </summary>
         /// <param name="recipeId">Id przepisu</param>
         /// <param name="id">Id składnika</param>
@@ -49,7 +49,7 @@ namespace MenuPlanner.API.Controllers
         }
 
         /// <summary>
-        /// Usuń składnik z przepisu
+        /// Usuń składnik z przepisu. ("Creator")
         /// </summary>
         /// <param name="recipeId">Id przepisu</param>
         /// <param name="id">Id usówanego składnika</param>
