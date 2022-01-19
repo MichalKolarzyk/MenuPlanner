@@ -10,9 +10,9 @@ function App() {
     <div>
       <div className='p-5 h-screen'>
         <Nav />
-        <Routes>
-          <Route path='/*' element={<Home />} />
-        </Routes>
+          <Routes>
+            <Route path='/*' element={<Home />} />
+          </Routes>
         <Footer />
       </div>
     </div>
