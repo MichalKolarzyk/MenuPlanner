@@ -33,6 +33,12 @@ const Header = () => {
         <span className='block'>Lista zakupów</span>
       </NavLink>
       <NavLink 
+        to='/tags'
+        className={({ isActive }) => isActive ? isActiveStyle : isNotActiveStyle}
+      >
+        <span className='block'>Tagi</span>
+      </NavLink>
+      <NavLink 
         to='/settings'
         className={({ isActive }) => isActive ? isActiveStyle : isNotActiveStyle}
       >
