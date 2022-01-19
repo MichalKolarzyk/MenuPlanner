@@ -130,3 +130,453 @@
 2022-01-09 18:20:39.3031 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
 2022-01-09 18:20:39.3140 Info Configuration initialized.
 2022-01-09 18:20:39.3140 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-13 20:48:23.8026 Info Message Template Auto Format enabled
+2022-01-13 20:48:23.8151 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-13 20:48:23.8379 Info Adding target FileTarget(Name=allfile)
+2022-01-13 20:48:23.8379 Info Adding target FileTarget(Name=exceptions)
+2022-01-13 20:48:23.8379 Info Adding target FileTarget(Name=request-time)
+2022-01-13 20:48:23.8546 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-13 20:48:23.8647 Info Configuration initialized.
+2022-01-13 20:48:23.8647 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-13 20:49:17.2863 Info AppDomain Shutting down. Logger closing...
+2022-01-13 20:49:17.3002 Info Logger has been shut down.
+2022-01-13 20:49:35.7719 Info Message Template Auto Format enabled
+2022-01-13 20:49:35.7719 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-13 20:49:35.7938 Info Adding target FileTarget(Name=allfile)
+2022-01-13 20:49:35.7938 Info Adding target FileTarget(Name=exceptions)
+2022-01-13 20:49:35.7938 Info Adding target FileTarget(Name=request-time)
+2022-01-13 20:49:35.8087 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-13 20:49:35.8174 Info Configuration initialized.
+2022-01-13 20:49:35.8174 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-13 20:50:29.4241 Info Message Template Auto Format enabled
+2022-01-13 20:50:29.4241 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-13 20:50:29.4539 Info Adding target FileTarget(Name=allfile)
+2022-01-13 20:50:29.4539 Info Adding target FileTarget(Name=exceptions)
+2022-01-13 20:50:29.4539 Info Adding target FileTarget(Name=request-time)
+2022-01-13 20:50:29.4693 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-13 20:50:29.4693 Info Configuration initialized.
+2022-01-13 20:50:29.4693 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-13 20:50:44.7524 Info AppDomain Shutting down. Logger closing...
+2022-01-13 20:50:44.7524 Info Logger has been shut down.
+2022-01-13 20:56:04.8392 Info Message Template Auto Format enabled
+2022-01-13 20:56:04.8507 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-13 20:56:04.8744 Info Adding target FileTarget(Name=allfile)
+2022-01-13 20:56:04.8744 Info Adding target FileTarget(Name=exceptions)
+2022-01-13 20:56:04.8767 Info Adding target FileTarget(Name=request-time)
+2022-01-13 20:56:04.8939 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-13 20:56:04.8939 Info Configuration initialized.
+2022-01-13 20:56:04.8939 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-13 20:56:26.2818 Info AppDomain Shutting down. Logger closing...
+2022-01-13 20:56:26.2925 Info Logger has been shut down.
+2022-01-13 20:56:36.3892 Info Message Template Auto Format enabled
+2022-01-13 20:56:36.3956 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-13 20:56:36.4150 Info Adding target FileTarget(Name=allfile)
+2022-01-13 20:56:36.4150 Info Adding target FileTarget(Name=exceptions)
+2022-01-13 20:56:36.4150 Info Adding target FileTarget(Name=request-time)
+2022-01-13 20:56:36.4311 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-13 20:56:36.4406 Info Configuration initialized.
+2022-01-13 20:56:36.4406 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-13 20:57:49.0853 Info Message Template Auto Format enabled
+2022-01-13 20:57:49.0966 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-13 20:57:49.1169 Info Adding target FileTarget(Name=allfile)
+2022-01-13 20:57:49.1169 Info Adding target FileTarget(Name=exceptions)
+2022-01-13 20:57:49.1169 Info Adding target FileTarget(Name=request-time)
+2022-01-13 20:57:49.1359 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-13 20:57:49.1497 Info Configuration initialized.
+2022-01-13 20:57:49.1497 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-13 20:57:57.7133 Info AppDomain Shutting down. Logger closing...
+2022-01-13 20:57:57.7240 Info Logger has been shut down.
+2022-01-13 20:59:52.6484 Info Message Template Auto Format enabled
+2022-01-13 20:59:52.6577 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-13 20:59:52.6765 Info Adding target FileTarget(Name=allfile)
+2022-01-13 20:59:52.6765 Info Adding target FileTarget(Name=exceptions)
+2022-01-13 20:59:52.6765 Info Adding target FileTarget(Name=request-time)
+2022-01-13 20:59:52.6967 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-13 20:59:52.7069 Info Configuration initialized.
+2022-01-13 20:59:52.7069 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-13 21:00:28.7293 Info Message Template Auto Format enabled
+2022-01-13 21:00:28.7383 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-13 21:00:28.7564 Info Adding target FileTarget(Name=allfile)
+2022-01-13 21:00:28.7564 Info Adding target FileTarget(Name=exceptions)
+2022-01-13 21:00:28.7564 Info Adding target FileTarget(Name=request-time)
+2022-01-13 21:00:28.7708 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-13 21:00:28.7708 Info Configuration initialized.
+2022-01-13 21:00:28.7708 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-13 21:01:48.0977 Info Message Template Auto Format enabled
+2022-01-13 21:01:48.0977 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-13 21:01:48.1307 Info Adding target FileTarget(Name=allfile)
+2022-01-13 21:01:48.1307 Info Adding target FileTarget(Name=exceptions)
+2022-01-13 21:01:48.1307 Info Adding target FileTarget(Name=request-time)
+2022-01-13 21:01:48.1528 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-13 21:01:48.1643 Info Configuration initialized.
+2022-01-13 21:01:48.1643 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-13 21:01:58.4108 Info AppDomain Shutting down. Logger closing...
+2022-01-13 21:01:58.4108 Info Logger has been shut down.
+2022-01-13 21:03:26.7586 Info Message Template Auto Format enabled
+2022-01-13 21:03:26.7693 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-13 21:03:26.7901 Info Adding target FileTarget(Name=allfile)
+2022-01-13 21:03:26.7901 Info Adding target FileTarget(Name=exceptions)
+2022-01-13 21:03:26.7901 Info Adding target FileTarget(Name=request-time)
+2022-01-13 21:03:26.8093 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-13 21:03:26.8241 Info Configuration initialized.
+2022-01-13 21:03:26.8241 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-13 21:04:52.9404 Info Message Template Auto Format enabled
+2022-01-13 21:04:52.9404 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-13 21:04:52.9711 Info Adding target FileTarget(Name=allfile)
+2022-01-13 21:04:52.9711 Info Adding target FileTarget(Name=exceptions)
+2022-01-13 21:04:52.9711 Info Adding target FileTarget(Name=request-time)
+2022-01-13 21:04:52.9884 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-13 21:04:52.9884 Info Configuration initialized.
+2022-01-13 21:04:52.9884 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-13 21:05:01.3823 Info AppDomain Shutting down. Logger closing...
+2022-01-13 21:05:01.3940 Info Logger has been shut down.
+2022-01-13 21:05:22.2627 Info Message Template Auto Format enabled
+2022-01-13 21:05:22.2690 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-13 21:05:22.2884 Info Adding target FileTarget(Name=allfile)
+2022-01-13 21:05:22.2884 Info Adding target FileTarget(Name=exceptions)
+2022-01-13 21:05:22.2884 Info Adding target FileTarget(Name=request-time)
+2022-01-13 21:05:22.3051 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-13 21:05:22.3157 Info Configuration initialized.
+2022-01-13 21:05:22.3157 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-13 21:05:36.0918 Info Message Template Auto Format enabled
+2022-01-13 21:05:36.1015 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-13 21:05:36.1223 Info Adding target FileTarget(Name=allfile)
+2022-01-13 21:05:36.1223 Info Adding target FileTarget(Name=exceptions)
+2022-01-13 21:05:36.1223 Info Adding target FileTarget(Name=request-time)
+2022-01-13 21:05:36.1427 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-13 21:05:36.1427 Info Configuration initialized.
+2022-01-13 21:05:36.1427 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-13 21:05:54.3113 Info Message Template Auto Format enabled
+2022-01-13 21:05:54.3173 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-13 21:05:54.3351 Info Adding target FileTarget(Name=allfile)
+2022-01-13 21:05:54.3351 Info Adding target FileTarget(Name=exceptions)
+2022-01-13 21:05:54.3351 Info Adding target FileTarget(Name=request-time)
+2022-01-13 21:05:54.3528 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-13 21:05:54.3633 Info Configuration initialized.
+2022-01-13 21:05:54.3633 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-13 21:06:00.2117 Info AppDomain Shutting down. Logger closing...
+2022-01-13 21:06:00.2237 Info Logger has been shut down.
+2022-01-13 21:06:29.6523 Info Message Template Auto Format enabled
+2022-01-13 21:06:29.6617 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-13 21:06:29.6810 Info Adding target FileTarget(Name=allfile)
+2022-01-13 21:06:29.6810 Info Adding target FileTarget(Name=exceptions)
+2022-01-13 21:06:29.6810 Info Adding target FileTarget(Name=request-time)
+2022-01-13 21:06:29.6965 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-13 21:06:29.7058 Info Configuration initialized.
+2022-01-13 21:06:29.7058 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-13 21:06:39.3371 Info AppDomain Shutting down. Logger closing...
+2022-01-13 21:06:39.3491 Info Logger has been shut down.
+2022-01-13 21:07:07.6254 Info Message Template Auto Format enabled
+2022-01-13 21:07:07.6394 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-13 21:07:07.6601 Info Adding target FileTarget(Name=allfile)
+2022-01-13 21:07:07.6601 Info Adding target FileTarget(Name=exceptions)
+2022-01-13 21:07:07.6601 Info Adding target FileTarget(Name=request-time)
+2022-01-13 21:07:07.6766 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-13 21:07:07.6766 Info Configuration initialized.
+2022-01-13 21:07:07.6766 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-13 21:07:39.2016 Info AppDomain Shutting down. Logger closing...
+2022-01-13 21:07:39.2147 Info Logger has been shut down.
+2022-01-13 21:08:42.3816 Info Message Template Auto Format enabled
+2022-01-13 21:08:42.3816 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-13 21:08:42.4106 Info Adding target FileTarget(Name=allfile)
+2022-01-13 21:08:42.4106 Info Adding target FileTarget(Name=exceptions)
+2022-01-13 21:08:42.4106 Info Adding target FileTarget(Name=request-time)
+2022-01-13 21:08:42.4262 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-13 21:08:42.4262 Info Configuration initialized.
+2022-01-13 21:08:42.4262 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-13 21:09:31.2154 Info AppDomain Shutting down. Logger closing...
+2022-01-13 21:09:31.2310 Info Logger has been shut down.
+2022-01-13 21:11:30.3583 Info Message Template Auto Format enabled
+2022-01-13 21:11:30.3681 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-13 21:11:30.3871 Info Adding target FileTarget(Name=allfile)
+2022-01-13 21:11:30.3871 Info Adding target FileTarget(Name=exceptions)
+2022-01-13 21:11:30.3871 Info Adding target FileTarget(Name=request-time)
+2022-01-13 21:11:30.4028 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-13 21:11:30.4127 Info Configuration initialized.
+2022-01-13 21:11:30.4127 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-13 21:13:00.4670 Info AppDomain Shutting down. Logger closing...
+2022-01-13 21:13:00.4816 Info Logger has been shut down.
+2022-01-13 21:14:20.7960 Info Message Template Auto Format enabled
+2022-01-13 21:14:20.8056 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-13 21:14:20.8240 Info Adding target FileTarget(Name=allfile)
+2022-01-13 21:14:20.8240 Info Adding target FileTarget(Name=exceptions)
+2022-01-13 21:14:20.8240 Info Adding target FileTarget(Name=request-time)
+2022-01-13 21:14:20.8459 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-13 21:14:20.8459 Info Configuration initialized.
+2022-01-13 21:14:20.8459 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-13 21:14:30.7038 Info AppDomain Shutting down. Logger closing...
+2022-01-13 21:14:30.7160 Info Logger has been shut down.
+2022-01-13 21:15:01.8829 Info Message Template Auto Format enabled
+2022-01-13 21:15:01.8928 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-13 21:15:01.9137 Info Adding target FileTarget(Name=allfile)
+2022-01-13 21:15:01.9137 Info Adding target FileTarget(Name=exceptions)
+2022-01-13 21:15:01.9137 Info Adding target FileTarget(Name=request-time)
+2022-01-13 21:15:01.9367 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-13 21:15:01.9484 Info Configuration initialized.
+2022-01-13 21:15:01.9484 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-13 21:15:14.7475 Info AppDomain Shutting down. Logger closing...
+2022-01-13 21:15:14.7592 Info Logger has been shut down.
+2022-01-13 21:15:56.5733 Info Message Template Auto Format enabled
+2022-01-13 21:15:56.5842 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-13 21:15:56.6123 Info Adding target FileTarget(Name=allfile)
+2022-01-13 21:15:56.6123 Info Adding target FileTarget(Name=exceptions)
+2022-01-13 21:15:56.6123 Info Adding target FileTarget(Name=request-time)
+2022-01-13 21:15:56.6372 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-13 21:15:56.6479 Info Configuration initialized.
+2022-01-13 21:15:56.6479 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-13 21:17:06.9333 Info Message Template Auto Format enabled
+2022-01-13 21:17:06.9394 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-13 21:17:06.9584 Info Adding target FileTarget(Name=allfile)
+2022-01-13 21:17:06.9584 Info Adding target FileTarget(Name=exceptions)
+2022-01-13 21:17:06.9584 Info Adding target FileTarget(Name=request-time)
+2022-01-13 21:17:06.9743 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-13 21:17:06.9743 Info Configuration initialized.
+2022-01-13 21:17:06.9743 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-13 21:17:10.7095 Info AppDomain Shutting down. Logger closing...
+2022-01-13 21:17:10.7220 Info Logger has been shut down.
+2022-01-13 21:17:47.3622 Info Message Template Auto Format enabled
+2022-01-13 21:17:47.3622 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-13 21:17:47.3966 Info Adding target FileTarget(Name=allfile)
+2022-01-13 21:17:47.3966 Info Adding target FileTarget(Name=exceptions)
+2022-01-13 21:17:47.3966 Info Adding target FileTarget(Name=request-time)
+2022-01-13 21:17:47.4144 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-13 21:17:47.4266 Info Configuration initialized.
+2022-01-13 21:17:47.4266 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-13 21:17:50.8844 Info AppDomain Shutting down. Logger closing...
+2022-01-13 21:17:50.8965 Info Logger has been shut down.
+2022-01-13 21:19:38.3256 Info Message Template Auto Format enabled
+2022-01-13 21:19:38.3383 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-13 21:19:38.3643 Info Adding target FileTarget(Name=allfile)
+2022-01-13 21:19:38.3643 Info Adding target FileTarget(Name=exceptions)
+2022-01-13 21:19:38.3643 Info Adding target FileTarget(Name=request-time)
+2022-01-13 21:19:38.3815 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-13 21:19:38.3921 Info Configuration initialized.
+2022-01-13 21:19:38.3921 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-13 21:20:50.2191 Info AppDomain Shutting down. Logger closing...
+2022-01-13 21:20:50.2347 Info Logger has been shut down.
+2022-01-13 21:22:06.5118 Info Message Template Auto Format enabled
+2022-01-13 21:22:06.5231 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-13 21:22:06.5452 Info Adding target FileTarget(Name=allfile)
+2022-01-13 21:22:06.5452 Info Adding target FileTarget(Name=exceptions)
+2022-01-13 21:22:06.5452 Info Adding target FileTarget(Name=request-time)
+2022-01-13 21:22:06.5627 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-13 21:22:06.5735 Info Configuration initialized.
+2022-01-13 21:22:06.5735 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-13 21:22:45.1075 Info AppDomain Shutting down. Logger closing...
+2022-01-13 21:22:45.1221 Info Logger has been shut down.
+2022-01-13 21:23:57.2753 Info Message Template Auto Format enabled
+2022-01-13 21:23:57.2846 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-13 21:23:57.3054 Info Adding target FileTarget(Name=allfile)
+2022-01-13 21:23:57.3054 Info Adding target FileTarget(Name=exceptions)
+2022-01-13 21:23:57.3054 Info Adding target FileTarget(Name=request-time)
+2022-01-13 21:23:57.3243 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-13 21:23:57.3370 Info Configuration initialized.
+2022-01-13 21:23:57.3370 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-13 21:24:17.7445 Info AppDomain Shutting down. Logger closing...
+2022-01-13 21:24:17.7587 Info Logger has been shut down.
+2022-01-13 21:24:47.4282 Info Message Template Auto Format enabled
+2022-01-13 21:24:47.4389 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-13 21:24:47.4615 Info Adding target FileTarget(Name=allfile)
+2022-01-13 21:24:47.4615 Info Adding target FileTarget(Name=exceptions)
+2022-01-13 21:24:47.4615 Info Adding target FileTarget(Name=request-time)
+2022-01-13 21:24:47.4816 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-13 21:24:47.4928 Info Configuration initialized.
+2022-01-13 21:24:47.4928 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-13 21:24:52.7196 Info AppDomain Shutting down. Logger closing...
+2022-01-13 21:24:52.7339 Info Logger has been shut down.
+2022-01-13 21:26:11.1890 Info Message Template Auto Format enabled
+2022-01-13 21:26:11.1890 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-13 21:26:11.2294 Info Adding target FileTarget(Name=allfile)
+2022-01-13 21:26:11.2294 Info Adding target FileTarget(Name=exceptions)
+2022-01-13 21:26:11.2294 Info Adding target FileTarget(Name=request-time)
+2022-01-13 21:26:11.2544 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-13 21:26:11.2544 Info Configuration initialized.
+2022-01-13 21:26:11.2544 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-13 21:26:33.0654 Info AppDomain Shutting down. Logger closing...
+2022-01-13 21:26:33.0815 Info Logger has been shut down.
+2022-01-13 21:27:11.2135 Info Message Template Auto Format enabled
+2022-01-13 21:27:11.2250 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-13 21:27:11.2459 Info Adding target FileTarget(Name=allfile)
+2022-01-13 21:27:11.2459 Info Adding target FileTarget(Name=exceptions)
+2022-01-13 21:27:11.2459 Info Adding target FileTarget(Name=request-time)
+2022-01-13 21:27:11.2626 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-13 21:27:11.2741 Info Configuration initialized.
+2022-01-13 21:27:11.2741 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-13 21:32:14.8935 Info Message Template Auto Format enabled
+2022-01-13 21:32:14.8935 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-13 21:32:14.9255 Info Adding target FileTarget(Name=allfile)
+2022-01-13 21:32:14.9255 Info Adding target FileTarget(Name=exceptions)
+2022-01-13 21:32:14.9255 Info Adding target FileTarget(Name=request-time)
+2022-01-13 21:32:14.9421 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-13 21:32:14.9421 Info Configuration initialized.
+2022-01-13 21:32:14.9421 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-13 21:32:29.0508 Info AppDomain Shutting down. Logger closing...
+2022-01-13 21:32:29.0508 Info Logger has been shut down.
+2022-01-13 21:32:42.7033 Info Message Template Auto Format enabled
+2022-01-13 21:32:42.7147 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-13 21:32:42.7399 Info Adding target FileTarget(Name=allfile)
+2022-01-13 21:32:42.7399 Info Adding target FileTarget(Name=exceptions)
+2022-01-13 21:32:42.7399 Info Adding target FileTarget(Name=request-time)
+2022-01-13 21:32:42.7591 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-13 21:32:42.7723 Info Configuration initialized.
+2022-01-13 21:32:42.7723 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-13 21:32:49.9368 Info AppDomain Shutting down. Logger closing...
+2022-01-13 21:32:49.9481 Info Logger has been shut down.
+2022-01-13 21:32:59.6986 Info Message Template Auto Format enabled
+2022-01-13 21:32:59.7106 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-13 21:32:59.7321 Info Adding target FileTarget(Name=allfile)
+2022-01-13 21:32:59.7321 Info Adding target FileTarget(Name=exceptions)
+2022-01-13 21:32:59.7321 Info Adding target FileTarget(Name=request-time)
+2022-01-13 21:32:59.7497 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-13 21:32:59.7603 Info Configuration initialized.
+2022-01-13 21:32:59.7603 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-13 21:33:33.7188 Info AppDomain Shutting down. Logger closing...
+2022-01-13 21:33:33.7338 Info Logger has been shut down.
+2022-01-13 21:33:45.8170 Info Message Template Auto Format enabled
+2022-01-13 21:33:45.8170 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-13 21:33:45.8468 Info Adding target FileTarget(Name=allfile)
+2022-01-13 21:33:45.8468 Info Adding target FileTarget(Name=exceptions)
+2022-01-13 21:33:45.8468 Info Adding target FileTarget(Name=request-time)
+2022-01-13 21:33:45.8659 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-13 21:33:45.8783 Info Configuration initialized.
+2022-01-13 21:33:45.8783 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-13 21:33:57.5510 Info AppDomain Shutting down. Logger closing...
+2022-01-13 21:33:57.5634 Info Logger has been shut down.
+2022-01-13 21:34:41.3708 Info Message Template Auto Format enabled
+2022-01-13 21:34:41.3842 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-13 21:34:41.4125 Info Adding target FileTarget(Name=allfile)
+2022-01-13 21:34:41.4125 Info Adding target FileTarget(Name=exceptions)
+2022-01-13 21:34:41.4125 Info Adding target FileTarget(Name=request-time)
+2022-01-13 21:34:41.4341 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-13 21:34:41.4491 Info Configuration initialized.
+2022-01-13 21:34:41.4491 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-13 21:34:58.2689 Info AppDomain Shutting down. Logger closing...
+2022-01-13 21:34:58.2849 Info Logger has been shut down.
+2022-01-13 21:36:18.8279 Info Message Template Auto Format enabled
+2022-01-13 21:36:18.8377 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-13 21:36:18.8594 Info Adding target FileTarget(Name=allfile)
+2022-01-13 21:36:18.8605 Info Adding target FileTarget(Name=exceptions)
+2022-01-13 21:36:18.8605 Info Adding target FileTarget(Name=request-time)
+2022-01-13 21:36:18.8605 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-13 21:36:18.8840 Info Configuration initialized.
+2022-01-13 21:36:18.8840 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-13 21:36:23.1064 Info AppDomain Shutting down. Logger closing...
+2022-01-13 21:36:23.1185 Info Logger has been shut down.
+2022-01-13 21:36:30.0250 Info Message Template Auto Format enabled
+2022-01-13 21:36:30.0354 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-13 21:36:30.0585 Info Adding target FileTarget(Name=allfile)
+2022-01-13 21:36:30.0585 Info Adding target FileTarget(Name=exceptions)
+2022-01-13 21:36:30.0585 Info Adding target FileTarget(Name=request-time)
+2022-01-13 21:36:30.0784 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-13 21:36:30.0932 Info Configuration initialized.
+2022-01-13 21:36:30.0945 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-13 21:37:06.7442 Info AppDomain Shutting down. Logger closing...
+2022-01-13 21:37:06.7589 Info Logger has been shut down.
+2022-01-13 21:50:55.1156 Info Message Template Auto Format enabled
+2022-01-13 21:50:55.1156 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-13 21:50:55.1379 Info Adding target FileTarget(Name=allfile)
+2022-01-13 21:50:55.1379 Info Adding target FileTarget(Name=exceptions)
+2022-01-13 21:50:55.1379 Info Adding target FileTarget(Name=request-time)
+2022-01-13 21:50:55.1524 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-13 21:50:55.1611 Info Configuration initialized.
+2022-01-13 21:50:55.1611 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-13 21:51:08.8244 Info AppDomain Shutting down. Logger closing...
+2022-01-13 21:51:08.8352 Info Logger has been shut down.
+2022-01-13 21:54:37.2443 Info Message Template Auto Format enabled
+2022-01-13 21:54:37.2551 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-13 21:54:37.2765 Info Adding target FileTarget(Name=allfile)
+2022-01-13 21:54:37.2765 Info Adding target FileTarget(Name=exceptions)
+2022-01-13 21:54:37.2765 Info Adding target FileTarget(Name=request-time)
+2022-01-13 21:54:37.2931 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-13 21:54:37.3042 Info Configuration initialized.
+2022-01-13 21:54:37.3042 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-13 21:55:02.8973 Info AppDomain Shutting down. Logger closing...
+2022-01-13 21:55:02.9121 Info Logger has been shut down.
+2022-01-13 21:57:24.4098 Info Message Template Auto Format enabled
+2022-01-13 21:57:24.4098 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-13 21:57:24.4383 Info Adding target FileTarget(Name=allfile)
+2022-01-13 21:57:24.4396 Info Adding target FileTarget(Name=exceptions)
+2022-01-13 21:57:24.4396 Info Adding target FileTarget(Name=request-time)
+2022-01-13 21:57:24.4545 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-13 21:57:24.4545 Info Configuration initialized.
+2022-01-13 21:57:24.4545 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-13 21:58:03.7534 Info AppDomain Shutting down. Logger closing...
+2022-01-13 21:58:03.7534 Info Logger has been shut down.
+2022-01-13 22:00:00.9914 Info Message Template Auto Format enabled
+2022-01-13 22:00:01.0037 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-13 22:00:01.0265 Info Adding target FileTarget(Name=allfile)
+2022-01-13 22:00:01.0265 Info Adding target FileTarget(Name=exceptions)
+2022-01-13 22:00:01.0265 Info Adding target FileTarget(Name=request-time)
+2022-01-13 22:00:01.0443 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-13 22:00:01.0584 Info Configuration initialized.
+2022-01-13 22:00:01.0584 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-13 22:00:50.4093 Info AppDomain Shutting down. Logger closing...
+2022-01-13 22:00:50.4239 Info Logger has been shut down.
+2022-01-13 22:10:16.8098 Info Message Template Auto Format enabled
+2022-01-13 22:10:16.8199 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-13 22:10:16.8497 Info Adding target FileTarget(Name=allfile)
+2022-01-13 22:10:16.8497 Info Adding target FileTarget(Name=exceptions)
+2022-01-13 22:10:16.8497 Info Adding target FileTarget(Name=request-time)
+2022-01-13 22:10:16.8716 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-13 22:10:16.8821 Info Configuration initialized.
+2022-01-13 22:10:16.8821 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-19 20:52:28.0183 Info Message Template Auto Format enabled
+2022-01-19 20:52:28.0292 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-19 20:52:28.0542 Info Adding target FileTarget(Name=allfile)
+2022-01-19 20:52:28.0542 Info Adding target FileTarget(Name=exceptions)
+2022-01-19 20:52:28.0542 Info Adding target FileTarget(Name=request-time)
+2022-01-19 20:52:28.0723 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-19 20:52:28.0852 Info Configuration initialized.
+2022-01-19 20:52:28.0852 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-19 20:52:34.8252 Info AppDomain Shutting down. Logger closing...
+2022-01-19 20:52:34.8370 Info Logger has been shut down.
+2022-01-19 21:03:33.2609 Info Message Template Auto Format enabled
+2022-01-19 21:03:33.2778 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-19 21:03:33.3155 Info Adding target FileTarget(Name=allfile)
+2022-01-19 21:03:33.3179 Info Adding target FileTarget(Name=exceptions)
+2022-01-19 21:03:33.3179 Info Adding target FileTarget(Name=request-time)
+2022-01-19 21:03:33.3470 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-19 21:03:33.3673 Info Configuration initialized.
+2022-01-19 21:03:33.3673 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-19 21:03:53.9131 Info AppDomain Shutting down. Logger closing...
+2022-01-19 21:03:53.9282 Info Logger has been shut down.
+2022-01-19 21:05:28.0167 Info Message Template Auto Format enabled
+2022-01-19 21:05:28.0270 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-19 21:05:28.0538 Info Adding target FileTarget(Name=allfile)
+2022-01-19 21:05:28.0538 Info Adding target FileTarget(Name=exceptions)
+2022-01-19 21:05:28.0538 Info Adding target FileTarget(Name=request-time)
+2022-01-19 21:05:28.0746 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-19 21:05:28.0856 Info Configuration initialized.
+2022-01-19 21:05:28.0856 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-19 21:05:48.6058 Info AppDomain Shutting down. Logger closing...
+2022-01-19 21:05:48.6249 Info Logger has been shut down.
+2022-01-19 21:07:00.2649 Info Message Template Auto Format enabled
+2022-01-19 21:07:00.2738 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-19 21:07:00.2923 Info Adding target FileTarget(Name=allfile)
+2022-01-19 21:07:00.2923 Info Adding target FileTarget(Name=exceptions)
+2022-01-19 21:07:00.2923 Info Adding target FileTarget(Name=request-time)
+2022-01-19 21:07:00.3087 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-19 21:07:00.3192 Info Configuration initialized.
+2022-01-19 21:07:00.3192 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-19 21:07:08.4157 Info AppDomain Shutting down. Logger closing...
+2022-01-19 21:07:08.4157 Info Logger has been shut down.
+2022-01-19 21:14:21.5859 Info Message Template Auto Format enabled
+2022-01-19 21:14:21.5859 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-19 21:14:21.6145 Info Adding target FileTarget(Name=allfile)
+2022-01-19 21:14:21.6153 Info Adding target FileTarget(Name=exceptions)
+2022-01-19 21:14:21.6153 Info Adding target FileTarget(Name=request-time)
+2022-01-19 21:14:21.6303 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-19 21:14:21.6303 Info Configuration initialized.
+2022-01-19 21:14:21.6303 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-19 21:14:39.3094 Info AppDomain Shutting down. Logger closing...
+2022-01-19 21:14:39.3247 Info Logger has been shut down.
+2022-01-19 21:14:58.6006 Info Message Template Auto Format enabled
+2022-01-19 21:14:58.6006 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-19 21:14:58.6331 Info Adding target FileTarget(Name=allfile)
+2022-01-19 21:14:58.6331 Info Adding target FileTarget(Name=exceptions)
+2022-01-19 21:14:58.6331 Info Adding target FileTarget(Name=request-time)
+2022-01-19 21:14:58.6501 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-19 21:14:58.6501 Info Configuration initialized.
+2022-01-19 21:14:58.6621 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-19 21:15:06.5493 Info AppDomain Shutting down. Logger closing...
+2022-01-19 21:15:06.5602 Info Logger has been shut down.

@@ -20,6 +20,14 @@ namespace MenuPlanner.API.Controllers
             _tagService = tagService;
         }
 
+        /// <summary>
+        /// Utworzenie nowego taga. (Admin)
+        /// </summary>
+        /// <remarks>
+        /// Tagi służą do wyszukiwania przepisów, przepis może zawierać wiele tagów.
+        /// </remarks>
+        /// <param name="tagDto"></param>
+        /// <returns></returns>
         [HttpPost]
         [Authorize("Admin")]
         public ActionResult Create([FromBody] CreateTagDto tagDto)
@@ -28,6 +36,11 @@ namespace MenuPlanner.API.Controllers
             return Created($"/api/tag/{id}",null);
         }
 
+        /// <summary>
+        /// Usunięcie wybranego taga. (Admin)
+        /// </summary>
+        /// <param name="id">Id taga</param>
+        /// <returns></returns>
         [HttpDelete]
         [Authorize("Admin")]
         public ActionResult Delete([FromQuery] int id)
@@ -36,6 +49,10 @@ namespace MenuPlanner.API.Controllers
             return NoContent();
         }
 
+        /// <summary>
+        /// Pobranie listy wszystkich tagów. (Viewer)
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Authorize("Viewer")]
         public ActionResult<IEnumerable<TagDto>> Get()
@@ -44,6 +61,11 @@ namespace MenuPlanner.API.Controllers
             return Ok(result);
         }
 
+        /// <summary>
+        /// Pobranie wybranego tagu (Viewer)
+        /// </summary>
+        /// <param name="id">Id tagu</param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         [Authorize("Viewer")]
         public ActionResult<TagDto> Get([FromRoute] int id)
@@ -52,6 +74,12 @@ namespace MenuPlanner.API.Controllers
             return Ok(tagDto);
         }
 
+
+        /// <summary>
+        /// Edycja wybranego tagu (Admin)
+        /// </summary>
+        /// <param name="tagDto">Id tagu</param>
+        /// <returns></returns>
         [HttpPut]
         [Authorize("Admin")]
         public ActionResult Update(UpdateTagDto tagDto)

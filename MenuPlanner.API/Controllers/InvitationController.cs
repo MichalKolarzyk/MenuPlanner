@@ -19,6 +19,11 @@ namespace MenuPlanner.API.Controllers
             _invitationService = invitationService;
         }
 
+        /// <summary>
+        /// Zaproś użytkownika. ("Viewer")
+        /// </summary>
+        /// <param name="email">Adres email użytkownika</param>
+        /// <returns></returns>
         [HttpPost("invite")]
         [Authorize("Viewer")]
         public ActionResult Invite([FromQuery] string email)
@@ -27,6 +32,11 @@ namespace MenuPlanner.API.Controllers
             return Ok();
         }
 
+        /// <summary>
+        /// Zaakceptuj zaproszenie. ("Viewer")
+        /// </summary>
+        /// <param name="id">Id zaproszenia</param>
+        /// <returns></returns>
         [HttpPost("accept")]
         [Authorize("Viewer")]
         public ActionResult AcceptInvitation([FromQuery] int id)
@@ -35,6 +45,11 @@ namespace MenuPlanner.API.Controllers
             return Ok();
         }
 
+        /// <summary>
+        /// Odżuć zaproszenie. ("Viewer")
+        /// </summary>
+        /// <param name="id">Id zaproszenia</param>
+        /// <returns></returns>
         [HttpDelete("reject")]
         [Authorize("Viewer")]
         public ActionResult RejectInvitation([FromQuery] int id)

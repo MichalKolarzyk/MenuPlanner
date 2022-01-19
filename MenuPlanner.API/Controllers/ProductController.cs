@@ -21,6 +21,11 @@ namespace MenuPlanner.API.Controllers
             _productService = productService;
         }
 
+        /// <summary>
+        /// Utworzenie nowego produktu. ("Creator")
+        /// </summary>
+        /// <param name="productDto"></param>
+        /// <returns></returns>
         [HttpPost]
         [Authorize("Creator")]
         public ActionResult Create([FromBody] CreateProductDto productDto)
@@ -29,6 +34,11 @@ namespace MenuPlanner.API.Controllers
             return Created($"api/product/{id}", null);
         }
 
+        /// <summary>
+        /// Usunięcie produktu. ("Creator")
+        /// </summary>
+        /// <param name="id">id produktu</param>
+        /// <returns></returns>
         [HttpDelete]
         [Authorize("Creator")]
         public ActionResult Delete([FromQuery] int id)
@@ -37,7 +47,11 @@ namespace MenuPlanner.API.Controllers
             return NoContent();
         }
 
-
+        /// <summary>
+        /// Pobranie listy produktów. ("Viewer")
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [HttpGet]
         [Authorize("Viewer")]
         public ActionResult<PagedResponse<ProductDto>> Get(ProductRequest request)
@@ -46,6 +60,11 @@ namespace MenuPlanner.API.Controllers
             return Ok(productResponse);
         }
 
+        /// <summary>
+        /// Pobranie produktu. ("Viewer")
+        /// </summary>
+        /// <param name="id">Id produktu</param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         [Authorize("Viewer")]
         public ActionResult<ProductDto> Get([FromRoute] int id)

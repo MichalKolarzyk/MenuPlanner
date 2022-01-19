@@ -21,7 +21,12 @@ namespace MenuPlanner.API.Controllers
             _stepService = stepService;
         }
 
-
+        /// <summary>
+        /// Dodanie kroku do przepisu. (Creator)
+        /// </summary>
+        /// <param name="recipeId"></param>
+        /// <param name="stepDto"></param>
+        /// <returns></returns>
         [HttpPost]
         [Authorize("Creator")]
         public ActionResult Create([FromRoute] int recipeId, [FromBody]CreateStepDto stepDto)
@@ -31,6 +36,13 @@ namespace MenuPlanner.API.Controllers
             return Created($"/api/recipe/{recipeId}/step/{id}", null);
         }
 
+
+        /// <summary>
+        /// Pobranie kroku z wybranego przepisu. (Viewer)
+        /// </summary>
+        /// <param name="recipeId">Id przepisu</param>
+        /// <param name="id">Id kroku</param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         [Authorize("Viewer")]
         public ActionResult<StepDto> Get([FromRoute] int recipeId, [FromRoute] int id)
@@ -39,6 +51,12 @@ namespace MenuPlanner.API.Controllers
             return stepDto;
         }
 
+        /// <summary>
+        /// Usunięcie kroku z wybranego przepisu. (Creator)
+        /// </summary>
+        /// <param name="recipeId">Id przepisu</param>
+        /// <param name="id">Id kroku</param>
+        /// <returns></returns>
         [HttpDelete]
         [Authorize("Creator")]
         public ActionResult Delete([FromRoute] int recipeId, [FromQuery] int id)
