@@ -1,5 +1,6 @@
 ﻿using MenuPlanner.API.Abstracts;
 using MenuPlanner.API.Models.Recipes;
+using MenuPlanner.API.Models.Tags;
 using MenuPlanner.API.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -59,6 +60,33 @@ namespace MenuPlanner.API.Controllers
         {
             RecipeDto recipeDto = _recipeService.Get(id);
             return Ok(recipeDto);
+        }
+
+        /// <summary>
+        /// Usuń wybraną recepturę. (Creator)
+        /// </summary>
+        /// <param name="id"></param>
+        /// <remarks>Recepturę może usunąć tylko autor.</remarks>
+        /// <returns></returns>
+        [HttpDelete("{id}")]
+        [Authorize("Creator")]
+        public ActionResult<RecipeDto> Delete([FromRoute] int id)
+        {
+            _recipeService.Delete(id);
+            return NoContent();
+        }
+
+        /// <summary>
+        /// Pobierz tagi z receptury. (Viewer)
+        /// </summary>
+        /// <param name="recipeId">Id przepisu</param>
+        /// <returns></returns>
+        [HttpGet("{recipeId}/tags")]
+        [Authorize("Viewer")]
+        public ActionResult<IEnumerable<TagDto>> GetTags([FromRoute] int recipeId)
+        {
+            IEnumerable<TagDto> tagDtos = _recipeService.GetTags(recipeId);
+            return Ok(tagDtos);
         }
 
         /// <summary>

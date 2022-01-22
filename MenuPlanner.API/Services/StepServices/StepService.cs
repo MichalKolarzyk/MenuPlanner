@@ -2,6 +2,7 @@
 using MenuPlanner.API.Entities;
 using MenuPlanner.API.Exceptions;
 using MenuPlanner.API.Models.Steps;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -65,6 +66,21 @@ namespace MenuPlanner.API.Services
 
             StepDto stepDto = _mapper.Map<StepDto>(step);
             return stepDto;
+        }
+
+        public IEnumerable<StepDto> Get(int recipeId)
+        {
+            Recipe recipe = _context.Recipes
+                .Include(r => r.Setps)
+                .FirstOrDefault(r => r.Id == recipeId);
+
+            if (recipe == null)
+                throw new NotFoundException("Recipe not found");
+
+            IEnumerable<Step> steps = recipe.Setps;
+            IEnumerable<StepDto> stepDtos = _mapper.Map<IEnumerable<StepDto>>(steps);
+
+            return stepDtos;
         }
     }
 }

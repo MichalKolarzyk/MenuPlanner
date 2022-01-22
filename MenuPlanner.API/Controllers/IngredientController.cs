@@ -35,6 +35,19 @@ namespace MenuPlanner.API.Controllers
         }
 
         /// <summary>
+        /// Pobierz wszystkie składniki z przepisu. (Viewer)
+        /// </summary>
+        /// <param name="recipeId"></param>
+        /// <returns></returns>
+        [HttpGet()]
+        [Authorize("Viewer")]
+        public ActionResult<IEnumerable<IngredientDto>> Get([FromRoute] int recipeId)
+        {
+            IEnumerable<IngredientDto> ingredientDtos = _ingredientService.Get(recipeId);
+            return Ok(ingredientDtos);
+        }
+
+        /// <summary>
         /// Pobierz składnik z przepisu. ("Viewer")
         /// </summary>
         /// <param name="recipeId">Id przepisu</param>
