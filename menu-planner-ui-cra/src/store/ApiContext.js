@@ -1,10 +1,11 @@
 import React from "react"
 
 const ApiContext = React.createContext({
-    tags: [],
-    addTag: (tag) => {},
-    removeTag: (id) => {},
-    updateTag: (updateTag) => {}
+    baseUrl: "",
+    setBaseUrl: (newUrl) => {},
+    token: "",
+    setToken: (newToken) => {},
+    isLoggin: () => {},
 })
 
 export default ApiContext;

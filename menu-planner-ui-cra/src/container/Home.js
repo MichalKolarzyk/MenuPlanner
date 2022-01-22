@@ -20,7 +20,7 @@ const Home = () => {
           <Route path='/recipes' element={<Recipes />} />
           <Route path='/products' element={<Products />} />
           <Route path='/shopping-list' element={<ShoppingList />} />
-          <Route path='/tags' element={<Tags />} />
+          <Route path={`/tags`} element={<Tags />} />
           <Route path='/settings' element={<Settings />} />
         </Routes>
       </ApiProvider>

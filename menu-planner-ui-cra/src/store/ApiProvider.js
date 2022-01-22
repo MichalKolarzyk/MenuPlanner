@@ -1,46 +1,27 @@
-import React, {useState, useEffect} from "react"
-import Sender from "../requests/Sender"
-import TagRequestDelete from '../requests/tagRequests/TagRequestDelete'
-import TagRequestGetAll from '../requests/tagRequests/TagRequestGetAll'
-import TagRequestCreate from '../requests/tagRequests/TagRequestCreate'
+import React, { useState } from "react"
 import ApiContext from "./ApiContext"
-import TagRequestUpdate from "../requests/tagRequests/TagRequestUpdate"
 
 const ApiProvider = (props) => {
-    const sender = new Sender();
-    const [tags, setTags] = useState([]);
+    const [token, setToken] = useState("Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjgiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQWRtaW4gQWRtaW4iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsIkRhdGVPZkJpcnRoIjoiMTk5My0xMC0yMyIsIk5hdGlvbmFsaXR5IjoiUG9sYW5kIiwiZXhwIjoxNjUxMDY3NjM5LCJpc3MiOiJodHRwOi8vcmVzdGF1cmFudGFwaS5jb20iLCJhdWQiOiJodHRwOi8vcmVzdGF1cmFudGFwaS5jb20ifQ.USikUaK7O-kKUAJovdLbQ1nxoT3waia6zpHIIX9VweE")
+    const [baseUrl, setBaseUrl] = useState("http://localhost:5000")
 
-    useEffect(() => {getAllTagsHandler()}, [])
-    
-    const addTagHandler = async (item) => {
-        const request = new TagRequestCreate(item);
-        await sender.send(request)
-        await getAllTagsHandler();
+    const isLogginHandler = () => {
+        if (token !== "") {
+            return true;
+        }
+        return false;
     }
 
-    const removeTagHandler = async (id) => {
-        const request = new TagRequestDelete(id);
-        await sender.send(request);
-        await getAllTagsHandler();
-    }
+    const setTokenHandler = (newToken) => setToken(newToken);
 
-    const getAllTagsHandler = async () => {
-        const request = new TagRequestGetAll()
-        const response = await sender.send(request);
-        setTags(response);
-    }
-
-    const updateTagHandler = async (updateTag) => {
-        const request = new TagRequestUpdate(updateTag);
-        const response = await sender.send(request);
-        await getAllTagsHandler();
-    }
+    const setBaseUrlHandler = (newUrl) => setBaseUrl(newUrl);
 
     const apiContext = {
-        tags: tags,
-        addTag: addTagHandler,
-        removeTag: removeTagHandler,
-        updateTag: updateTagHandler
+        baseUrl: baseUrl,
+        setBaseUrl: setBaseUrlHandler,
+        token: token,
+        setToken: setTokenHandler,
+        isLoggin: isLogginHandler,
     }
 
     return <ApiContext.Provider value={apiContext}>
