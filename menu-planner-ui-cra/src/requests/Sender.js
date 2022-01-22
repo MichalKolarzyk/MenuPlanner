@@ -16,5 +16,23 @@ class Sender {
             console.log(error.message);
         }
     }
+
+    async send2(request, connection) {
+        const baseUrl = connection.url;
+        try {
+            const response = await fetch(`${baseUrl}${request.url}`, {
+                method: request.methodName,
+                body: JSON.stringify(request.body),
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${connection.token}`
+                }
+            });
+            return await response.json();
+        }
+        catch (error) {
+            console.log(error.message);
+        }
+    }
 }
 export default Sender
