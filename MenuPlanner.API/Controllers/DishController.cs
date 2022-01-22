@@ -1,5 +1,6 @@
 ﻿using MenuPlanner.API.Models.Dishes;
 using MenuPlanner.API.Services;
+using MenuPlanner.API.Services.HttpContextServices;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -14,6 +15,7 @@ namespace MenuPlanner.API.Controllers
     public class DishController : Controller
     {
         IDishService _dishService;
+
         public DishController(IDishService dishService) 
         {
             _dishService = dishService;
@@ -62,6 +64,19 @@ namespace MenuPlanner.API.Controllers
         {
             DishDto dishDto = _dishService.Get(id);
             return Ok(dishDto);
+        }
+
+        /// <summary>
+        /// Usuń wybrane danie. (Viewer)
+        /// </summary>
+        /// <param name="dishId"></param>
+        /// <returns></returns>
+        [HttpDelete("{id}")]
+        [Authorize("Viewer")]
+        public ActionResult Delete([FromRoute] int id)
+        {
+            _dishService.Delete(id);
+            return NoContent();
         }
     }
 }

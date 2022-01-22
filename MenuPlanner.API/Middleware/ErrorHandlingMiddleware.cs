@@ -25,6 +25,11 @@ namespace MenuPlanner.API.Middleware
                 context.Response.StatusCode = 400;
                 await context.Response.WriteAsync(badRequest.Message);
             }
+            catch(ForbiddenException forbiddenException)
+            {
+                context.Response.StatusCode = 403;
+                await context.Response.WriteAsync(forbiddenException.Message);
+            }
             catch (Exception e)
             {
                 context.Response.StatusCode = 500;

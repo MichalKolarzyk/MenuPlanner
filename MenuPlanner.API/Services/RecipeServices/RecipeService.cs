@@ -3,6 +3,7 @@ using MenuPlanner.API.Abstracts;
 using MenuPlanner.API.Entities;
 using MenuPlanner.API.Exceptions;
 using MenuPlanner.API.Models.Recipes;
+using MenuPlanner.API.Models.Tags;
 using MenuPlanner.API.Services.HttpContextServices;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -59,7 +60,7 @@ namespace MenuPlanner.API.Services
         {
             Tag tag = _context.Tags.FirstOrDefault(t => t.Id == tagId);
             if (tag == null)
-                throw new NotFoundException("tag not found");
+                throw new NotFoundException("Tag not found");
             return tag;
         }
 
@@ -90,7 +91,8 @@ namespace MenuPlanner.API.Services
                 .Include(r => r.Setps)
                 .FirstOrDefault(r => r.Id == id);
             if (recipe == null)
-                throw new NotFoundException("recipe not found");
+                throw new NotFoundException("Recipe not found.");
+
             RecipeDto recipeDto = _mapper.Map<RecipeDto>(recipe);
             return recipeDto;
         }
@@ -102,10 +104,42 @@ namespace MenuPlanner.API.Services
                 .Include(r => r.Tags)
                 .FirstOrDefault(r => r.Id == recipeId);
             if (recipe == null)
-                throw new NotFoundException("recipe not found");
+                throw new NotFoundException("Recipe not found.");
             return recipe;
         }
 
+        public void Delete(int recipeId)
+        {
+            int? currentUserId = _httpContextService.UserId;
 
+            if (currentUserId == null)
+                return;
+
+            Recipe recipe = _context.Recipes
+                .FirstOrDefault(r => r.Id == recipeId);
+
+            if (recipe == null)
+                throw new NotFoundException("Recipe not found.");
+
+            if (currentUserId != recipe.AuthorId)
+                throw new ForbiddenException("Current user is not an author of this recipe.");
+
+            _context.Recipes.Remove(recipe);
+            _context.SaveChanges();
+        }
+
+        public IEnumerable<TagDto> GetTags(int recipeId)
+        {
+            Recipe recipe = _context.Recipes
+                .Include(r => r.Tags)
+                .FirstOrDefault(r => r.Id == recipeId);
+
+            if (recipe == null)
+                throw new NotFoundException("Recipe not found.");
+
+            IEnumerable<Tag> tags = recipe.Tags;
+            IEnumerable<TagDto> tagDtos = _mapper.Map<IEnumerable<TagDto>>(tags);
+            return tagDtos;
+        }
     }
 }

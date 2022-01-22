@@ -53,9 +53,25 @@ namespace MenuPlanner.API.Services.IngredientServices
             return ingredientDto;
         }
 
+        public IEnumerable<IngredientDto> Get(int recipeId)
+        {
+            Recipe recipe = _context.Recipes
+                .Include(r => r.Ingredients).ThenInclude(i => i.Product)
+                .FirstOrDefault(i => i.Id == recipeId);
+            if (recipe == null)
+                throw new NotFoundException("Recipe not found");
+
+            IEnumerable<Ingredient> ingredients = recipe.Ingredients;
+            IEnumerable<IngredientDto> ingredientDtos = _mapper.Map<IEnumerable<IngredientDto>>(ingredients);
+
+            return ingredientDtos;
+        }
+
         private Ingredient GetById(int recipeId, int id)
         {
-            Recipe recipe = _context.Recipes.FirstOrDefault(i => i.Id == recipeId);
+            Recipe recipe = _context.Recipes
+                .Include(r => r.Ingredients).ThenInclude(i=>i.Product)
+                .FirstOrDefault(i => i.Id == recipeId);
             if (recipe == null)
                 throw new NotFoundException("Recipe not found");
 

@@ -14,5 +14,6 @@ namespace MenuPlanner.API.Models.Dishes
         public float Portions { get; set; }
         public string RecipeName { get; set; }
         public int RecipeId { get; set; }
+        public int UserId { get; set; }
     }
 }

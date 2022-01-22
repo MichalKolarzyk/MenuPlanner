@@ -36,6 +36,18 @@ namespace MenuPlanner.API.Controllers
             return Created($"/api/recipe/{recipeId}/step/{id}", null);
         }
 
+        /// <summary>
+        /// Pobiera kroki dla wybranego przepisu. (Viewer)
+        /// </summary>
+        /// <param name="recipeId">Id przepisu</param>
+        /// <returns></returns>
+        [HttpGet()]
+        [Authorize("Viewer")]
+        public ActionResult<IEnumerable<StepDto>> Get([FromRoute] int recipeId)
+        {
+            IEnumerable<StepDto> stepDtos = _stepService.Get(recipeId);
+            return Ok(stepDtos);
+        }
 
         /// <summary>
         /// Pobranie kroku z wybranego przepisu. (Viewer)

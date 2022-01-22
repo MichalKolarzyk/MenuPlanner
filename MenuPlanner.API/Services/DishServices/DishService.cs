@@ -44,13 +44,28 @@ namespace MenuPlanner.API.Services
             }
             else
             {
-                throw new BadRequestException("This user is not trusted");
+                throw new BadRequestException("This user is not trusted.");
             }
             
             _context.Dishes.Add(dish);
             _context.SaveChanges();
 
             return dish.Id;
+        }
+
+        public void Delete(int dishId)
+        {
+            Dish dish = _context.Dishes
+                .FirstOrDefault(d => d.Id == dishId);
+            if (dish == null)
+                throw new NotFoundException("Dish not found.");
+
+            int? currentUserId = _httpContextService.UserId;
+            if (dish.UserId != currentUserId && _trustedUserService.IsTrusted(dish.UserId) == false)
+                throw new ForbiddenException("Current user can't delete this dish");
+
+            _context.Dishes.Remove(dish);
+            _context.SaveChanges();
         }
 
         public DishDto Get(int id)
@@ -60,7 +75,7 @@ namespace MenuPlanner.API.Services
                 .FirstOrDefault(d => d.Id == id);
 
             if (dish == null)
-                throw new NotFoundException("Dish not found");
+                throw new NotFoundException("Dish not found.");
 
             DishDto dishDto = _mapper.Map<DishDto>(dish);
             return dishDto;
