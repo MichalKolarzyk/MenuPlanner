@@ -1,126 +1,27 @@
-import React, { useState, useEffect } from "react"
-import Sender from "../requests/Sender"
-import TagRequestDelete from '../requests/tagRequests/TagRequestDelete'
-import TagRequestGetAll from '../requests/tagRequests/TagRequestGetAll'
-import TagRequestCreate from '../requests/tagRequests/TagRequestCreate'
+import React, { useState } from "react"
 import ApiContext from "./ApiContext"
-import TagRequestUpdate from "../requests/tagRequests/TagRequestUpdate"
-import TagRequestGetById from "../requests/tagRequests/TagRequestGetById"
-import RecipeRequestCreate from "../requests/recipeRequests/RecipeRequestCreate"
-import RecipeRequestGetList from "../requests/recipeRequests/RecipeRequestGetList"
-import RecipeRequestGetById from "../requests/recipeRequests/RecipeRequestGetById"
-import RecipeRequestAddTag from "../requests/recipeRequests/RecipeRequestAddTag"
-import RecipeRequestRemoveTag from "../requests/recipeRequests/RecipeRequestRemoveTag"
-import StepRequestCreate from "../requests/stepRequests/StepRequestCreate"
-import StepRequestDelete from "../requests/stepRequests/StepRequestDelete"
-import StepRequestGetById from "../requests/stepRequests/StepRequestGetById"
-import StepRequestGet from "../requests/stepRequests/StepRequestGet"
-import RecipeRequestGetTags from '../requests/recipeRequests/RecipeRequestGetTags'
 
 const ApiProvider = (props) => {
-    const sender = new Sender();
-    
-    const getTagsHandler = async () => {
-        const request = new TagRequestGetAll()
-        const response = await sender.send(request);
-        return response;
+    const [token, setToken] = useState("Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjgiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQWRtaW4gQWRtaW4iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsIkRhdGVPZkJpcnRoIjoiMTk5My0xMC0yMyIsIk5hdGlvbmFsaXR5IjoiUG9sYW5kIiwiZXhwIjoxNjUxMDY3NjM5LCJpc3MiOiJodHRwOi8vcmVzdGF1cmFudGFwaS5jb20iLCJhdWQiOiJodHRwOi8vcmVzdGF1cmFudGFwaS5jb20ifQ.USikUaK7O-kKUAJovdLbQ1nxoT3waia6zpHIIX9VweE")
+    const [baseUrl, setBaseUrl] = useState("http://localhost:5000")
+
+    const isLogginHandler = () => {
+        if (token !== "") {
+            return true;
+        }
+        return false;
     }
 
-    const createTagHandler = async (item) => {
-        const request = new TagRequestCreate(item);
-        sender.send(request)
-    }
+    const setTokenHandler = (newToken) => setToken(newToken);
 
-    const getTagHandler = async (id) => {
-        const request = new TagRequestGetById(id);
-        const response = await sender.send(request);
-        return response;
-    }
-
-    const deleteTagHandler = async (id) => {
-        const request = new TagRequestDelete(id);
-        await sender.send(request);
-    }
-
-    const updateTagHandler = async (updateTag) => {
-        const request = new TagRequestUpdate(updateTag);
-        await sender.send(request);
-    }
-
-    const createRecipeHandler = async (recipe) => {
-        const request = new RecipeRequestCreate(recipe);
-        await sender.send(request);
-    }
-
-    const getRecipeListHandler = async (recipeRequest) => {
-        const request = new RecipeRequestGetList(recipeRequest)
-        const response = await sender.send(request);
-        return response;
-    }
-
-    const getRecipeHandler = async (id) => {
-        const request = new RecipeRequestGetById(id)
-        const response = await sender.send(request);
-        return response;
-    }
-
-    const addTagToRecipeHandler = async (recipeId, tagId) => {
-        const request = new RecipeRequestAddTag(recipeId, tagId)
-        await sender.send(request);
-    }
-
-    const removeTagFromRecipeHandler = async (recipeId, tagId) => {
-        const request = new RecipeRequestRemoveTag(recipeId, tagId)
-        await sender.send(request);
-    }
-
-    const createStepHandler = async (recipeId, step) => {
-        const request = new StepRequestCreate(recipeId, step);
-        await sender.send(request);
-    }
-
-    const deleteStetHandler = async (recipeId, stepId) => {
-        const request = new StepRequestDelete(recipeId, stepId);
-        await sender.send(request);
-    }
-
-    const getStepHandler = async (recipeId, stepId) => {
-        const request = new StepRequestGetById(recipeId, stepId);
-        const response = await sender.send(request);
-        return response;
-    }
-
-    const getStepsHandler = async (recipeId) => {
-        const request = new StepRequestGet(recipeId)
-        const response = await sender.send(request);
-        return response;
-    }
-
-    const getTagsFromRecipeHandler = async (recipeId) => {
-        const request = new RecipeRequestGetTags(recipeId);
-        const response = await sender.send(request);
-        return response;
-    }
-
+    const setBaseUrlHandler = (newUrl) => setBaseUrl(newUrl);
 
     const apiContext = {
-        getTags: getTagsHandler,
-        createTag: createTagHandler,
-        getTag: getTagHandler,
-        deleteTag: deleteTagHandler,
-        updateTag: updateTagHandler,
-
-        createRecipe: createRecipeHandler,
-        getRecipes: getRecipeListHandler,
-        getRecipe: getRecipeHandler,
-        addTagToRecipe: addTagToRecipeHandler,
-        getTagsFromRecipe: getTagsFromRecipeHandler,
-        removeTagFromRecipe: removeTagFromRecipeHandler,
-
-        createStep: createStepHandler,
-        deleteStet: deleteStetHandler,
-        getStep: getStepHandler,
-        getSteps: getStepsHandler, 
+        baseUrl: baseUrl,
+        setBaseUrl: setBaseUrlHandler,
+        token: token,
+        setToken: setTokenHandler,
+        isLoggin: isLogginHandler,
     }
 
     return <ApiContext.Provider value={apiContext}>
