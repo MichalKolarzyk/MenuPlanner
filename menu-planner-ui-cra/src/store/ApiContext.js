@@ -1,22 +1,24 @@
 import React from "react"
 
 const ApiContext = React.createContext({
-    tags: [],
+    getTags: () => {},
     createTag: (tag) => {},
     getTag: (id) => {},
     deleteTag: (id) => {},
     updateTag: (updateTag) => {},
 
-    recipes: [],
     createRecipe: (recipe) => {},
-    getRecipeList: (recipeRequest) => {},
+    getRecipes: (recipeRequest) => {},
     getRecipe: (id) => {},
+    deleteRecipe: (id) => {},
     addTagToRecipe: (recipeId, tagId) => {},
+    getTagsFromRecipe: (recipeId) => {},
     removeTagFromRecipe: (recipeId, tagId) => {},
 
     createStep: (recipeId, step) => {},
     deleteStet: (recipeId, stepId) => {},
     getStep: (recipeId, stepId) => {},
+    getSteps: (recipeId, stepId) => {}, 
 })
 
 export default ApiContext;
