@@ -9,7 +9,7 @@ const Tags = () => {
   const [tag, setTag] = useState({})
 
   useEffect(async () => {
-    const tag = await tagController.getTag("80");
+    const tag = await tagController.getTags();
     console.log(tag);
     setTag(tag);
   }, [])

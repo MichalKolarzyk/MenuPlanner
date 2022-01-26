@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace MenuPlanner.API.Exceptions
 {
-    public class ForbiddenException : HttpExceptionBase
+    public class InternalException : HttpExceptionBase
     {
-        public ForbiddenException(string message, string details = "details not found.") : base(message, details)
+        public InternalException(string message, string details = "details not found.") : base(message, details)
         {
         }
 
@@ -18,9 +18,9 @@ namespace MenuPlanner.API.Exceptions
             {
                 Message = Message,
                 Detail = Details,
-                Error = "Forbidden request exception",
+                Error = "Internal Exception",
                 Path = context.Request.Path,
-                Status = 403,
+                Status = 500,
             };
         }
     }

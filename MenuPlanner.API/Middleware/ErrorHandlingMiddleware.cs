@@ -17,23 +17,28 @@ namespace MenuPlanner.API.Middleware
             }
             catch (NotFoundException notFoundException)
             {
-                context.Response.StatusCode = 404;
-                await context.Response.WriteAsync(notFoundException.Message);
+                ExceptionResponse exceptionResponse = notFoundException.GetResponse(context);
+                context.Response.StatusCode = exceptionResponse.Status;
+                await context.Response.WriteAsJsonAsync(exceptionResponse);
             }
             catch (BadRequestException badRequest)
             {
-                context.Response.StatusCode = 400;
-                await context.Response.WriteAsync(badRequest.Message);
+                ExceptionResponse exceptionResponse = badRequest.GetResponse(context);
+                context.Response.StatusCode = exceptionResponse.Status;
+                await context.Response.WriteAsJsonAsync(exceptionResponse);
             }
             catch(ForbiddenException forbiddenException)
             {
-                context.Response.StatusCode = 403;
-                await context.Response.WriteAsync(forbiddenException.Message);
+                ExceptionResponse exceptionResponse = forbiddenException.GetResponse(context);
+                context.Response.StatusCode = exceptionResponse.Status;
+                await context.Response.WriteAsJsonAsync(exceptionResponse);
             }
             catch (Exception e)
             {
-                context.Response.StatusCode = 500;
-                await context.Response.WriteAsync(e.Message);
+                InternalException exception = new InternalException(e.Message, "Something went wrong");
+                ExceptionResponse exceptionResponse = exception.GetResponse(context);
+                context.Response.StatusCode = exceptionResponse.Status;
+                await context.Response.WriteAsJsonAsync(exceptionResponse);
             }
         }
     }
