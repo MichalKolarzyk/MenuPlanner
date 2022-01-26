@@ -51,7 +51,7 @@ const MainSite = () => {
             </button>
             <div className="shadow-2xl">
               <input
-                type="text"
+                type="email"
                 className="px-4 py-2 outline-none w-full rounded-lg focus:ring-2 focus:ring-gray-100 bg-gray-100 text-gray-700"
                 placeholder="Email"
                 value={email.value}

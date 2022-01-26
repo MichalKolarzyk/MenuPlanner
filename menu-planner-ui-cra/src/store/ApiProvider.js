@@ -2,8 +2,10 @@ import React, { useState } from "react"
 import ApiContext from "./ApiContext"
 
 const ApiProvider = (props) => {
-    const [token, setToken] = useState('')
+    const [token, setToken] = useState('');
+    const [authorizationMethod, setAuthorizationMethod] = useState('');
     const [baseUrl, setBaseUrl] = useState("http://localhost:5000")
+
 
     const isLogginHandler = () => {
         if (token !== "") {
@@ -12,7 +14,7 @@ const ApiProvider = (props) => {
         return false;
     }
 
-    const setTokenHandler = (newToken) => setToken("Bearer " + newToken);
+    const setTokenHandler = (newToken) => setToken(newToken);
 
     const setBaseUrlHandler = (newUrl) => setBaseUrl(newUrl);
 
@@ -21,6 +23,8 @@ const ApiProvider = (props) => {
         setBaseUrl: setBaseUrlHandler,
         token: token,
         setToken: setTokenHandler,
+        authorizationMethod: authorizationMethod,
+        setAuthorizationMethod: setAuthorizationMethod,
         isLoggin: isLogginHandler,
     }
 

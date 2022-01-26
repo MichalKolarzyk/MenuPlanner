@@ -8,5 +8,6 @@ namespace MenuPlanner.API.Models.Users
     public class LoginResponse
     {
         public string Token { get; set; }
+        public string AuthorizationMethod { get; set; }
     }
 }

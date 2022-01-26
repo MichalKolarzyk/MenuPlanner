@@ -15,7 +15,7 @@ class Sender {
         body: bodyJson,
         headers: {
           "Content-Type": "application/json",
-          Authorization: this.apiContext.token,
+          Authorization: `${this.apiContext.authorizationMethod} ${this.apiContext.token}`,
         },
       });
 

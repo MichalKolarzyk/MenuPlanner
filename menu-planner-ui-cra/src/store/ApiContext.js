@@ -5,6 +5,8 @@ const ApiContext = React.createContext({
     setBaseUrl: (newUrl) => {},
     token: "",
     setToken: (newToken) => {},
+    authorizationMethod: "",
+    setAuthorizationMethod: (newAuthorizationMethod) => {},
     isLoggin: () => {},
 })
 

@@ -56,5 +56,17 @@ namespace MenuPlanner.API.Controllers
             return Ok();
         }
 
+        /// <summary>
+        /// Pobierz dane użytkownika.
+        /// </summary>
+        /// <param name="token">token</param>
+        /// <returns></returns>
+        [HttpGet]
+        public ActionResult<UserDto> GetUser([FromQuery] string token)
+        {
+            UserDto userDto = _accountService.GetUser(token);
+            return userDto;
+        }
+
     }
 }
