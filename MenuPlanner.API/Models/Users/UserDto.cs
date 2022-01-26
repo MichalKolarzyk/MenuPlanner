@@ -13,5 +13,6 @@ namespace MenuPlanner.API.Models.Users
         public string LastName { get; set; }
         public DateTime? DateOfBirth { get; set; }
         public string Nationality { get; set; }
+        public string RoleName { get; set; }
     }
 }

@@ -840,3 +840,61 @@
 2022-01-26 20:58:04.8526 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
 2022-01-26 20:58:04.8526 Info Configuration initialized.
 2022-01-26 20:58:04.8526 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-26 22:20:18.2465 Info Message Template Auto Format enabled
+2022-01-26 22:20:18.2465 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-26 22:20:18.2756 Info Adding target FileTarget(Name=allfile)
+2022-01-26 22:20:18.2756 Info Adding target FileTarget(Name=exceptions)
+2022-01-26 22:20:18.2756 Info Adding target FileTarget(Name=request-time)
+2022-01-26 22:20:18.2927 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-26 22:20:18.2927 Info Configuration initialized.
+2022-01-26 22:20:18.3044 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-26 22:21:33.5782 Info Message Template Auto Format enabled
+2022-01-26 22:21:33.5886 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-26 22:21:33.6102 Info Adding target FileTarget(Name=allfile)
+2022-01-26 22:21:33.6102 Info Adding target FileTarget(Name=exceptions)
+2022-01-26 22:21:33.6102 Info Adding target FileTarget(Name=request-time)
+2022-01-26 22:21:33.6325 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-26 22:21:33.6325 Info Configuration initialized.
+2022-01-26 22:21:33.6325 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-26 22:21:44.3262 Info AppDomain Shutting down. Logger closing...
+2022-01-26 22:21:44.3372 Info Logger has been shut down.
+2022-01-26 22:21:49.6143 Info Message Template Auto Format enabled
+2022-01-26 22:21:49.6231 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-26 22:21:49.6411 Info Adding target FileTarget(Name=allfile)
+2022-01-26 22:21:49.6411 Info Adding target FileTarget(Name=exceptions)
+2022-01-26 22:21:49.6411 Info Adding target FileTarget(Name=request-time)
+2022-01-26 22:21:49.6561 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-26 22:21:49.6649 Info Configuration initialized.
+2022-01-26 22:21:49.6649 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-26 22:33:18.4923 Info Message Template Auto Format enabled
+2022-01-26 22:33:18.4923 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-26 22:33:18.5254 Info Adding target FileTarget(Name=allfile)
+2022-01-26 22:33:18.5254 Info Adding target FileTarget(Name=exceptions)
+2022-01-26 22:33:18.5254 Info Adding target FileTarget(Name=request-time)
+2022-01-26 22:33:18.5416 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-26 22:33:18.5416 Info Configuration initialized.
+2022-01-26 22:33:18.5416 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-26 22:41:11.7388 Info Message Template Auto Format enabled
+2022-01-26 22:41:11.7475 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-26 22:41:11.7641 Info Adding target FileTarget(Name=allfile)
+2022-01-26 22:41:11.7641 Info Adding target FileTarget(Name=exceptions)
+2022-01-26 22:41:11.7641 Info Adding target FileTarget(Name=request-time)
+2022-01-26 22:41:11.7791 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-26 22:41:11.7791 Info Configuration initialized.
+2022-01-26 22:41:11.7885 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-26 22:42:13.5063 Info Message Template Auto Format enabled
+2022-01-26 22:42:13.5155 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-26 22:42:13.5361 Info Adding target FileTarget(Name=allfile)
+2022-01-26 22:42:13.5376 Info Adding target FileTarget(Name=exceptions)
+2022-01-26 22:42:13.5376 Info Adding target FileTarget(Name=request-time)
+2022-01-26 22:42:13.5651 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-26 22:42:13.5760 Info Configuration initialized.
+2022-01-26 22:42:13.5760 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-01-26 22:46:15.5052 Info Message Template Auto Format enabled
+2022-01-26 22:46:15.5159 Info Loading assembly: NLog.Web.AspNetCore
+2022-01-26 22:46:15.5353 Info Adding target FileTarget(Name=allfile)
+2022-01-26 22:46:15.5353 Info Adding target FileTarget(Name=exceptions)
+2022-01-26 22:46:15.5353 Info Adding target FileTarget(Name=request-time)
+2022-01-26 22:46:15.5520 Info Validating config: TargetNames=allfile, exceptions, request-time, ConfigItems=48, FilePath=C:\Repos\MenuPlanner\MenuPlanner.API\bin\Debug\net5.0\NLog.config
+2022-01-26 22:46:15.5615 Info Configuration initialized.
+2022-01-26 22:46:15.5615 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False

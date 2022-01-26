@@ -90,6 +90,7 @@ namespace MenuPlanner.API.Services.AccountServices
             LoginResponse loginResponse = new LoginResponse
             {
                 Token = tokenHandler.WriteToken(token),
+                AuthorizationMethod = "Bearer",
             };
             return loginResponse;
         }
@@ -104,6 +105,26 @@ namespace MenuPlanner.API.Services.AccountServices
             _context.SaveChanges();
 
             _logger.LogInformation($"User with id {userId} has changed role to {user.RoleId}");
+        }
+
+        public UserDto GetUser(string token)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            if (tokenHandler.CanReadToken(token) == false)
+                throw new NotFoundException("Aktualny user ma niepoprawny token", "Jeśli twój token wygasł zaloguj się ponownie.");
+            var securityToken = tokenHandler.ReadJwtToken(token);
+            
+            Claim claim = securityToken.Claims.First(claim => claim.Type == ClaimTypes.NameIdentifier);
+            if (claim == null)
+                throw new InternalException("Aktualny user ma niepoprawny token");
+
+            int userId = int.Parse(claim.Value);
+
+            User user = _context.Users
+                .Include(u => u.Role)
+                .FirstOrDefault(u => u.Id == userId);
+            UserDto userDto = _mapper.Map<UserDto>(user);
+            return userDto;
         }
     }
 }
