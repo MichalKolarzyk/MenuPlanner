@@ -36,10 +36,10 @@ namespace MenuPlanner.API.Controllers
         /// <param name="loginDto"></param>
         /// <returns></returns>
         [HttpPost("login")]
-        public ActionResult Login([FromBody] LoginDto loginDto)
+        public ActionResult<LoginResponse> Login([FromBody] LoginDto loginDto)
         {
-            string token = _accountService.GenerateToken(loginDto);
-            return Ok(token);
+            LoginResponse loginResponse = _accountService.GenerateToken(loginDto);
+            return Ok(loginResponse);
         }
 
         /// <summary>

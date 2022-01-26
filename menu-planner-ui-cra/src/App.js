@@ -1,19 +1,19 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route } from "react-router-dom";
 
 import Home from "./container/Home";
 import MainSite from "./components/MainSite";
+import ApiProvider from "./store/ApiProvider";
 
 function App() {
-
   return (
-    <div>
-      <div>
+    <>
+      <ApiProvider>
         <Routes>
-          <Route path='/*' element={<Home />} />
-          <Route path='/' element={<MainSite />} />
+          <Route path="/*" element={<Home />} />
+          <Route path="/" element={<MainSite />} />
         </Routes>
-      </div>
-    </div>
+      </ApiProvider>
+    </>
   );
 }
 

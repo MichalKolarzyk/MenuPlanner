@@ -52,7 +52,7 @@ namespace MenuPlanner.API.Services.AccountServices
             _logger.LogInformation($"User with id {user.Id} has been registered");
         }
 
-        public string GenerateToken(LoginDto loginDto)
+        public LoginResponse GenerateToken(LoginDto loginDto)
         {
             User user = _context.Users.Include(u => u.Role).FirstOrDefault(u => u.Email == loginDto.Email);
             if (user == null)
@@ -61,7 +61,7 @@ namespace MenuPlanner.API.Services.AccountServices
             var result = _passwordHasher.VerifyHashedPassword(user, user.PasswordHash, loginDto.Password);
 
             if (result == PasswordVerificationResult.Failed)
-                throw new BadRequestException("Invalid username or password");
+                throw new BadRequestException("Invalid username or password", "Try register if you are not Sign in");
 
             List<Claim> claims = new List<Claim>()
             {
@@ -86,7 +86,12 @@ namespace MenuPlanner.API.Services.AccountServices
                 signingCredentials: cred);
 
             var tokenHandler = new JwtSecurityTokenHandler();
-            return tokenHandler.WriteToken(token);
+
+            LoginResponse loginResponse = new LoginResponse
+            {
+                Token = tokenHandler.WriteToken(token),
+            };
+            return loginResponse;
         }
 
         public void ChangeRole(int userId, int newRoleId)

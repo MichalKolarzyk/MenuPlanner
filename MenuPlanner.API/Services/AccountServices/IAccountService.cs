@@ -4,7 +4,7 @@ namespace MenuPlanner.API.Services.AccountServices
 {
     public interface IAccountService
     {
-        string GenerateToken(LoginDto loginDto);
+        LoginResponse GenerateToken(LoginDto loginDto);
         void Register(CreateUserDto userDto);
         void ChangeRole(int userId, int newRoleId);
     }
