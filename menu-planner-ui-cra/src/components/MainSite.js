@@ -1,14 +1,15 @@
 import React, { useState, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import bcg from "../assets/bcg.jpg";
 import useInput from "../hooks/useInput";
 import useAccountController from "../hooks/useAccountController";
 
 const MainSite = () => {
   const accountController = useAccountController();
+  let navigate = useNavigate();
 
   const email = useInput((value) => value.includes("@"));
-  const password = useInput((value) => true);
+  const password = useInput((value) => value.length >= 5);
 
   let formIsValid = false;
   if (email.isValid && password.isValid) {
@@ -17,15 +18,16 @@ const MainSite = () => {
 
   const loginSubmitHandler = async (event) => {
     event.preventDefault();
-    if (!formIsValid) {
-      return;
-    }
+    // if (!formIsValid) {
+    //   return;
+    // }
 
     await accountController.login({
       email: email.value,
       password: password.value,
     });
 
+    navigate("/plan")
     email.reset();
     password.reset();
   };
