@@ -7,6 +7,7 @@ class Sender {
     const baseUrl = this.apiContext.baseUrl;
     const bodyJson = JSON.stringify(request.body);
     let response;
+    
     let json;
     try {
       const url = baseUrl + request.url;
@@ -14,15 +15,13 @@ class Sender {
         method: request.methodName,
         body: bodyJson,
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json; charset=utf-8",
           Authorization: `${this.apiContext.authorizationMethod} ${this.apiContext.token}`,
         },
       });
-
+      json = await response.json()
       if (!response.ok) {
-        const error = await response.json()
-        console.log(error)
-        alert(error.message);
+        alert(json.message);
       }
     } catch (error) {
       const senderError = {
@@ -35,7 +34,6 @@ class Sender {
       console.log(response);
       alert(senderError.message);
     }
-    json = await response.json();
     return json;
   }
 }

@@ -3,26 +3,21 @@ import ApiContext from "./ApiContext";
 
 const ApiProvider = (props) => {
   const [token, setToken] = useState(localStorage.getItem('token'));
-  const [authorizationMethod, setAuthorizationMethod] = useState("");
+  const [authorizationMethod, setAuthorizationMethod] = useState(localStorage.getItem('authMethod'));
   const [baseUrl, setBaseUrl] = useState("http://localhost:5000");
 
-  const isLogginHandler = () => {
-    if (token === "") {
-      return false;
-    }
-    if (token === null) {
-      return false;
-    }
-    if(token === undefined){
-        return false;
-    }
-    return true;
-  };
+  const isLoggedIn = !!token;
+  console.log(isLoggedIn);
 
   const setTokenHandler = (newToken) => {
     setToken(newToken);
     localStorage.setItem("token", newToken);
   };
+
+  const setAuthorizationMethodHandler = (authMethod) => {
+    setAuthorizationMethod(authMethod)
+    localStorage.setItem("authMethod", authMethod);
+  }
 
   const logoutHandler = () => {
     setToken(null);
@@ -37,8 +32,8 @@ const ApiProvider = (props) => {
     token: token,
     setToken: setTokenHandler,
     authorizationMethod: authorizationMethod,
-    setAuthorizationMethod: setAuthorizationMethod,
-    isLoggin: isLogginHandler,
+    setAuthorizationMethod: setAuthorizationMethodHandler,
+    isLoggedIn : isLoggedIn,
     logout: logoutHandler,
   };
 

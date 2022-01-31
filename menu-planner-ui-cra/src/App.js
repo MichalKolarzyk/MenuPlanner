@@ -5,21 +5,18 @@ import Home from "./container/Home";
 import MainSite from "./components/MainSite";
 import ApiProvider from "./store/ApiProvider";
 import ApiContext from "./store/ApiContext";
+import Plan from "./components/Plan";
 
 function App() {
   const apiContext = useContext(ApiContext);
-  const isLoggin = apiContext.isLoggin();
+  const isLoggedIn = apiContext.isLoggedIn;
   return (
-    <>
-      <ApiProvider>
-        <Routes>
-          <Route path="/*" element={<Home />} />
-          <Route path="/" element={<MainSite />} />
-          {isLoggin && <Route path="*" element={<Navigate to="/plan" />}/>}
-          {!isLoggin && <Route path="*" element={<Navigate to="/" />}/>}
-        </Routes>
-      </ApiProvider>
-    </>
+    <ApiProvider>
+      <Routes>
+        <Route path="/*" element={<Home />} />
+        <Route path="/" element={<MainSite />} />
+      </Routes>
+    </ApiProvider>
   );
 }
 
