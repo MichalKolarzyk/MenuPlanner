@@ -15,6 +15,10 @@ const useAccountController = () => {
         apiContext.setAuthorizationMethod(response.authorizationMethod)
     }
 
+    const logout = () => {
+        apiContext.logout();
+    }
+
     const getUser = async () => {
         const request = new AccountRequestGetUser(apiContext.token);
         const response = await sender.send(request);
@@ -23,6 +27,7 @@ const useAccountController = () => {
 
     return {
         login,
+        logout,
         getUser,
       };
 }
