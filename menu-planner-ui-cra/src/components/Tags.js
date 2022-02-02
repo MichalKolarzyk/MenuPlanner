@@ -1,10 +1,8 @@
-import React, { useContext, useEffect, useState } from 'react'
-import ApiContext from '../store/ApiContext';
-import TagController from '../controllers/TagController';
+import React, { useEffect, useState } from 'react'
+import useTagController from '../hooks/Controllers/useTagController';
 
 const Tags = () => {
-  const apiContext = useContext(ApiContext)
-  const tagController = new TagController(apiContext);
+  const tagController = useTagController();
   
   const [tag, setTag] = useState({})
 

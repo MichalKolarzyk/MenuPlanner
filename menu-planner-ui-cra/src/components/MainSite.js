@@ -1,9 +1,10 @@
-import React, { useState, useContext,useEffect } from "react";
+import React, {  useContext, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import bcg from "../assets/bcg.jpg";
+import useAccountController from "../hooks/Controllers/useAccountController";
 import useInput from "../hooks/useInput";
-import useAccountController from "../hooks/useAccountController";
 import ApiContext from "../store/ApiContext";
+import Input from "../ui/inputs/Input";
 
 const MainSite = () => {
   const apiContext = useContext(ApiContext);
@@ -11,10 +12,10 @@ const MainSite = () => {
   let navigate = useNavigate();
 
   useEffect(() => {
-    if(apiContext.isLoggedIn === true){
-      navigate('/plan')
+    if (apiContext.isLoggedIn === true) {
+      navigate("/plan");
     }
-  })
+  });
 
   const email = useInput((value) => value.includes("@"));
   const password = useInput((value) => value.length >= 5);
@@ -35,7 +36,7 @@ const MainSite = () => {
       password: password.value,
     });
 
-    navigate("/plan")
+    navigate("/plan");
     email.reset();
     password.reset();
   };
@@ -60,22 +61,8 @@ const MainSite = () => {
               Zaloguj się:
             </button>
             <div className="shadow-2xl">
-              <input
-                type="email"
-                className="px-4 py-2 outline-none w-full rounded-lg focus:ring-2 focus:ring-gray-100 bg-gray-100 text-gray-700"
-                placeholder="Email"
-                value={email.value}
-                onChange={email.onChange}
-                onBlur={email.onBlur}
-              />
-              <input
-                type="password"
-                className="px-4 py-2 outline-none w-full rounded-lg focus:ring-2 focus:ring-gray-100 bg-gray-100 text-gray-700"
-                placeholder="Hasło"
-                value={password.value}
-                onChange={password.onChange}
-                onBlur={password.onBlur}
-              />
+              <Input useInput={email} type="email" placeholder="Email" />
+              <Input useInput={password} type="password" placeholder="Hasło" />
             </div>
           </div>
           <Link to="/plan" className="mt-2 text-white tracking-widest">
