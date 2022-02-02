@@ -1,8 +1,8 @@
-import Sender from "../requests/Sender";
-import AccountRequestLogin from '../requests/accountRequests/AccountRequestLogin'
+import Sender from "../../requests/Sender";
+import AccountRequestLogin from '../../requests/accountRequests/AccountRequestLogin'
 import { useContext } from "react";
-import ApiContext from "../store/ApiContext";
-import AccountRequestGetUser from "../requests/accountRequests/AccountRequestGetUser";
+import ApiContext from "../../store/ApiContext";
+import AccountRequestGetUser from "../../requests/accountRequests/AccountRequestGetUser";
 
 const useAccountController = () => {
     const apiContext = useContext(ApiContext)
