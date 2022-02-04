@@ -4,39 +4,52 @@ class Sender {
   }
 
   async send(request) {
+    this.apiContext.setIsBusy(true);
+
     const baseUrl = this.apiContext.baseUrl;
     const bodyJson = JSON.stringify(request.body);
+    const url = baseUrl + request.url;
+
+    const headers = {
+      "Content-Type": "application/json; charset=utf-8",
+      Authorization: `${this.apiContext.authorizationMethod} ${this.apiContext.token}`,
+    };
+
     let response;
-    this.apiContext.setIsBusy(true);
     let json;
+    let senderError;
+    let errorMessage;
+
     try {
-      const url = baseUrl + request.url;
       response = await fetch(url, {
         method: request.methodName,
         body: bodyJson,
-        headers: {
-          "Content-Type": "application/json; charset=utf-8",
-          Authorization: `${this.apiContext.authorizationMethod} ${this.apiContext.token}`,
-        },
+        headers: headers,
       });
-      json = await response.json()
-      this.apiContext.setIsBusy(false)
-      if (!response.ok) {
-        alert(json.message);
-      }
+      json = await response.json();
     } catch (error) {
-      const senderError = {
+      senderError = {
         bodyJson: bodyJson,
         message: error.message,
         request: request,
+        response: response,
         apiContext: this.apiContext,
       };
-      console.log(senderError);
-      console.log(response);
-      this.apiContext.setIsBusy(false)
-      alert(senderError.message);
+    } finally {
+      if (senderError) {
+        console.log(senderError);
+        errorMessage = senderError.message;
+      } else if (response && !response.ok) {
+        errorMessage = json.message;
+      }
+
+      if (errorMessage) {
+        alert(errorMessage);
+      }
+
+      this.apiContext.setIsBusy(false);
+      return json;
     }
-    return json;
   }
 }
 export default Sender;
