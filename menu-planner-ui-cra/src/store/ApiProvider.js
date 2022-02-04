@@ -5,6 +5,7 @@ const ApiProvider = (props) => {
   const [token, setToken] = useState(localStorage.getItem('token'));
   const [authorizationMethod, setAuthorizationMethod] = useState(localStorage.getItem('authMethod'));
   const [baseUrl, setBaseUrl] = useState("http://localhost:5000");
+  const [isBusy, setIsBusy] = useState(false);
 
   const isLoggedIn = !!token;
   console.log(isLoggedIn);
@@ -35,6 +36,8 @@ const ApiProvider = (props) => {
     setAuthorizationMethod: setAuthorizationMethodHandler,
     isLoggedIn : isLoggedIn,
     logout: logoutHandler,
+    isBusy: isBusy,
+    setIsBusy: setIsBusy,
   };
 
   return (

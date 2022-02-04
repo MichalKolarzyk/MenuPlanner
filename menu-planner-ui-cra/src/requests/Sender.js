@@ -7,7 +7,7 @@ class Sender {
     const baseUrl = this.apiContext.baseUrl;
     const bodyJson = JSON.stringify(request.body);
     let response;
-    
+    this.apiContext.setIsBusy(true);
     let json;
     try {
       const url = baseUrl + request.url;
@@ -20,6 +20,7 @@ class Sender {
         },
       });
       json = await response.json()
+      this.apiContext.setIsBusy(false)
       if (!response.ok) {
         alert(json.message);
       }
@@ -32,6 +33,7 @@ class Sender {
       };
       console.log(senderError);
       console.log(response);
+      this.apiContext.setIsBusy(false)
       alert(senderError.message);
     }
     return json;

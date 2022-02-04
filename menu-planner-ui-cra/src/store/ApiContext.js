@@ -9,6 +9,8 @@ const ApiContext = React.createContext({
     setAuthorizationMethod: (newAuthorizationMethod) => {},
     isLoggedIn: false,
     logout: () => {},
+    isBusy: false,
+    setIsBusy: () => {},
 })
 
 export default ApiContext;
