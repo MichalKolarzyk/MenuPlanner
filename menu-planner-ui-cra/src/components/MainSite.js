@@ -18,8 +18,8 @@ const MainSite = () => {
     }
   });
 
-  const email = useInput((value) => value.includes("@"));
-  const password = useInput((value) => value.length >= 5);
+  const email = useInput((value) => value.includes("@") && value.length >= 7);
+  const password = useInput((value) => value.length >= 6);
 
   let formIsValid = false;
   if (email.isValid && password.isValid) {
@@ -28,9 +28,6 @@ const MainSite = () => {
 
   const loginSubmitHandler = async (event) => {
     event.preventDefault();
-    // if (!formIsValid) {
-    //   return;
-    // }
 
     await accountController.login({
       email: email.value,
@@ -48,7 +45,7 @@ const MainSite = () => {
       password: "1234",
     });
     navigate("/plan");
-  }
+  };
 
   return (
     <div className="flex justify-start items-center flex-col h-screen">
@@ -73,9 +70,13 @@ const MainSite = () => {
               <Input useInput={email} type="email" placeholder="Email" />
               <Input useInput={password} type="password" placeholder="Hasło" />
             </div>
-            <LoginButton disabled={apiContext.isBusy}/>
+            <LoginButton disabled={apiContext.isBusy || !formIsValid} />
           </form>
-          <button onClick={WithoutLogginHandler} className="mt-2 text-white tracking-widest">
+          <button
+            disabled={apiContext.isBusy}
+            onClick={WithoutLogginHandler}
+            className="mt-2 text-white tracking-widest"
+          >
             Kontynuuj jako gość
           </button>
         </div>
