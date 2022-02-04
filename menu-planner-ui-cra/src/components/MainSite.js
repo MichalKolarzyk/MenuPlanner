@@ -1,4 +1,4 @@
-import React, {  useContext, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import bcg from "../assets/bcg.jpg";
 import useAccountController from "../hooks/Controllers/useAccountController";
@@ -42,11 +42,16 @@ const MainSite = () => {
     password.reset();
   };
 
+  const WithoutLogginHandler = async () => {
+    await accountController.login({
+      email: "mk@gmail.com",
+      password: "1234",
+    });
+    navigate("/plan");
+  }
+
   return (
-    <form
-      onSubmit={loginSubmitHandler}
-      className="flex justify-start items-center flex-col h-screen"
-    >
+    <div className="flex justify-start items-center flex-col h-screen">
       <div className="relative w-full h-full">
         <img
           src={bcg}
@@ -54,25 +59,28 @@ const MainSite = () => {
           className="w-full h-full object-cover"
         />
         <div className="absolute flex flex-col justify-center items-center top-0 right-0 left-0 bottom-0 bg-blackOverlay">
-          <div className="bg-white p-4 rounded-xl shadow-xl">
+          <form
+            onSubmit={loginSubmitHandler}
+            className="bg-white p-4 rounded-xl shadow-xl"
+          >
             <div className="p-5 text-black text-3xl tracking-widest text-center">
               MenuPlanner
             </div>
-            <button className="p-5 text-black text-xl tracking-widest text-center">
+            <div className="p-5 text-black text-xl tracking-widest text-center">
               Zaloguj się:
-            </button>
+            </div>
             <div className="">
               <Input useInput={email} type="email" placeholder="Email" />
               <Input useInput={password} type="password" placeholder="Hasło" />
             </div>
-            <LoginButton />
-          </div>
-          <Link to="/plan" className="mt-2 text-white tracking-widest">
-            Kontynuuj bez logowania
-          </Link>
+            <LoginButton disabled={apiContext.isBusy}/>
+          </form>
+          <button onClick={WithoutLogginHandler} className="mt-2 text-white tracking-widest">
+            Kontynuuj jako gość
+          </button>
         </div>
       </div>
-    </form>
+    </div>
   );
 };
 
