@@ -6,7 +6,7 @@ const Input = (props) => {
   return (
     <input
       type={type}
-      className="px-4 py-2 outline-none w-full rounded-lg focus:ring-2 focus:ring-gray-100 bg-gray-100 text-gray-700"
+      className="mt-2 px-4 py-2 outline-none w-full rounded-lg shadow-lg bg-gray-100 text-gray-700"
       placeholder={placeholder}
       value={useInput.value}
       onChange={useInput.onChange}

@@ -5,6 +5,7 @@ import useAccountController from "../hooks/Controllers/useAccountController";
 import useInput from "../hooks/useInput";
 import ApiContext from "../store/ApiContext";
 import Input from "../ui/inputs/Input";
+import LoginButton from "../ui/buttons/LoginButton";
 
 const MainSite = () => {
   const apiContext = useContext(ApiContext);
@@ -60,10 +61,11 @@ const MainSite = () => {
             <button className="p-5 text-black text-xl tracking-widest text-center">
               Zaloguj się:
             </button>
-            <div className="shadow-2xl">
+            <div className="">
               <Input useInput={email} type="email" placeholder="Email" />
               <Input useInput={password} type="password" placeholder="Hasło" />
             </div>
+            <LoginButton />
           </div>
           <Link to="/plan" className="mt-2 text-white tracking-widest">
             Kontynuuj bez logowania
