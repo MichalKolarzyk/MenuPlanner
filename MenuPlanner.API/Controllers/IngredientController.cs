@@ -39,7 +39,7 @@ namespace MenuPlanner.API.Controllers
         /// </summary>
         /// <param name="recipeId"></param>
         /// <returns></returns>
-        [HttpGet()]
+        [HttpGet]
         [Authorize("Viewer")]
         public ActionResult<IEnumerable<IngredientDto>> Get([FromRoute] int recipeId)
         {

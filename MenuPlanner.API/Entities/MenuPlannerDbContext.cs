@@ -17,6 +17,7 @@ namespace MenuPlanner.API.Entities
         }
 
         public DbSet<Dish> Dishes { get; set; }
+        public DbSet<DishType> DishTypes { get; set; }
         public DbSet<Ingredient> Ingredients { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Recipe> Recipes { get; set; }

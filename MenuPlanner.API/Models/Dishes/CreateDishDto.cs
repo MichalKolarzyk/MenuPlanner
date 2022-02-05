@@ -20,5 +20,8 @@ namespace MenuPlanner.API.Models.Dishes
 
         [DefaultValue(null)]
         public int? TrustedUserId { get; set; }
+
+        [Required]
+        public int? DishTypeId { get; set; }
     }
 }

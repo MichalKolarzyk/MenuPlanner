@@ -9,6 +9,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using MenuPlanner.API.Services.HttpContextServices;
 using MenuPlanner.API.Services.TrustedUserServices;
+using MenuPlanner.API.Services.DishTypeServices;
+using MenuPlanner.API.Models.DishTypes;
 
 namespace MenuPlanner.API.Services
 {
@@ -16,16 +18,20 @@ namespace MenuPlanner.API.Services
     {
         private readonly MenuPlannerDbContext _context;
         private readonly IMapper _mapper;
+        private readonly IDishTypeService _dishTypeService;
         private readonly IHttpContextService _httpContextService;
         private readonly ITrustedUserService _trustedUserService;
+        
 
         public DishService(MenuPlannerDbContext context,
             IMapper mapper,
+            IDishTypeService dishTypeService,
             IHttpContextService httpContextService,
             ITrustedUserService trustedUserService)
         {
             _context = context;
             _mapper = mapper;
+            _dishTypeService = dishTypeService;
             _httpContextService = httpContextService;
             _trustedUserService = trustedUserService;
         }
@@ -102,7 +108,8 @@ namespace MenuPlanner.API.Services
                     .Where(d => userIds.Contains(d.UserId))
                     .Where(d => d.Date >= from)
                     .Where(d => d.Date <= to)
-                    .Include(d => d.Recipe);
+                    .Include(d => d.Recipe)
+                    .Include(d => d.DishType);
 
             IEnumerable<DishDto> dishesDto = _mapper.Map<IEnumerable<DishDto>>(dishes);
 

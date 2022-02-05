@@ -45,7 +45,7 @@ namespace MenuPlanner.API.Controllers
         /// usersIds: pobiera dania dla użytkowników podanych w tej liście
         /// 
         /// </remarks>
-        [HttpGet]
+        [HttpPost("getList")]
         [Authorize("Viewer")]
         public ActionResult<DishResponse> Get([FromBody] DishRequest request)
         {

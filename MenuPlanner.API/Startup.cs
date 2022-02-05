@@ -2,6 +2,8 @@ using FluentValidation;
 using FluentValidation.AspNetCore;
 using MenuPlanner.API.Entities;
 using MenuPlanner.API.Middleware;
+using MenuPlanner.API.Models.Dishes;
+using MenuPlanner.API.Models.DishTypes;
 using MenuPlanner.API.Models.Products;
 using MenuPlanner.API.Models.Role;
 using MenuPlanner.API.Models.Tags;
@@ -9,6 +11,7 @@ using MenuPlanner.API.Models.Units;
 using MenuPlanner.API.Models.Users;
 using MenuPlanner.API.Services;
 using MenuPlanner.API.Services.AccountServices;
+using MenuPlanner.API.Services.DishTypeServices;
 using MenuPlanner.API.Services.FavoriteRecipeServices;
 using MenuPlanner.API.Services.HttpContextServices;
 using MenuPlanner.API.Services.IngredientServices;
@@ -90,6 +93,7 @@ namespace MenuPlanner.API
             services.AddScoped<IHttpContextService, HttpContextService>();
             services.AddScoped<ITrustedUserService, TrustedUserService>();
             services.AddScoped<IFavoriteRecipeService, FavoriteRecipeService>();
+            services.AddScoped<IDishTypeService, DishTypeService>();
 
             services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
 
@@ -100,6 +104,8 @@ namespace MenuPlanner.API
             services.AddScoped<IValidator<CreateUserDto>, RegisterUserDtoValidator>();
             services.AddScoped<IValidator<CreateProductDto>, CreateProductDtoValidator>();
             services.AddScoped<IValidator<CreateUnitDto>, CreateUnitDtoValidator>();
+            services.AddScoped<IValidator<CreateDishTypeDto>, CreateDishTypeDtoValidator>();
+            services.AddScoped<IValidator<CreateDishDto>, CreateDishDtoValidator>();
 
             services.AddScoped<ErrorHandlingMiddleware>();
 
