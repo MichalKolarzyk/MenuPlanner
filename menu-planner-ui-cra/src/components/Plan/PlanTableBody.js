@@ -6,19 +6,26 @@ const PlanTableBody = (props) => {
   const dishes = props.dishes;
   const users = props.users;
 
-  return <tbody className="divide-y divide-gray-100">
-    {dates.map((day) => (
-      <PlanDay
-        key={day.getDate()}
-        date={day}
-        dishTypes={dishTypes}
-        users={users}
-        dishes={dishes.filter(
-          (d) => new Date(d.date).getTime() === day.getTime()
-        )}
-      />
-    ))}
-  </tbody>;
+  const dishesFilterHandler = (day) => {
+    if (!dishes) {
+      return [];
+    }
+    return dishes.filter((d) => new Date(d.date).getTime() === day.getTime())
+  };
+
+  return (
+    <tbody className="divide-y divide-gray-100">
+      {dates.map((day) => (
+        <PlanDay
+          key={day.getDate()}
+          date={day}
+          dishTypes={dishTypes}
+          users={users}
+          dishes={dishesFilterHandler(day)}
+        />
+      ))}
+    </tbody>
+  );
 };
 
 export default PlanTableBody;

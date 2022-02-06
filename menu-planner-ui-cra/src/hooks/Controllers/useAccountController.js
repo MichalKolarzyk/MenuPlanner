@@ -23,6 +23,7 @@ const useAccountController = () => {
   const getUser = async () => {
     const request = new AccountRequestGetUser(apiContext.token);
     const response = await sender.send(request);
+    apiContext.setCurrentUser(response);
     return response;
   };
 

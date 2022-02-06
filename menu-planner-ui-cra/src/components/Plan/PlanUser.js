@@ -5,7 +5,7 @@ const PlanUser = (props) => {
   const user = props.user;
   const dishTypes = props.dishTypes;
 
-  const className = "p-3 text-sm text-gray-700 whitespace-nowrap";
+  const className = "p-3 text-sm text-gray-700 whitespace-nowrap"; 
 
   const view = dishTypes.map((dt) => (
     <PlanCell key={dt} dishes={dishes.filter((d) => d.dishTypeId === dt)} />
