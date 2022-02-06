@@ -1,4 +1,5 @@
-﻿using MenuPlanner.API.Models.DishTypes;
+﻿using MenuPlanner.API.Attributes;
+using MenuPlanner.API.Models.DishTypes;
 using MenuPlanner.API.Services.DishTypeServices;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -21,7 +22,7 @@ namespace MenuPlanner.API.Controllers
         }
 
         [HttpGet]
-        [Authorize("Viewer")]
+        [ViewerAuth]
         public ActionResult<IEnumerable<DishTypeDto>> GetAll()
         {
             IEnumerable<DishTypeDto> dishTypes = _dishTypeService.GetAll();
@@ -29,11 +30,19 @@ namespace MenuPlanner.API.Controllers
         }
 
         [HttpPost]
-        [Authorize("Admin")]
+        [AdminAuth]
         public ActionResult Create([FromBody] CreateDishTypeDto createDishTypeDto)
         {
             int id =_dishTypeService.Create(createDishTypeDto);
             return Created($"api/dishType/{id}", null);
+        }
+
+        
+        [HttpDelete("{id}")]
+        [AdminAuth]
+        public ActionResult Delete([FromRoute] int id)
+        {
+            return NoContent();
         }
     }
 }

@@ -24,9 +24,9 @@ namespace MenuPlanner.API.Validators
 
         private void NameNotTaken(string value, ValidationContext<CreateDishTypeDto> context)
         {
-            bool nameInUse = _dbContext.Products.Any(r => r.Name == value);
-            if (nameInUse == true)
-                context.AddFailure("Name", "Dish type name is taken.");
+            bool nameInUse = _dbContext.DishTypes.Any(r => r.Name == value);
+            if (nameInUse)
+                context.AddFailure("Dish type name is taken.");
         }
     }
 }
