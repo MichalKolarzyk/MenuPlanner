@@ -4,7 +4,7 @@ import { Navigate } from "react-router-dom";
 
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
-import Plan from "../components/Plan";
+import Plan from "../components/Plan/Plan";
 import Header from "../components/Header";
 import Recipes from "../components/Recipes";
 import Products from "../components/Products";

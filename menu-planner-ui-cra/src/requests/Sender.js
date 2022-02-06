@@ -37,14 +37,15 @@ class Sender {
       };
     } finally {
       if (senderError) {
-        console.log(senderError);
         errorMessage = senderError.message;
+        console.log(senderError);
       } else if (response && !response.ok) {
-        errorMessage = json.message;
+        errorMessage = json;
+        console.log(errorMessage)
       }
 
       if (errorMessage) {
-        alert(errorMessage);
+        alert(errorMessage.message);
       }
 
       this.apiContext.setIsBusy(false);
