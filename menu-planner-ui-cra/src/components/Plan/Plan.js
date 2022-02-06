@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import useDishController from "../../hooks/Controllers/useDishController";
 import PlanCell from "./PlanCell";
 import PlanDay from "./PlanDay";
+import PlanUser from "./PlanUser";
 
 const Plan = () => {
   //const [days, setDays] = useState([]);
@@ -17,9 +18,9 @@ const Plan = () => {
 
 
 
-  const [users, setUsers] = useState([6]);
+  const [users, setUsers] = useState([6,7]);
   const [dishes, setDishes] = useState([]);
-  const [days, setDays] = useState(7);
+  const [days, setDays] = useState(3);
   const [startDate, setStartDate] = useState(new Date("2021-12-22T00:00:00"));
   const [dishTypes, setDishTypes] = useState([1, 2, 3, 4, 5]);
 
@@ -61,11 +62,7 @@ const Plan = () => {
               users.map((user, index) => (
               <tr className="bg-gray-50" key={day.day}>
                 {index === 0 && <td rowspan={users.length} className={tdStandard}>{day.toDateString()}</td>}
-                <td className={tdBold}>{user}</td>
-                {dishTypes.map(dt => <PlanCell 
-                    className={tdStandard}
-                    dishes={dishes.filter(d => d.userId === user && d.dishTypeId===dt && new Date(d.date).getTime() === day.getTime())}>
-                  </PlanCell>)}
+                {<PlanUser dishTypes={dishTypes} user={user} dishes={dishes.filter(d => d.userId === user && new Date(d.date).getTime() === day.getTime())}/>}
               </tr>
             ))
             ))}
