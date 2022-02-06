@@ -8,7 +8,6 @@ const ApiProvider = (props) => {
   const [isBusy, setIsBusy] = useState(false);
 
   const isLoggedIn = !!token;
-  console.log(isLoggedIn);
 
   const setTokenHandler = (newToken) => {
     setToken(newToken);
