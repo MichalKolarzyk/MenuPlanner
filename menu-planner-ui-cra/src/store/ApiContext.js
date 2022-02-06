@@ -11,6 +11,8 @@ const ApiContext = React.createContext({
     logout: () => {},
     isBusy: false,
     setIsBusy: () => {},
+    currentUser: {},
+    setCurrentUser: () => {},
 })
 
 export default ApiContext;
