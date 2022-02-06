@@ -7,22 +7,14 @@ const PlanDay = (props) => {
   const dishTypes = props.dishTypes;
 
   const className = "p-3 text-sm text-gray-700 whitespace-nowrap";
-  const view = users.map((u, index) => (
-    <>
-      {index === 0 && <td rowspan={users.length} className={className}>{date.toDateString()}</td>}
-      <PlanUser
-        key={u}
-        user={u}
-        dishTypes={dishTypes}
-        dishes={dishes.filter((d) => d.userId === u)}
-      />
-    </>
+  const view = (users.map((u, index) => (
+      <tr className="bg-gray-50" key={u}>
+        {index === 0 && <td rowSpan={users.length} className={className}> {date.toDateString()}</td>}
+        {<PlanUser dishTypes={dishTypes} user={u} dishes={dishes.filter((d) => d.userId === u)}/>}
+      </tr>)
   ));
-  return (
-    <tr className="bg-gray-50">
-      {view}
-    </tr>
-  );
+
+  return view;
 };
 
 export default PlanDay;
