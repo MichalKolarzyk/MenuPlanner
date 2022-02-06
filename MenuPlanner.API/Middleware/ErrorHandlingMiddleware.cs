@@ -11,34 +11,35 @@ namespace MenuPlanner.API.Middleware
     {
         public async Task InvokeAsync(HttpContext context, RequestDelegate next)
         {
+            ExceptionResponse exceptionResponse = null;
             try
             {
                 await next.Invoke(context);
             }
             catch (NotFoundException notFoundException)
             {
-                ExceptionResponse exceptionResponse = notFoundException.GetResponse(context);
-                context.Response.StatusCode = exceptionResponse.Status;
-                await context.Response.WriteAsJsonAsync(exceptionResponse);
+                exceptionResponse = notFoundException.GetResponse(context);
             }
             catch (BadRequestException badRequest)
             {
-                ExceptionResponse exceptionResponse = badRequest.GetResponse(context);
-                context.Response.StatusCode = exceptionResponse.Status;
-                await context.Response.WriteAsJsonAsync(exceptionResponse);
+                exceptionResponse = badRequest.GetResponse(context);
             }
-            catch(ForbiddenException forbiddenException)
+            catch (ForbiddenException forbiddenException)
             {
-                ExceptionResponse exceptionResponse = forbiddenException.GetResponse(context);
-                context.Response.StatusCode = exceptionResponse.Status;
-                await context.Response.WriteAsJsonAsync(exceptionResponse);
+                exceptionResponse = forbiddenException.GetResponse(context);
             }
             catch (Exception e)
             {
                 InternalException exception = new InternalException(e.Message, "Something went wrong");
-                ExceptionResponse exceptionResponse = exception.GetResponse(context);
-                context.Response.StatusCode = exceptionResponse.Status;
-                await context.Response.WriteAsJsonAsync(exceptionResponse);
+                exceptionResponse = exception.GetResponse(context);
+            }
+            finally
+            {
+                if (exceptionResponse != null)
+                {
+                    context.Response.StatusCode = exceptionResponse.Status;
+                    await context.Response.WriteAsJsonAsync(exceptionResponse);
+                }
             }
         }
     }
