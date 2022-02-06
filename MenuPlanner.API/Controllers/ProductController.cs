@@ -52,7 +52,7 @@ namespace MenuPlanner.API.Controllers
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        [HttpGet]
+        [HttpPost("getList")]
         [Authorize("Viewer")]
         public ActionResult<PagedResponse<ProductDto>> Get(ProductRequest request)
         {

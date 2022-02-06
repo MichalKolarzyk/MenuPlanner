@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MenuPlanner.API.Entities;
 using MenuPlanner.API.Models.Dishes;
+using MenuPlanner.API.Models.DishTypes;
 using MenuPlanner.API.Models.Ingredients;
 using MenuPlanner.API.Models.Products;
 using MenuPlanner.API.Models.Recipes;
@@ -22,6 +23,9 @@ namespace MenuPlanner.API
         {
             CreateMap<CreateDishDto, Dish>();
             CreateMap<Dish, DishDto>();
+
+            CreateMap<CreateDishTypeDto, DishType>();
+            CreateMap<DishType, DishTypeDto>();
 
             CreateMap<CreateProductDto, Product>();
             CreateMap<Product, ProductDto>();

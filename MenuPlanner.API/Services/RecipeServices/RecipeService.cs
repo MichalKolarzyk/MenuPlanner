@@ -67,8 +67,6 @@ namespace MenuPlanner.API.Services
         public PagedResponse<RecipeDto> Get(RecipeRequest request)
         {
             var baseQuery = _context.Recipes
-                .Include(r => r.Setps)
-                .Include(r => r.Ingredients).ThenInclude(i => i.Product)
                 .Include(r => r.Tags)
                 .Where(r => r.Name.ToLower().Contains(request.SearchPhrase));
 

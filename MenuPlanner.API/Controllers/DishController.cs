@@ -45,7 +45,7 @@ namespace MenuPlanner.API.Controllers
         /// usersIds: pobiera dania dla użytkowników podanych w tej liście
         /// 
         /// </remarks>
-        [HttpGet]
+        [HttpPost("getList")]
         [Authorize("Viewer")]
         public ActionResult<DishResponse> Get([FromBody] DishRequest request)
         {
@@ -69,7 +69,7 @@ namespace MenuPlanner.API.Controllers
         /// <summary>
         /// Usuń wybrane danie. (Viewer)
         /// </summary>
-        /// <param name="dishId"></param>
+        /// <param name="id"></param>
         /// <returns></returns>
         [HttpDelete("{id}")]
         [Authorize("Viewer")]

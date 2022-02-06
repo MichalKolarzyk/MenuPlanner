@@ -11,6 +11,8 @@ namespace MenuPlanner.API.Models.Dishes
     {
         public int Id { get; set; }
         public DateTime Date { get; set; }
+        public string DishTypeName { get; set; }
+        public int DishTypeId { get; set; }
         public float Portions { get; set; }
         public string RecipeName { get; set; }
         public int RecipeId { get; set; }
