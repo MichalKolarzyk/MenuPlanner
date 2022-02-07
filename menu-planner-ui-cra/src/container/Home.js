@@ -30,9 +30,8 @@ const Home = () => {
           className="fixed w-full h-full object-cover"
         />
         <div className="absolute w-full h-max top-0 right-0 bottom-0 left-0 p-5 bg-blackOverlay">
-          <Nav />
-          <div className="">
-            
+          <div className="px-0 sm:px-10 md:px-20 lg:px-40">
+            <Nav />
             <Header />
             {isLoggedIn && (
               <Routes>
@@ -44,10 +43,9 @@ const Home = () => {
                 <Route path="/settings" element={<Settings />} />
               </Routes>
             )}
-            
+            {!isLoggedIn && <Navigate to="/"/>}
+            <Footer />
           </div>
-          {!isLoggedIn && <Navigate to="/"/>}
-          <Footer />
         </div>
       </div>
     </div>

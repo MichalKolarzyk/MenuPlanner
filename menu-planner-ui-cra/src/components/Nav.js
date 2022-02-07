@@ -17,7 +17,7 @@ const Nav = () => {
   };
 
   return (
-    <div className="flex justify-between items-center px-4 pb-4 mb-4 border-b border-black">
+    <div className="flex justify-between items-center px-4 pb-4 mb-4 border-b border-white">
       <Link to="/plan" className="font-semibold text-white text-xl">
         MenuPlannerApp
       </Link>
