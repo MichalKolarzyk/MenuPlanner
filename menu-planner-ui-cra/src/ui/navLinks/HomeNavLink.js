@@ -3,8 +3,8 @@ import { NavLink } from "react-router-dom";
 const HomeNavLink = (props) => {
   const to = props.to;
   const label = props.label;
-  const isActiveStyle = "w-full font-bold border-r-2 border-black px-2 my-1";
-  const isNotActiveStyle = "w-full border-r-2 border-black px-2 my-1";
+  const isActiveStyle = "px-2 p-2 tracking-wider border-2 border-red-400 rounded-xl font-semibold";
+  const isNotActiveStyle = "px-2 p-2 tracking-wider";
 
   return (
     <NavLink

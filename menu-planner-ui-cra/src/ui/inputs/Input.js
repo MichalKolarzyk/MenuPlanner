@@ -9,14 +9,14 @@ const Input = (props) => {
   }
 
   return (
-    <input
-      type={type}
-      className={className}
-      placeholder={placeholder}
-      value={useInput.value}
-      onChange={useInput.onChange}
-      onBlur={useInput.onBlur}
-    />
+      <input
+        type={type}
+        className={className}
+        placeholder={placeholder}
+        value={useInput.value}
+        onChange={useInput.onChange}
+        onBlur={useInput.onBlur}
+      />
   );
 };
 
