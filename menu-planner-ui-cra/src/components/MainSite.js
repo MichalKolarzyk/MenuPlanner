@@ -58,7 +58,7 @@ const MainSite = () => {
         <div className="absolute flex flex-col justify-center items-center top-0 right-0 left-0 bottom-0 bg-blackOverlay">
           <form
             onSubmit={loginSubmitHandler}
-            className="block w-1/2 bg-white p-4 rounded-xl shadow-xl"
+            className="block w-96 bg-white p-4 rounded-xl shadow-xl"
           >
             <div className="p-5 text-black text-3xl tracking-widest text-center">
               MenuPlanner
