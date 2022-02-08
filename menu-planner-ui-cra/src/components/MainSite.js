@@ -58,7 +58,7 @@ const MainSite = () => {
         <div className="absolute flex flex-col justify-center items-center top-0 right-0 left-0 bottom-0 bg-blackOverlay">
           <form
             onSubmit={loginSubmitHandler}
-            className="bg-white p-4 rounded-xl shadow-xl"
+            className="block w-1/2 bg-white p-4 rounded-xl shadow-xl"
           >
             <div className="p-5 text-black text-3xl tracking-widest text-center">
               MenuPlanner
@@ -68,7 +68,9 @@ const MainSite = () => {
             </div>
             <div className="">
               <Input useInput={email} type="email" placeholder="Email" />
+              {email.hasError ? <div className="transition duration-500 ease w-full px-4 mt-2 text-red-400">Podany email jest za krótki lub niepoprawny!</div> : null}
               <Input useInput={password} type="password" placeholder="Hasło" />
+              {password.hasError ? <div className="w-full px-4 mt-2 text-red-400">Podane hasło jest niepoprawne!</div> : null}
             </div>
             <LoginButton disabled={apiContext.isBusy || !formIsValid} />
           </form>
