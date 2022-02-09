@@ -20,11 +20,12 @@ const MainSite = () => {
   });
 
   const email = useInput([
-    useValidatror((value) => value.length >= 10, "email musi byc wiekszy niz 10 znakow"),
+    useValidatror((value) => value.length >= 10, "email musi byc dłuższy niz 10 znakow"),
     useValidatror((value) => value.includes('@'), "email musi zawierać znak @"),
+    useValidatror((value) => value.includes('.'), "email musi zawierać znak ."),
   ]);
   const password = useInput([
-    useValidatror((value) => value.length >= 6, "hasło musi byc wiekszy niz 6 znakow"),
+
   ]);
 
   let formIsValid = false;

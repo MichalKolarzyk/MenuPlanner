@@ -9,13 +9,12 @@ const useInput = (useValidatorsArray) => {
   if(useValidatorsArray){
     error = useValidatorsArray.find(uv => uv.validationHandler(enteredValue) === false);
   }
-  
+
   if(error){
     valueIsValid = false;
     errorMessage = error.errorMessage;
   }
 
-  //const valueIsValid = validateValue(enteredValue);
   const hasError = !valueIsValid && isTouched;
 
   const onChange = (event) => {

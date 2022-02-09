@@ -20,7 +20,7 @@ const Input = (props) => {
         onChange={useInput.onChange}
         onBlur={useInput.onBlur}
       />
-      {useInput.hasError && (
+      {useInput.hasError && useInput.errorMessage && (
         <div className="transition duration-1000 ease w-full px-4 mt-2 text-red-400">
           {useInput.errorMessage}
         </div>
