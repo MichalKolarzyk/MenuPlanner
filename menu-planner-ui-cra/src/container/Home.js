@@ -21,6 +21,7 @@ import ApiContext from "../store/ApiContext";
 const Home = () => {
   const apiContext = useContext(ApiContext);
   const isLoggedIn = apiContext.isLoggedIn;
+
   return (
     <div className="h-screen">
       <div className="relative w-full h-full">
