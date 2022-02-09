@@ -3,7 +3,7 @@ const PlanTableHeader = (props) => {
   const thStandard = "p-3 text-sm font-semibold tracking-wide text-left";
 
   return (
-    <thead className="bg-red-400 border-b-2 border-black">
+    <thead className="bg-red-400 border-b">
       <tr>
         <th className={thStandard}></th>
         <th className={thStandard}>Użytkownik</th>

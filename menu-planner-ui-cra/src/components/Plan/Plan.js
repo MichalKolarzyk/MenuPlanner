@@ -34,8 +34,8 @@ const Plan = () => {
   }, []);
 
   return (
-    <div className="bg-gray-100">
-      <div className="overflow-auto rounded-lg border border-black shadow">
+    <div className="bg-gray-100 rounded-2xl">
+      <div className="overflow-auto rounded-xl shadow-xl">
         <table className="w-full">
           <PlanTableHeader dishTypes={dishTypes} />
           <PlanTableBody
