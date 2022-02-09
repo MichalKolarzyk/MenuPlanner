@@ -1,10 +1,21 @@
 import { useState } from "react";
 
-const useInput = (validateValue) => {
+const useInput = (useValidatorsArray) => {
   const [enteredValue, setEnteredValue] = useState("");
   const [isTouched, setIsTouched] = useState(false);
+  let valueIsValid = true;
+  let errorMessage = "";
+  let error;
+  if(useValidatorsArray){
+    error = useValidatorsArray.find(uv => uv.validationHandler(enteredValue) === false);
+  }
+  
+  if(error){
+    valueIsValid = false;
+    errorMessage = error.errorMessage;
+  }
 
-  const valueIsValid = validateValue(enteredValue);
+  //const valueIsValid = validateValue(enteredValue);
   const hasError = !valueIsValid && isTouched;
 
   const onChange = (event) => {
@@ -24,6 +35,7 @@ const useInput = (validateValue) => {
     value: enteredValue,
     isValid: valueIsValid,
     hasError,
+    errorMessage,
     onChange,
     onBlur,
     reset,

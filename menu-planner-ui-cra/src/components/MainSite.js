@@ -6,6 +6,7 @@ import useInput from "../hooks/useInput";
 import ApiContext from "../store/ApiContext";
 import Input from "../ui/inputs/Input";
 import LoginButton from "../ui/buttons/LoginButton";
+import useValidatror from "../hooks/useValidator";
 
 const MainSite = () => {
   const apiContext = useContext(ApiContext);
@@ -18,8 +19,13 @@ const MainSite = () => {
     }
   });
 
-  const email = useInput((value) => value.includes("@") && value.length >= 7);
-  const password = useInput((value) => value.length >= 6);
+  const email = useInput([
+    useValidatror((value) => value.length >= 10, "email musi byc wiekszy niz 10 znakow"),
+    useValidatror((value) => value.includes('@'), "email musi zawierać znak @"),
+  ]);
+  const password = useInput([
+    useValidatror((value) => value.length >= 6, "hasło musi byc wiekszy niz 6 znakow"),
+  ]);
 
   let formIsValid = false;
   if (email.isValid && password.isValid) {
@@ -68,9 +74,7 @@ const MainSite = () => {
             </div>
             <div className="">
               <Input useInput={email} type="email" placeholder="Email" />
-              {email.hasError ? <div className="transition duration-500 ease w-full px-4 mt-2 text-red-400">Podany email jest za krótki lub niepoprawny!</div> : null}
               <Input useInput={password} type="password" placeholder="Hasło" />
-              {password.hasError ? <div className="w-full px-4 mt-2 text-red-400">Podane hasło jest niepoprawne!</div> : null}
             </div>
             <LoginButton disabled={apiContext.isBusy || !formIsValid} />
           </form>

@@ -17,6 +17,7 @@ import ApiContext from "../store/ApiContext";
 const Home = () => {
   const apiContext = useContext(ApiContext);
   const isLoggedIn = apiContext.isLoggedIn;
+
   return (
     <div className="p-5 h-screen">
       <Nav />
