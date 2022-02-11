@@ -6,10 +6,10 @@ const PlanTableHeader = (props) => {
     <thead className="bg-red-400 border-b">
       <tr>
         <th className={thStandard}></th>
-        <th className={thStandard}>Użytkownik</th>
+        {true && <th className={thStandard}>Użytkownik</th>}
         {dishTypes.map((dt) => (
           <th key={dt} className={thStandard}>
-            {dt}
+            {dt.name}
           </th>
         ))}
       </tr>

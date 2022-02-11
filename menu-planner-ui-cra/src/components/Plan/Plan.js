@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import useDishController from "../../hooks/Controllers/useDishController";
+import useDishTypeController from "../../hooks/Controllers/useDishTypeController";
 import ApiContext from "../../store/ApiContext";
 import PlanCell from "./PlanCell";
 import PlanDay from "./PlanDay";
@@ -8,8 +9,9 @@ import PlanTableHeader from "./PlanTableHeader";
 import PlanUser from "./PlanUser";
 
 const Plan = () => {
-  const apiContext = useContext(ApiContext)
-  const [users, setUsers] = useState([6,8]);
+  const dishTypesController = useDishTypeController();
+
+  const [users, setUsers] = useState([8,6]);
   const [dishes, setDishes] = useState([]);
   const [days, setDays] = useState(7);
   const [startDate, setStartDate] = useState(new Date("2021-12-22T00:00:00"));
@@ -31,6 +33,9 @@ const Plan = () => {
       usersIds: users,
     });
     setDishes(dishesItems.dishesDto);
+    const dishTypes = await dishTypesController.getAllDishTypes();
+    setDishTypes(dishTypes)
+    console.log(dishTypes);
   }, []);
 
   return (

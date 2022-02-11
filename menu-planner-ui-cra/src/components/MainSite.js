@@ -25,7 +25,7 @@ const MainSite = () => {
     useValidatror((value) => value.includes('.'), "email musi zawierać znak ."),
   ]);
   const password = useInput([
-
+    useValidatror((value) => value.length >= 6),
   ]);
 
   let formIsValid = false;

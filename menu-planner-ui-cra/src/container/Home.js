@@ -12,9 +12,9 @@ import Recipes from "../components/Recipes";
 import Products from "../components/Products";
 import ShoppingList from "../components/ShoppingList";
 import Settings from "../components/Settings";
-import Tags from "../components/Tags";
 import { useContext } from "react";
 import ApiContext from "../store/ApiContext";
+import useAccountController from "../hooks/Controllers/useAccountController";
 
 // import "./Home.css"
 
@@ -40,7 +40,6 @@ const Home = () => {
                 <Route path="/recipes" element={<Recipes />} />
                 <Route path="/products" element={<Products />} />
                 <Route path="/shopping-list" element={<ShoppingList />} />
-                <Route path="/tags" element={<Tags />} />
                 <Route path="/settings" element={<Settings />} />
               </Routes>
             )}
