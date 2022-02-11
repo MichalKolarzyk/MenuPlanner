@@ -8,7 +8,6 @@ const Header = () => {
       <HomeNavLink label="Przepisy" to="/recipes" />
       <HomeNavLink label="Produkty" to="/products" />
       <HomeNavLink label="Zakupy" to="/shopping-list" />
-      <HomeNavLink label="Tagi" to="/tags" />
       <HomeNavLink label="Ustawienia" to="/settings" />
     </div>
   );
