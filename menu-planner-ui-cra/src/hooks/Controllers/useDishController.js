@@ -1,11 +1,8 @@
-import { useContext } from "react";
 import DishRequestGetList from "../../requests/dishRequests/DishRequestGetList";
-import Sender from "../../requests/Sender";
-import ApiContext from "../../store/ApiContext";
+import useSender from "./useSender";
 
 const useDishController = () => {
-    const apiContext = useContext(ApiContext);
-    const sender = new Sender(apiContext);
+    const sender = useSender();
 
     const getDishList = async (dishBody) => {
         const request = new DishRequestGetList(dishBody)

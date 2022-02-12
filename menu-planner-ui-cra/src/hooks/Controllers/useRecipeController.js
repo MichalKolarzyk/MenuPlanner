@@ -1,14 +1,12 @@
-import { useContext } from "react/cjs/react.development";
-import Sender from "../../requests/Sender";
 import RecipeRequestCreate from "../../requests/recipeRequests/RecipeRequestCreate";
 import RecipeRequestGetList from "../../requests/recipeRequests/RecipeRequestGetList";
 import RecipeRequestGetById from "../../requests/recipeRequests/RecipeRequestGetById";
 import RecipeRequestAddTag from "../../requests/recipeRequests/RecipeRequestAddTag";
 import RecipeRequestGetTags from "../../requests/recipeRequests/RecipeRequestGetTags";
+import useSender from "./useSender";
 
 const useRecipeController = () => {
-  const apiContext = useContext(ApiContext);
-  const sender = new Sender(apiContext);
+  const sender = useSender();
 
   const createRecipe = async (recipe) => {
     const request = new RecipeRequestCreate(recipe);

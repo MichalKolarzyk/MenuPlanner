@@ -1,13 +1,12 @@
-import Sender from "../../requests/Sender";
 import AccountRequestLogin from "../../requests/accountRequests/AccountRequestLogin";
 import { useContext } from "react";
 import ApiContext from "../../store/ApiContext";
 import AccountRequestGetUser from "../../requests/accountRequests/AccountRequestGetUser";
-import { useState } from "react/cjs/react.development";
+import useSender from "./useSender";
 
 const useAccountController = () => {
   const apiContext = useContext(ApiContext);
-  const sender = new Sender(apiContext);
+  const sender = useSender();
 
   const login = async (loginRequest) => {
     const request = new AccountRequestLogin(loginRequest);

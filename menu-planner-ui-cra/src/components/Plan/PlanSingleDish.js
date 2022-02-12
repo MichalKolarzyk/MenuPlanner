@@ -1,7 +1,5 @@
 const PlanSingleDish = (props) =>{
     const dish = props.dish;
-
-    console.log(dish);
     let view = <div></div>
     if(view){
         view = (

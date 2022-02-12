@@ -1,11 +1,9 @@
-import { useContext } from 'react';
 import DishTypeRequestGetAll from '../../requests/dishTypeRequests/DishTypeRequestGetAll'
-import Sender from '../../requests/Sender';
-import ApiContext from '../../store/ApiContext';
+import useSender from './useSender';
 
 const useDishTypeController = () => {
-    const apiContext = useContext(ApiContext);
-    const sender = new Sender(apiContext);
+
+    const sender = useSender();
 
     const getAllDishTypes = async () => {
         const request = new DishTypeRequestGetAll()

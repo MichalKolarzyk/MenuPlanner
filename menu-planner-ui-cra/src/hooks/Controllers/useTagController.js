@@ -3,13 +3,10 @@ import TagRequestGetById from "../../requests/tagRequests/TagRequestGetById";
 import TagRequestDelete from "../../requests/tagRequests/TagRequestDelete";
 import TagRequestUpdate from "../../requests/tagRequests/TagRequestUpdate";
 import TagRequestGetAll from "../../requests/tagRequests/TagRequestGetAll";
-import { useContext, useState } from "react/cjs/react.development";
-import ApiContext from "../../store/ApiContext";
-import Sender from "../../requests/Sender";
+import useSender from "./useSender";
 
 const useTagController = () => {
-  const apiContext = useContext(ApiContext);
-  const sender = new Sender(apiContext);
+  const sender = useSender();
 
   const getTags = async () => {
     const request = new TagRequestGetAll();
