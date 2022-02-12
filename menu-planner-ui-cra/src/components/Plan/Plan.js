@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import useDishController from "../../hooks/Controllers/useDishController";
 import useDishTypeController from "../../hooks/Controllers/useDishTypeController";
-import useLayers from "../../hooks/useLayers";
 import PlanTableBody from "./PlanTableBody";
 import PlanTableHeader from "./PlanTableHeader";
 
@@ -14,7 +13,6 @@ const Plan = () => {
   const [startDate, setStartDate] = useState(new Date("2021-12-22T00:00:00"));
   const [dishTypes, setDishTypes] = useState([1, 3, 5]);
 
-  const layers = useLayers();
   const dishController = useDishController();
   const numbersOfDays = [...Array(days).keys()];
 
@@ -35,18 +33,9 @@ const Plan = () => {
     setDishTypes(dishTypes);
   }, []);
 
-  const ShowMessageHandler = () => {
-    layers.showMessage("Error", "To jest testowy error")
-  }
-
-  const ShowFormHandler = () => {
-    layers.showForm(<form><button>Add</button></form>);
-  }
 
   return (
     <div className="bg-gray-100 rounded-2xl">
-      <div onClick={ShowMessageHandler}>ShowMessage</div>
-      <div onClick={ShowFormHandler}>ShowForm</div>
       <div className="overflow-auto rounded-xl shadow-xl">
         <table className="w-full">
           <PlanTableHeader dishTypes={dishTypes} />

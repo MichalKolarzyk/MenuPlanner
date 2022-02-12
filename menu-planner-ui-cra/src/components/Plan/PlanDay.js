@@ -10,7 +10,7 @@ const PlanDay = (props) => {
   const view = (users.map((u, index) => (
       <tr className="bg-gray-50" key={u}>
         {index === 0 && <td rowSpan={users.length} className={className}> {date.toDateString()}</td>}
-        {<PlanUser dishTypes={dishTypes} user={u} dishes={dishes.filter((d) => d.userId === u)}/>}
+        {<PlanUser date={date} dishTypes={dishTypes} user={u} dishes={dishes.filter((d) => d.userId === u)}/>}
       </tr>)
   ));
 
