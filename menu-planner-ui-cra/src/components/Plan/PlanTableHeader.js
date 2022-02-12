@@ -8,7 +8,7 @@ const PlanTableHeader = (props) => {
         <th className={thStandard}></th>
         {true && <th className={thStandard}>Użytkownik</th>}
         {dishTypes.map((dt) => (
-          <th key={dt} className={thStandard}>
+          <th key={dt.id} className={thStandard}>
             {dt.name}
           </th>
         ))}
