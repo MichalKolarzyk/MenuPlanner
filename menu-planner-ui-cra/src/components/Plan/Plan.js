@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from "react";
 import useDishController from "../../hooks/Controllers/useDishController";
 import useDishTypeController from "../../hooks/Controllers/useDishTypeController";
+import useDateExtension from "../../hooks/Extensions/useDateExtension";
 import PlanTableBody from "./PlanTableBody";
 import PlanTableHeader from "./PlanTableHeader";
 
 const Plan = () => {
   const dishTypesController = useDishTypeController();
+  const dateExtension = useDateExtension();
 
   const [users, setUsers] = useState([8, 6]);
   const [dishes, setDishes] = useState([]);
   const [days, setDays] = useState(7);
-  const [startDate, setStartDate] = useState(new Date("2021-12-22T00:00:00"));
+  const [startDate, setStartDate] = useState(new Date());
   const [dishTypes, setDishTypes] = useState([1, 3, 5]);
 
   const dishController = useDishController();
@@ -23,8 +25,9 @@ const Plan = () => {
   });
 
   useEffect(async () => {
+    console.log(dateExtension.toDateString(startDate));
     const dishesItems = await dishController.getDishList({
-      from: new Date(2021, 11, 22),
+      from: dateExtension.toDateString(startDate),
       days: days,
       usersIds: users,
     });

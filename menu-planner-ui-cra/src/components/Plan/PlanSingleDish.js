@@ -1,16 +1,26 @@
-const PlanSingleDish = (props) =>{
-    const dish = props.dish;
-    let view = <div></div>
-    if(view){
-        view = (
-        <div>
-            <span>{dish.recipeName}</span>
-            <span>, </span>
-            <span>{dish.portions}</span>
-        </div>)
-    }
+import { useState } from "react";
+import { FiXCircle } from "react-icons/fi";
 
-    return view
-}
+const PlanSingleDish = (props) => {
+  const dish = props.dish;
+
+  const [isHovered, setIsHovered] = useState(false);
+
+  let view = <div></div>;
+  if (view) {
+    view = (
+      <div
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <span>{dish.recipeName}</span>
+        <span>, </span>
+        <span>{dish.portions}</span>
+      </div>
+    );
+  }
+
+  return view;
+};
 
 export default PlanSingleDish;

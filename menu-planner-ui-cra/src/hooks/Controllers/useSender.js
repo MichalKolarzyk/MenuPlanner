@@ -56,8 +56,60 @@ const useSender = () => {
       }
     }
 
+    const sendCreate = async (request)  => {
+      apiContext.setIsBusy(true);
+  
+      const baseUrl = apiContext.baseUrl;
+      const bodyJson = JSON.stringify(request.body);
+      const url = baseUrl + request.url;
+  
+      const headers = {
+        "Content-Type": "application/json; charset=utf-8",
+        Authorization: `${apiContext.authorizationMethod} ${apiContext.token}`,
+      };
+  
+      let response;
+      let json;
+      let senderError;
+      let errorMessage;
+  
+      try {
+        response = await fetch(url, {
+          method: request.methodName,
+          body: bodyJson,
+          headers: headers,
+        });
+      } catch (error) {
+        senderError = {
+          bodyJson: bodyJson,
+          message: error.message,
+          request: request,
+          response: response,
+          apiContext: apiContext,
+        };
+      } finally {
+        if (senderError) {
+          errorMessage = senderError.message;
+          console.log(senderError);
+        } else if (response && !response.ok) {
+          errorMessage = await response.json();
+          console.log(errorMessage)
+        }
+  
+        if (errorMessage) {
+          layers.showMessage("Error", errorMessage.message);
+        }
+  
+        // apiContext.setIsBusy(false);
+        // console.log(response.headers)
+        // return response.headers["Location"];
+      }
+    }
+
+
     return {
         send,
+        sendCreate,
     }
   }
   export default useSender;
