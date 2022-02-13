@@ -1,4 +1,5 @@
 import DishRequestGetList from "../../requests/dishRequests/DishRequestGetList";
+import DishRequestCreate from "../../requests/dishRequests/DishRequestCreate";
 import useSender from "./useSender";
 
 const useDishController = () => {
@@ -10,8 +11,15 @@ const useDishController = () => {
         return result;
     } 
 
+    const createDish = async (dishBody) => {
+        const request = new DishRequestCreate(dishBody)
+        const result = await sender.sendCreate(request);
+        return result;
+    }
+
     return{
         getDishList,
+        createDish,
     };
 }
 

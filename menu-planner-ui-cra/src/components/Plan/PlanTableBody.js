@@ -1,6 +1,9 @@
+import useDateExtension from "../../hooks/Extensions/useDateExtension";
 import PlanDay from "./PlanDay";
 
 const PlanTableBody = (props) => {
+  const dateExtension = useDateExtension();
+
   const dates = props.dates;
   const dishTypes = props.dishTypes;
   const dishes = props.dishes;
@@ -10,14 +13,14 @@ const PlanTableBody = (props) => {
     if (!dishes) {
       return [];
     }
-    return dishes.filter((d) => new Date(d.date).getTime() === day.getTime())
+    return dishes.filter((d) => dateExtension.isEquas(new Date(d.date), day))
   };
 
   return (
     <tbody className="divide-y divide-gray-100">
       {dates.map((day) => (
         <PlanDay
-          key={day.getDate()}
+          key={day}
           date={day}
           dishTypes={dishTypes}
           users={users}

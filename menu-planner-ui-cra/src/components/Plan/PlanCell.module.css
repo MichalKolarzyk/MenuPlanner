@@ -1,0 +1,10 @@
+.cell{
+    @apply 
+    p-3 
+    text-sm 
+    text-gray-700 
+    whitespace-nowrap
+}
+.cell:hover{
+    background-color: rgb(243, 243, 243);
+}
