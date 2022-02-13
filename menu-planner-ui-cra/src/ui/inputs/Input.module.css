@@ -1,0 +1,58 @@
+.div{
+    position: relative;
+}
+
+.input {
+  @apply mt-2 
+    px-4 
+    py-2 
+    outline-none 
+    w-full 
+    rounded-lg 
+    shadow-lg 
+    bg-gray-100 
+    text-gray-700;
+}
+
+.inputError {
+  @apply mt-2 
+    px-4 
+    py-2 
+    outline-none 
+    w-full 
+    rounded-lg 
+    shadow-lg 
+    bg-red-100
+    text-gray-700;
+}
+
+.textError {
+  @apply 
+  transition 
+  duration-1000 
+  w-full px-4 
+  mt-2 
+  text-red-400;
+  font-size: small;
+}
+
+.label{
+    @apply
+    text-gray-400;
+    position: absolute;
+    left: 1.1rem;
+    top: 1rem;
+    transition: all 0.1s ease-out;
+    pointer-events: none
+}
+
+.labelOnActive{
+    @apply
+    text-gray-700;
+    position: absolute;
+    left: 0.5rem;
+    top: 0.2rem;
+    font-size: x-small;
+    transition: all 0.1s ease-out;
+    pointer-events: none
+}

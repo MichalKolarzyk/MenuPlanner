@@ -1,31 +1,46 @@
+import { useState } from "react";
+import classes from "./Input.module.css";
+
 const Input = (props) => {
   const useInput = props.useInput;
   const placeholder = props.placeholder;
   const type = props.type;
 
-  let className =
-    "mt-2 px-4 py-2 outline-none w-full rounded-lg shadow-lg bg-gray-100 text-gray-700";
+  const [isUsed, setIsUsed] = useState(false);
+
+  let className = classes.input;
   if (useInput.hasError) {
-    className =
-      "mt-2 px-4 py-2 outline-none w-full rounded-lg shadow-lg bg-red-100 text-gray-700";
+    className = classes.inputError;
+  }
+
+  let labelClassName = classes.label
+  if(isUsed){
+    labelClassName = classes.labelOnActive;
+  }
+
+  const blurHandler = () => {
+    useInput.onBlur();
+    if(!useInput.value){
+      setIsUsed(false);
+    }
   }
 
   return (
-    <>
+    <div className={classes.div}>
+      <span className={labelClassName}>{placeholder}</span>
       <input
         type={type}
         className={className}
-        placeholder={placeholder}
         value={useInput.value}
         onChange={useInput.onChange}
-        onBlur={useInput.onBlur}
-      />
+        onBlur={blurHandler}
+        onFocus={() => setIsUsed(true)}
+        
+      ></input>
       {useInput.hasError && useInput.errorMessage && (
-        <div className="transition duration-1000 ease w-full px-4 mt-2 text-red-400">
-          {useInput.errorMessage}
-        </div>
+        <div className={classes.textError}>{useInput.errorMessage}</div>
       )}
-    </>
+    </div>
   );
 };
 
