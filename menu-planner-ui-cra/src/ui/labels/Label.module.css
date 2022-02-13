@@ -1,0 +1,26 @@
+.div{
+    position: relative;
+}
+
+.label {
+    @apply mt-2 
+      px-4 
+      py-2 
+      outline-none 
+      w-full 
+      rounded-lg 
+      shadow-lg 
+      bg-gray-100 
+      text-gray-700;
+      display: block;
+  }
+
+  .description{
+    @apply
+    text-gray-700;
+    position: absolute;
+    left: 0.5rem;
+    top: -0.3rem;
+    font-size: x-small;
+    transition: all 0.1s ease-out;
+}

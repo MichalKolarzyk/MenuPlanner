@@ -3,6 +3,7 @@ import classes from "./FormLayer.module.css";
 import ReactDom from "react-dom";
 import LayersContext from "../../store/LayersContext";
 import { FiXCircle } from "react-icons/fi";
+import CloseButton from "../buttons/CloseButton";
 
 const Backdrop = (props) => {
   return <div className={classes.backdrop} onClick={props.onClick} />;
@@ -38,13 +39,7 @@ const FormLayer = () => {
         )}
         {ReactDom.createPortal(
           <ModalOverlay>
-            <div>
-              <FiXCircle
-                className="text-gray-300"
-                size="1.5rem"
-                onClick={onBackdropClick}
-              />
-            </div>
+            <CloseButton onClick={onBackdropClick}/>
             {children}
           </ModalOverlay>,
           portalElement
