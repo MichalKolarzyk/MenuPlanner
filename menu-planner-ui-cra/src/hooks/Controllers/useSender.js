@@ -100,9 +100,9 @@ const useSender = () => {
           layers.showMessage("Error", errorMessage.message);
         }
   
-        // apiContext.setIsBusy(false);
+        apiContext.setIsBusy(false);
         // console.log(response.headers)
-        // return response.headers["Location"];
+        return response;
       }
     }
 

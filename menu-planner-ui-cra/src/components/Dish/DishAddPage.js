@@ -5,6 +5,8 @@ import SubmitButton from "../../ui/buttons/SubmitButton";
 import Input from "../../ui/inputs/Input";
 import Label from "../../ui/labels/Label";
 import useValidation from '../../hooks/useValidator'
+import { useContext, useState } from "react";
+import LayersContext from "../../store/LayersContext";
 
 const DishAddPage = (props) => {
   const dateExtension = useDateExtension();
@@ -26,14 +28,19 @@ const DishAddPage = (props) => {
 
   const dishController = useDishController();
 
-  const submitHandler = (event) => {
-    dishController.createDish({
+  const submitHandler = async (event) => {
+    event.preventDefault();
+    const result = await dishController.createDish({
       recipeId: recipe.value,
       date: dateExtension.toDateString(date),
       portions: portions.value,
       trustedUserId: user,
       dishTypeId: dishType.id,
     });
+
+    if(result.ok){
+      window.location.reload(false);
+    }
   };
 
   return (
