@@ -1,7 +1,4 @@
 import { useContext } from "react";
-import useBindInput from "../../hooks/useBindInput";
-import useInput from "../../hooks/useInput";
-import Input from "../../ui/inputs/Input";
 import PlanContext from "./context/PlanContext";
 
 const PlanTableHeader = (props) => {
