@@ -1,12 +1,10 @@
-import useDishController from "../../hooks/Controllers/useDishController";
-import useDateExtension from "../../hooks/Extensions/useDateExtension";
-import useInput from "../../hooks/useInput";
+import useDishController from "../../hooks/controllers/useDishController";
+import useDateExtension from "../../hooks/extensions/useDateExtension";
+import useInput from "../../hooks/inputs/useInput";
 import SubmitButton from "../../ui/buttons/SubmitButton";
 import Input from "../../ui/inputs/Input";
 import Label from "../../ui/labels/Label";
 import useValidation from '../../hooks/useValidator'
-import { useContext, useState } from "react";
-import LayersContext from "../../store/LayersContext";
 
 const DishAddPage = (props) => {
   const dateExtension = useDateExtension();

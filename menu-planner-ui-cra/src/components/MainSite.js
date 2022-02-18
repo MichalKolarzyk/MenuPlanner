@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import bcg from "../assets/bcg.jpg";
-import useAccountController from "../hooks/Controllers/useAccountController";
-import useInput from "../hooks/useInput";
+import useAccountController from "../hooks/controllers/useAccountController";
+import useInput from "../hooks/inputs/useInput";
 import ApiContext from "../store/ApiContext";
 import Input from "../ui/inputs/Input";
 import LoginButton from "../ui/buttons/LoginButton";

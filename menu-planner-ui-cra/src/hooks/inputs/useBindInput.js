@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-const useInput = (useValidatorsArray) => {
-  const [enteredValue, setEnteredValue] = useState("");
+const useBindInput = (value, setValue, useValidatorsArray) => {
   const [isTouched, setIsTouched] = useState(false);
+  const [isFocus, setIsFocus] = useState(false);
   let valueIsValid = true;
   let errorMessage = "";
   let error;
   if(useValidatorsArray){
-    error = useValidatorsArray.find(uv => uv.validationHandler(enteredValue) === false);
+    error = useValidatorsArray.find(uv => uv.validationHandler(value) === false);
   }
 
   if(error){
@@ -18,27 +18,34 @@ const useInput = (useValidatorsArray) => {
   const hasError = !valueIsValid && isTouched;
 
   const onChange = (event) => {
-    setEnteredValue(event.target.value);
+    setValue(event.target.value);
   };
 
   const onBlur = (event) => {
     setIsTouched(true);
+    setIsFocus(false);
   };
 
   const reset = () => {
-    setEnteredValue("");
+    setValue("");
     setIsTouched(false);
   };
 
+  const onFocus = () =>{
+    setIsFocus(true);
+  }
+
   return {
-    value: enteredValue,
+    value,
     isValid: valueIsValid,
+    isFocus,
     hasError,
     errorMessage,
     onChange,
     onBlur,
+    onFocus,
     reset,
   };
 };
 
-export default useInput;
+export default useBindInput;

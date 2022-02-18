@@ -14,9 +14,7 @@ import ShoppingList from "../components/ShoppingList";
 import Settings from "../components/Settings";
 import { useContext } from "react";
 import ApiContext from "../store/ApiContext";
-import useAccountController from "../hooks/Controllers/useAccountController";
-
-// import "./Home.css"
+import PlanProvider from "../components/Plan/context/PlanProvider";
 
 const Home = () => {
   const apiContext = useContext(ApiContext);
@@ -36,7 +34,7 @@ const Home = () => {
             <Header />
             {isLoggedIn && (
               <Routes>
-                <Route path="/plan" element={<Plan />} />
+                <Route path="/plan" element={<PlanProvider><Plan /></PlanProvider>} />
                 <Route path="/recipes" element={<Recipes />} />
                 <Route path="/products" element={<Products />} />
                 <Route path="/shopping-list" element={<ShoppingList />} />
