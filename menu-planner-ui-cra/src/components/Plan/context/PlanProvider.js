@@ -15,11 +15,15 @@ const PlanProvider = (props) => {
     localStorage.setItem("dayNumber", value);
   }
 
+  const [users, setUsers] = useState([6,8]);
+
   const provider = {
     startDate,
     setStartDate,
     dayNumber,
     setDayNumber: setDatNumberHandler,
+    users,
+    setUsers,
   };
 
   return (

@@ -15,7 +15,7 @@ const Plan = () => {
   const startDate = planContext.startDate;
   const days = planContext.dayNumber;
 
-  const [users, setUsers] = useState([8, 6]);
+  const users = planContext.users
   const [dishes, setDishes] = useState([]);
   const [dishTypes, setDishTypes] = useState([1, 3, 5]);
 

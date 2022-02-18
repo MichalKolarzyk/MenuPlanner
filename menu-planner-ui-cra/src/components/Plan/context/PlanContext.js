@@ -5,6 +5,8 @@ const PlanContext = React.createContext({
     setStartDate: {},
     dayNumber: 0,
     setDayNumber: {},
+    users: [],
+    setUsers: {},
 })
 
 export default PlanContext;
