@@ -6,23 +6,14 @@ const Input = (props) => {
   const placeholder = props.placeholder;
   const type = props.type;
 
-  const [isUsed, setIsUsed] = useState(false);
-
   let className = classes.input;
   if (useInput.hasError) {
     className = classes.inputError;
   }
 
   let labelClassName = classes.label
-  if(isUsed){
+  if(useInput.value || useInput.isFocus){
     labelClassName = classes.labelOnActive;
-  }
-
-  const blurHandler = () => {
-    useInput.onBlur();
-    if(!useInput.value){
-      setIsUsed(false);
-    }
   }
 
   return (
@@ -33,9 +24,8 @@ const Input = (props) => {
         className={className}
         value={useInput.value}
         onChange={useInput.onChange}
-        onBlur={blurHandler}
-        onFocus={() => setIsUsed(true)}
-        
+        onBlur={useInput.onBlur}
+        onFocus={useInput.onFocus}
       ></input>
       {useInput.hasError && useInput.errorMessage && (
         <div className={classes.textError}>{useInput.errorMessage}</div>

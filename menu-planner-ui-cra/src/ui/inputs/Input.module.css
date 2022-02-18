@@ -1,5 +1,6 @@
 .div{
     position: relative;
+    padding-bottom: 0.75rem
 }
 
 .input {
@@ -28,11 +29,13 @@
 
 .textError {
   @apply 
-  transition 
-  duration-1000 
   w-full px-4 
   mt-2 
   text-red-400;
+  color: red;
+  left: 0rem;
+  top: 2.4rem;
+  position: absolute;
   font-size: small;
 }
 

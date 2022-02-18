@@ -1,4 +1,4 @@
-import useDateExtension from "../../hooks/Extensions/useDateExtension";
+import useDateExtension from "../../hooks/extensions/useDateExtension";
 import PlanDay from "./PlanDay";
 
 const PlanTableBody = (props) => {
@@ -18,9 +18,9 @@ const PlanTableBody = (props) => {
 
   return (
     <tbody className="divide-y divide-gray-100">
-      {dates.map((day) => (
+      {dates.map((day, index) => (
         <PlanDay
-          key={day}
+          key={index}
           date={day}
           dishTypes={dishTypes}
           users={users}

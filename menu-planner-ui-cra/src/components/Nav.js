@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react/cjs/react.development";
-import useAccountController from "../hooks/Controllers/useAccountController";
+import useAccountController from "../hooks/controllers/useAccountController";
 
 const Nav = () => {
   const accountController = useAccountController();

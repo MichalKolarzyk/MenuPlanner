@@ -1,44 +1,11 @@
 import { useState } from "react";
+import useBindInput from "./useBindInput";
 
 const useInput = (useValidatorsArray) => {
   const [enteredValue, setEnteredValue] = useState("");
-  const [isTouched, setIsTouched] = useState(false);
-  let valueIsValid = true;
-  let errorMessage = "";
-  let error;
-  if(useValidatorsArray){
-    error = useValidatorsArray.find(uv => uv.validationHandler(enteredValue) === false);
-  }
+  const input = useBindInput(enteredValue, setEnteredValue, useValidatorsArray);
 
-  if(error){
-    valueIsValid = false;
-    errorMessage = error.errorMessage;
-  }
-
-  const hasError = !valueIsValid && isTouched;
-
-  const onChange = (event) => {
-    setEnteredValue(event.target.value);
-  };
-
-  const onBlur = (event) => {
-    setIsTouched(true);
-  };
-
-  const reset = () => {
-    setEnteredValue("");
-    setIsTouched(false);
-  };
-
-  return {
-    value: enteredValue,
-    isValid: valueIsValid,
-    hasError,
-    errorMessage,
-    onChange,
-    onBlur,
-    reset,
-  };
+  return input;
 };
 
 export default useInput;

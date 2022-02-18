@@ -1,5 +1,5 @@
-import useDishController from "../../hooks/Controllers/useDishController";
-import useDateExtension from "../../hooks/Extensions/useDateExtension";
+import useDishController from "../../hooks/controllers/useDishController";
+import useDateExtension from "../../hooks/extensions/useDateExtension";
 import useInput from "../../hooks/useInput";
 import SubmitButton from "../../ui/buttons/SubmitButton";
 import Input from "../../ui/inputs/Input";

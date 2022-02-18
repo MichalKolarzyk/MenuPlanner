@@ -7,8 +7,8 @@ const PlanUser = (props) => {
 
   const className = "p-3 text-sm text-gray-700 whitespace-nowrap"; 
 
-  const view = dishTypes.map((dt) => (
-    <PlanCell dishType={dt} date={props.date} user={user} key={dt.id} dishes={dishes.filter((d) => d.dishTypeId === dt.id)} />
+  const view = dishTypes.map((dt, inedx) => (
+    <PlanCell dishType={dt} date={props.date} user={user} key={inedx} dishes={dishes.filter((d) => d.dishTypeId === dt.id)} />
   ));
 
   return (
