@@ -24,7 +24,7 @@ const MultiCheckboxSelect = (props) => {
 
   return (
     <span
-      className="d-inline-block"
+      className={"d-inline-block inline-block m-1"}
       data-toggle="popover"
       data-trigger="focus"
       data-content="Please selecet account(s)"

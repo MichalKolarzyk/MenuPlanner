@@ -2,6 +2,7 @@ import { useContext } from "react";
 import useFilterInput from "../../hooks/inputs/useFilterInput.js";
 import useValidatror from "../../hooks/useValidator";
 import Input from "../../ui/inputs/Input";
+import InputInline from "../../ui/inputs/InputInline.js";
 import MultiCheckboxSelect from "../../ui/selects/MultiCheckboxSelect.js";
 import PlanContext from "./context/PlanContext";
 
@@ -11,18 +12,25 @@ const PlanFilterBar = () => {
     planContext.dayNumber,
     planContext.setDayNumber,
     [
-      useValidatror((value) => value <= 7, "Wartosc musi byc mniejsza niz 7"),
-      useValidatror((value) => value > 0, "Wartosc musi byc wieksza niz 0"),
+      useValidatror((value) => value <= 7),
+      useValidatror((value) => value > 0),
     ]
   );
+
+  const dateInput = useFilterInput(
+    planContext.startDate,
+    planContext.setStartDate,
+  )
   return (
     <>
-      <Input className="inline-block" placeholder="Days" useInput={daysInput} />
+      <InputInline type="number" placeholder="Days" useInput={daysInput} />
+      <InputInline type="date" placeholder="Start date" useInput={dateInput} />
       <MultiCheckboxSelect
         selected={planContext.users}
         setSelected={planContext.setUsers}
         options={[
           { value: 6, label: 6 },
+          { value: 7, label: 7 },
           { value: 8, label: 8 },
         ]}
       />

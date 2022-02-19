@@ -5,7 +5,7 @@ import useDateExtension from "../../hooks/extensions/useDateExtension";
 import PlanContext from "./context/PlanContext";
 import PlanTableBody from "./PlanTableBody";
 import PlanTableHeader from "./PlanTableHeader";
-import PlanFilterBar from './PlanFilterBar'
+import PlanFilterBar from "./PlanFilterBar";
 
 const Plan = () => {
   const dishTypesController = useDishTypeController();
@@ -15,7 +15,7 @@ const Plan = () => {
   const startDate = planContext.startDate;
   const days = planContext.dayNumber;
 
-  const users = planContext.users
+  const users = planContext.users;
   const [dishes, setDishes] = useState([]);
   const [dishTypes, setDishTypes] = useState([1, 3, 5]);
 
@@ -24,13 +24,13 @@ const Plan = () => {
 
   const dates = numbersOfDays.map((i) => {
     const date = new Date(startDate);
-    date.setDate(startDate.getDate() + i);
+    date.setDate(date.getDate() + i);
     return date;
   });
 
   useEffect(async () => {
     const dishesItems = await dishController.getDishList({
-      from: dateExtension.toDateString(startDate),
+      from: dateExtension.toDateString(new Date(startDate)),
       days: days,
       usersIds: users,
     });
@@ -38,23 +38,23 @@ const Plan = () => {
 
     const dishTypes = await dishTypesController.getAllDishTypes();
     setDishTypes(dishTypes);
-  }, []);
+  }, [days,planContext.startDate]);
 
   return (
-      <div className="bg-gray-100 rounded-2xl">
-        <div className="overflow-auto rounded-xl shadow-xl">
-          <PlanFilterBar/>
-          <table className="w-full">
-            <PlanTableHeader dishTypes={dishTypes} />
-            <PlanTableBody
-              dates={dates}
-              dishTypes={dishTypes}
-              users={users}
-              dishes={dishes}
-            />
-          </table>
-        </div>
+    <div className="bg-gray-100 rounded-md">
+      <PlanFilterBar />
+      <div className="overflow-auto rounded-xl shadow-xl">
+        <table className="w-full">
+          <PlanTableHeader dishTypes={dishTypes} />
+          <PlanTableBody
+            dates={dates}
+            dishTypes={dishTypes}
+            users={users}
+            dishes={dishes}
+          />
+        </table>
       </div>
+    </div>
   );
 };
 
