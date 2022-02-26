@@ -20,14 +20,13 @@ const Home = () => {
   const isLoggedIn = connection.isLoggedIn;
 
   return (
-    <div className="h-screen">
       <div className="relative w-full h-full">
         <img 
           src={bcg2} 
           alt="where is the background" 
-          className="fixed w-full h-full object-cover"
+          className="fixed w-full h-full object-cover "
         />
-        <div className="absolute w-full h-max top-0 right-0 bottom-0 left-0 p-5 bg-blackOverlay">
+        <div className="fixed w-full h-full top-0 right-0 bottom-0 left-0 p-5 bg-blackOverlay">
           <div className="px-0 sm:px-10 md:px-20 lg:px-40">
             <Nav />
             <Header />
@@ -45,7 +44,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 

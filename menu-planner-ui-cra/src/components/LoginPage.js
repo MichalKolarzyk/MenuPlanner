@@ -9,20 +9,22 @@ import useValidatror from "../hooks/useValidator";
 import { useSelector } from "react-redux";
 import HeaderLabel from "../ui/labels/HeaderLabel";
 import Header2Label from "../ui/labels/Header2Label";
+import TextButton from "../ui/buttons/TextButton";
 
-const MainSite = () => {
-  const connection = useSelector(state => state.connection);
+const LoginPage = () => {
+  const connection = useSelector((state) => state.connection);
   const accountController = useAccountController();
   const navigate = useNavigate();
 
   const email = useInput([
-    useValidatror((value) => value.length >= 10, "email musi byc dłuższy niz 10 znakow"),
-    useValidatror((value) => value.includes('@'), "email musi zawierać znak @"),
-    useValidatror((value) => value.includes('.'), "email musi zawierać znak ."),
+    useValidatror(
+      (value) => value.length >= 10,
+      "email musi byc dłuższy niz 10 znakow"
+    ),
+    useValidatror((value) => value.includes("@"), "email musi zawierać znak @"),
+    useValidatror((value) => value.includes("."), "email musi zawierać znak ."),
   ]);
-  const password = useInput([
-    useValidatror((value) => value.length >= 6),
-  ]);
+  const password = useInput([useValidatror((value) => value.length >= 6)]);
 
   let formIsValid = false;
   if (email.isValid && password.isValid) {
@@ -32,12 +34,12 @@ const MainSite = () => {
   const loginSubmitHandler = async (event) => {
     event.preventDefault();
 
-     await accountController.login({
+    await accountController.login({
       email: email.value,
       password: password.value,
     });
 
-    navigate("/plan");
+    navigate("/plan", {replace: true});
   };
 
   const WithoutLogginHandler = async () => {
@@ -61,24 +63,23 @@ const MainSite = () => {
             onSubmit={loginSubmitHandler}
             className="block w-96 bg-white p-4 rounded-xl shadow-xl"
           >
-            <HeaderLabel text="Menu Planer"/>
-            <Header2Label text="Zaloguj się:"/>
-
-              <Input useInput={email} type="email" placeholder="Email" />
-              <Input useInput={password} type="password" placeholder="Hasło" />
+            <HeaderLabel>Menu Planer</HeaderLabel>
+            <Header2Label>Zaloguj się:</Header2Label>
+            <Input useInput={email} type="email" placeholder="Email" />
+            <Input useInput={password} type="password" placeholder="Hasło" />
             <LoginButton disabled={connection.isBusy || !formIsValid} />
           </form>
-          <button
-            disabled={connection.isBusy}
+
+          <TextButton
             onClick={WithoutLogginHandler}
-            className="mt-2 text-white tracking-widest"
+            disabled={connection.isBusy}
           >
             Kontynuuj jako gość
-          </button>
+          </TextButton>
         </div>
       </div>
     </div>
   );
 };
 
-export default MainSite;
+export default LoginPage;
