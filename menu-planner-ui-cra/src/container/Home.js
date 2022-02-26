@@ -13,12 +13,8 @@ import Products from "../components/Products";
 import ShoppingList from "../components/ShoppingList";
 import Settings from "../components/Settings";
 import PlanProvider from "../components/Plan/context/PlanProvider";
-import { useSelector } from "react-redux";
 
 const Home = () => {
-  const connection = useSelector(state => state.connection);
-  const isLoggedIn = connection.isLoggedIn;
-
   return (
       <div className="relative w-full h-full">
         <img 
@@ -30,7 +26,6 @@ const Home = () => {
           <div className="px-0 sm:px-10 md:px-20 lg:px-40">
             <Nav />
             <Header />
-            {isLoggedIn && (
               <Routes>
                 <Route path="/plan" element={<PlanProvider><Plan /></PlanProvider>} />
                 <Route path="/recipes" element={<Recipes />} />
@@ -38,9 +33,7 @@ const Home = () => {
                 <Route path="/shopping-list" element={<ShoppingList />} />
                 <Route path="/settings" element={<Settings />} />
               </Routes>
-            )}
-            {!isLoggedIn && <Navigate to="/"/>}
-            <Footer />
+            <Footer/>
           </div>
         </div>
       </div>
