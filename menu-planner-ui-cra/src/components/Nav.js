@@ -7,10 +7,10 @@ const Nav = () => {
   const accountController = useAccountController();
   const [user, setUser] = useState({});
 
-  useEffect(async () => {
-    const user = await accountController.getUser();
-    setUser(user);
-  }, []);
+  // useEffect(async () => {
+  //   const user = await accountController.getUser();
+  //   setUser(user);
+  // }, []);
 
   const logoutHandler = () => {
     accountController.logout();

@@ -3,14 +3,12 @@ import { useContext } from "react";
 
 import Home from "./container/Home";
 import MainSite from "./components/MainSite";
-import ApiProvider from "./store/ApiProvider";
 import FormLayer from "./ui/layers/FormLayer";
 import LayersProvider from "./store/LayersProvider";
 import MessageLayer from "./ui/layers/MessageLayer";
 
 function App() {
   return (
-    <ApiProvider>
       <LayersProvider>
         <MessageLayer />
         <FormLayer />
@@ -19,7 +17,6 @@ function App() {
           <Route path="/" element={<MainSite />} />
         </Routes>
       </LayersProvider>
-    </ApiProvider>
   );
 }
 

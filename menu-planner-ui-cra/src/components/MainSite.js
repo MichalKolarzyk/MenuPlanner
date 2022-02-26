@@ -1,23 +1,19 @@
-import React, { useContext, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import bcg from "../assets/bcg.jpg";
 import useAccountController from "../hooks/controllers/useAccountController";
 import useInput from "../hooks/inputs/useInput";
-import ApiContext from "../store/ApiContext";
 import Input from "../ui/inputs/Input";
 import LoginButton from "../ui/buttons/LoginButton";
 import useValidatror from "../hooks/useValidator";
+import { useSelector } from "react-redux";
+import HeaderLabel from "../ui/labels/HeaderLabel";
+import Header2Label from "../ui/labels/Header2Label";
 
 const MainSite = () => {
-  const apiContext = useContext(ApiContext);
+  const connection = useSelector(state => state.connection);
   const accountController = useAccountController();
-  let navigate = useNavigate();
-
-  useEffect(() => {
-    if (apiContext.isLoggedIn === true) {
-      navigate("/plan");
-    }
-  });
+  const navigate = useNavigate();
 
   const email = useInput([
     useValidatror((value) => value.length >= 10, "email musi byc dłuższy niz 10 znakow"),
@@ -36,14 +32,12 @@ const MainSite = () => {
   const loginSubmitHandler = async (event) => {
     event.preventDefault();
 
-    await accountController.login({
+     await accountController.login({
       email: email.value,
       password: password.value,
     });
 
     navigate("/plan");
-    email.reset();
-    password.reset();
   };
 
   const WithoutLogginHandler = async () => {
@@ -67,20 +61,15 @@ const MainSite = () => {
             onSubmit={loginSubmitHandler}
             className="block w-96 bg-white p-4 rounded-xl shadow-xl"
           >
-            <div className="p-5 text-black text-3xl tracking-widest text-center">
-              MenuPlanner
-            </div>
-            <div className="p-5 text-black text-xl tracking-widest text-center">
-              Zaloguj się:
-            </div>
-            <div className="">
+            <HeaderLabel text="Menu Planer"/>
+            <Header2Label text="Zaloguj się:"/>
+
               <Input useInput={email} type="email" placeholder="Email" />
               <Input useInput={password} type="password" placeholder="Hasło" />
-            </div>
-            <LoginButton disabled={apiContext.isBusy || !formIsValid} />
+            <LoginButton disabled={connection.isBusy || !formIsValid} />
           </form>
           <button
-            disabled={apiContext.isBusy}
+            disabled={connection.isBusy}
             onClick={WithoutLogginHandler}
             className="mt-2 text-white tracking-widest"
           >

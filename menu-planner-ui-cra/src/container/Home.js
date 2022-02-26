@@ -12,13 +12,12 @@ import Recipes from "../components/Recipes";
 import Products from "../components/Products";
 import ShoppingList from "../components/ShoppingList";
 import Settings from "../components/Settings";
-import { useContext } from "react";
-import ApiContext from "../store/ApiContext";
 import PlanProvider from "../components/Plan/context/PlanProvider";
+import { useSelector } from "react-redux";
 
 const Home = () => {
-  const apiContext = useContext(ApiContext);
-  const isLoggedIn = apiContext.isLoggedIn;
+  const connection = useSelector(state => state.connection);
+  const isLoggedIn = connection.isLoggedIn;
 
   return (
     <div className="h-screen">

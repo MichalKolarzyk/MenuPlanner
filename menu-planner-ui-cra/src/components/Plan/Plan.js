@@ -34,6 +34,7 @@ const Plan = () => {
       days: days,
       usersIds: users,
     });
+    console.log(dishesItems)
     setDishes(dishesItems.dishesDto);
 
     const dishTypes = await dishTypesController.getAllDishTypes();
