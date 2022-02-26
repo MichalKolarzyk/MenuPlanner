@@ -1,29 +1,27 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "./container/Home";
+import HomePage from "./components/HomePage";
 import LoginPage from "./components/LoginPage";
 import FormLayer from "./ui/layers/FormLayer";
 import LayersProvider from "./store/LayersProvider";
 import MessageLayer from "./ui/layers/MessageLayer";
-import { useSelector } from "react-redux";
 import RequireAuth from "./components/Requires/RequireAuth";
+import RoutesConfig from "./configurations/RoutesConfig";
 
 function App() {
-  const isLoggedIn = useSelector((store) => store.connection.isLoggedIn);
-
   return (
     <LayersProvider>
       <MessageLayer />
       <FormLayer />
       <Routes>
         <Route
-          path="/*"
+          path={RoutesConfig.homePage}
           element={
             <RequireAuth>
-              <Home />
+              <HomePage />
             </RequireAuth>
           }
         />
-        <Route path="/" element={<LoginPage />} />
+        <Route path={RoutesConfig.loginPage} element={<LoginPage />} />
       </Routes>
     </LayersProvider>
   );

@@ -34,12 +34,12 @@ const LoginPage = () => {
   const loginSubmitHandler = async (event) => {
     event.preventDefault();
 
-    await accountController.login({
+    const result = await accountController.login({
       email: email.value,
       password: password.value,
     });
 
-    navigate("/plan", {replace: true});
+    navigate("/plan", { replace: true });
   };
 
   const WithoutLogginHandler = async () => {

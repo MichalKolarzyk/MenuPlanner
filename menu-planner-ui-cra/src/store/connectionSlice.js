@@ -18,9 +18,9 @@ const connectionSlice = createSlice({
       state.token = newToken;
       localStorage.token = newToken;
       if(!!newToken){
-        state.isLoggedIn = false;
-      } else{
         state.isLoggedIn = true;
+      } else{
+        state.isLoggedIn = false;
       }
 
     },
