@@ -5,7 +5,7 @@ import useAccountController from "../hooks/controllers/useAccountController";
 import useInput from "../hooks/inputs/useInput";
 import Input from "../ui/inputs/Input";
 import LoginButton from "../ui/buttons/LoginButton";
-import useValidatror from "../hooks/useValidator";
+import useValidatror from "../hooks/validators/useValidator";
 import { useSelector } from "react-redux";
 import HeaderLabel from "../ui/labels/HeaderLabel";
 import Header2Label from "../ui/labels/Header2Label";

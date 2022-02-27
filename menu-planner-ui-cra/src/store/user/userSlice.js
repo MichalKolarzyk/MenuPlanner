@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import LocalStorageWrapper from "../../browser/LocalStorageWrapper";
+import LocalStorageWrapper from "../../extensions/LocalStorageExt";
 
 const userSlice = createSlice({
   name: "connection",

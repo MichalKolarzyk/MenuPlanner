@@ -1,17 +1,16 @@
 import React, { useState, useEffect, useContext } from "react";
 import useDishController from "../../hooks/controllers/useDishController";
 import useDishTypeController from "../../hooks/controllers/useDishTypeController";
-import useDateExtension from "../../hooks/extensions/useDateExtension";
 import PlanContext from "./context/PlanContext";
 import PlanTableBody from "./PlanTableBody";
 import PlanTableHeader from "./PlanTableHeader";
 import PlanFilterBar from "./PlanFilterBar";
 import Table from "../../ui/tables/Table";
 import RoundedCanvas from "../../ui/canvases/RoundedCanvas";
+import DateExt from "../../extensions/DateExt";
 
 const Plan = () => {
   const dishTypesController = useDishTypeController();
-  const dateExtension = useDateExtension();
   const planContext = useContext(PlanContext);
 
   const startDate = planContext.startDate;
@@ -32,7 +31,7 @@ const Plan = () => {
 
   useEffect(async () => {
     const dishesItems = await dishController.getDishList({
-      from: dateExtension.toDateString(new Date(startDate)),
+      from: DateExt.toDateString(new Date(startDate)),
       days: days,
       usersIds: users,
     });

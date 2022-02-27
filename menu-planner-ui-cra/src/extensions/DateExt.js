@@ -1,20 +1,18 @@
-const useDateExtension = () => {
-    const toDateString = (date) => {
+class DateExt{
+    static toDateString = (date) => {
       let day = date.getDate();
       if(day < 10){
         day = `0${day}`
       }
-
       let month = date.getMonth() + 1;
       if(month < 10){
         month = `0${month}`
       }
-
       const dateString = `${date.getFullYear()}-${month}-${day}`;
       return dateString;
     }
   
-    const isEquas = (date1, date2) => {
+    static isEquas = (date1, date2) => {
       if (date1.getDay() !== date2.getDay()) {
         return false;
       }
@@ -27,17 +25,12 @@ const useDateExtension = () => {
       return true;
     }
 
-    const dayNames = [ 'Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek', 'Sobota']
-    const getDayName = (date) => {
-      return dayNames[date.getDay()]
-    }
+    static dayNames = [ 'Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek', 'Sobota']
 
-    return{
-      toDateString,
-      isEquas,
-      getDayName,
+    static getDayName = (date) => {
+      return this.dayNames[date.getDay()]
     }
   }
   
-  export default useDateExtension;
+  export default DateExt;
   
