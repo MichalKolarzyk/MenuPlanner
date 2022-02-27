@@ -1,9 +1,7 @@
-import useDateExtension from "../../hooks/extensions/useDateExtension";
 import PlanDay from "./PlanDay";
+import DateExt from "../../extensions/DateExt";
 
 const PlanTableBody = (props) => {
-  const dateExtension = useDateExtension();
-
   const dates = props.dates;
   const dishTypes = props.dishTypes;
   const dishes = props.dishes;
@@ -13,7 +11,7 @@ const PlanTableBody = (props) => {
     if (!dishes) {
       return [];
     }
-    return dishes.filter((d) => dateExtension.isEquas(new Date(d.date), day))
+    return dishes.filter((d) => DateExt.isEquas(new Date(d.date), day))
   };
 
   return (

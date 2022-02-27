@@ -3,8 +3,8 @@ import classes from "./FormLayer.module.css";
 import ReactDom from "react-dom";
 import CloseButton from "../buttons/CloseButton";
 import RequireTrue from "../../components/Requires/RequireTrue";
-import { useDispatch, useSelector } from "react-redux";
-import { formActions } from "../../store/formLayer/formSlice";
+import FlexRow from "../flex/FlexRow";
+import useFormLayer from "../../store/formLayer/useFormLayer";
 
 const Backdrop = (props) => {
   return <div className={classes.backdrop} onClick={props.onClick} />;
@@ -21,20 +21,22 @@ const ModalOverlay = (props) => {
 const portalElement = document.getElementById("form");
 
 const FormLayer = () => {
-  const dispach = useDispatch();
-  const formLayer = useSelector(store => store.formLayer)
+  const formLayerHook = useFormLayer();
 
   const closeButtonClickHandler = () => {
-    dispach(formActions.close());
+    formLayerHook.close();
   };
 
   return (
-    <RequireTrue value={formLayer.isVisible && formLayer.form}>
+    <RequireTrue value={formLayerHook.isVisible}>
       {ReactDom.createPortal(<Backdrop />, portalElement)}
       {ReactDom.createPortal(
         <ModalOverlay>
-          <CloseButton onClick={closeButtonClickHandler} />
-          {formLayer.form}
+          <FlexRow>
+            <div>{formLayerHook.title}</div>
+            <CloseButton onClick={closeButtonClickHandler} />
+          </FlexRow>
+          {formLayerHook.form}
         </ModalOverlay>,
         portalElement
       )}

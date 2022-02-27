@@ -1,4 +1,4 @@
-class LocalStorageWrapper{
+class LocalStorageExt{
     static setArray = (key, array) => {
         if(!array){
             localStorage.removeItem(key);
@@ -54,4 +54,4 @@ class LocalStorageWrapper{
     }
 }
 
-export default LocalStorageWrapper;
+export default LocalStorageExt;

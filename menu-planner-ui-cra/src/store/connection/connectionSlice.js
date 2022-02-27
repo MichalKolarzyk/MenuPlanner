@@ -4,7 +4,7 @@ const connectionSlice = createSlice({
   name: "connection",
   initialState: {
     token: localStorage.token,
-    authorizationMethod: localStorage.authMethod,
+    authorizationMethod: localStorage.authorizationMethod,
     baseUrl: "http://localhost:5000",
     isBusy: false,
   },

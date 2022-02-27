@@ -1,8 +1,8 @@
-import AccountRequestLogin from "../../requests/accountRequests/AccountRequestLogin";
-import AccountRequestGetUser from "../../requests/accountRequests/AccountRequestGetUser";
+import AccountRequestLogin from "../requests/accountRequests/AccountRequestLogin";
+import AccountRequestGetUser from "../requests/accountRequests/AccountRequestGetUser";
 import useSender from "./useSender";
-import useUser from "../../store/user/useUser";
-import useConnection from "../../store/connection/useConnection";
+import useUser from "../store/user/useUser";
+import useConnection from "../store/connection/useConnection";
 
 const useAccountController = () => {
   const sender = useSender();

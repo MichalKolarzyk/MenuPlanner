@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import useFilterInput from "../../hooks/inputs/useFilterInput.js";
-import useValidatror from "../../hooks/useValidator";
+import useValidatror from "../../hooks/validators/useValidator";
 import Input from "../../ui/inputs/Input";
 import InputInline from "../../ui/inputs/InputInline.js";
 import MultiCheckboxSelect from "../../ui/selects/MultiCheckboxSelect.js";

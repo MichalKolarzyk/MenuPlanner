@@ -1,4 +1,4 @@
-import DishTypeRequestGetAll from '../../requests/dishTypeRequests/DishTypeRequestGetAll'
+import DishTypeRequestGetAll from '../requests/dishTypeRequests/DishTypeRequestGetAll'
 import useSender from './useSender';
 
 const useDishTypeController = () => {

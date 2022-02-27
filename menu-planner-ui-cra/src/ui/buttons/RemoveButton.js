@@ -1,12 +1,12 @@
 import { FiXCircle } from "react-icons/fi";
 
-const CloseButton = (props) => {
+const RemoveButton = (props) => {
   const onClick = props.onClick;
 
   return (
     <div>
       <FiXCircle
-        className="text-gray-300 cursor-pointer"
+        className="text-red-300 cursor-pointer"
         size="1.5rem"
         onClick={onClick}
       />
@@ -14,4 +14,4 @@ const CloseButton = (props) => {
   );
 };
 
-export default CloseButton;
+export default RemoveButton;

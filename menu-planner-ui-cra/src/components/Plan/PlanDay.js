@@ -1,8 +1,7 @@
-import useDateExtension from "../../hooks/extensions/useDateExtension";
 import PlanUser from "./PlanUser";
+import DateExt from "../../extensions/DateExt";
 
 const PlanDay = (props) => {
-  const dateExtension = useDateExtension();
   const date = props.date;
   const dishes = props.dishes;
   const users = props.users;
@@ -13,8 +12,8 @@ const PlanDay = (props) => {
     <tr className="bg-gray-50" key={u}>
       {index === 0 && (
         <td rowSpan={users.length} className={className}>
-          <div>{dateExtension.getDayName(date)}</div>
-          <div>({dateExtension.toDateString(date)})</div>
+          <div>{DateExt.getDayName(date)}</div>
+          <div>({DateExt.toDateString(date)})</div>
         </td>
       )}
       {

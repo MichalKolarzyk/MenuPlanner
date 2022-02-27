@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import LocalStorageWrapper from "../../../browser/LocalStorageWrapper";
+import LocalStorageExt from "../../../extensions/LocalStorageExt";
 import useUser from "../../../store/user/useUser";
 import PlanContext from "./PlanContext";
 
@@ -18,16 +18,16 @@ const PlanProvider = (props) => {
     localStorage.setItem("dayNumber", value);
   }
 
-  const [startDate, setStartDate] = useState(LocalStorageWrapper.getDate("startDate"));
+  const [startDate, setStartDate] = useState(LocalStorageExt.getDate("startDate"));
   const setStartDateHandler = (value) => {
     setStartDate(value)
-    LocalStorageWrapper.setObject("startDate", value)
+    LocalStorageExt.setObject("startDate", value)
   }
 
-  const [users, setUsers] = useState(LocalStorageWrapper.getNotEmptyArrayOrDefault("users", [userHook.user.id]));
+  const [users, setUsers] = useState(LocalStorageExt.getNotEmptyArrayOrDefault("users", [userHook.user.id]));
   const setUsersHandler = (value) => {
     setUsers(value);
-    LocalStorageWrapper.setArray("users", value);
+    LocalStorageExt.setArray("users", value);
   }
 
 

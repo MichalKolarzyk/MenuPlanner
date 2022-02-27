@@ -8,10 +8,15 @@ const useUser = () => {
     const setUser = (user) => {
         dispatch(userActions.setUser(user));
     }
+
+    const getFullName = () => {
+        return `${user.firstName} ${user.lastName}`
+    }
  
     return {
         user,
         setUser,
+        getFullName,
     }
 }
 

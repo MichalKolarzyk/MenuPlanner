@@ -1,8 +1,7 @@
 import DishAddPage from "../Dish/DishAddPage";
 import PlanSingleDish from "./PlanSingleDish";
 import classes from "./PlanCell.module.css";
-import useMessageLayer from "../../store/messageLayer/useMessageLayer";
-import useFormLayer from "../../store/formLayer/useformLayer";
+import useFormLayer from "../../store/formLayer/useFormLayer";
 
 const PlanCell = (props) => {
   const dishType = props.dishType;
@@ -10,19 +9,17 @@ const PlanCell = (props) => {
   const user = props.user;
   const date = props.date;
 
-  const messageLayer = useMessageLayer();
   const formLayer = useFormLayer();
 
   const onClickHandler = () => {
-    if (dishes.length > 0) {
-      messageLayer.show(
-        "Informacja",
-        "W obecnej wersji nie mozna dodac 2 posiłków"
-      );
-      return;
-    }
-
-    formLayer.show(<DishAddPage user={user} date={date} dishType={dishType} />);
+    formLayer.show("Dodaj danie",
+      <DishAddPage
+        dishes={dishes}
+        user={user}
+        date={date}
+        dishType={dishType}
+      />
+    );
   };
 
   const view = dishes.map((d, i) => <PlanSingleDish key={i} dish={d} />);

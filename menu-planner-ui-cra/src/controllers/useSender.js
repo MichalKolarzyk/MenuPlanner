@@ -1,5 +1,5 @@
-import useConnection from "../../store/connection/useConnection";
-import useMessageLayer from "../../store/messageLayer/useMessageLayer";
+import useConnection from "../store/connection/useConnection";
+import useMessageLayer from "../store/messageLayer/useMessageLayer";
 
 const useSender = () => {
   const connection = useConnection();
