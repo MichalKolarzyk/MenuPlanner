@@ -6,6 +6,8 @@ import PlanContext from "./context/PlanContext";
 import PlanTableBody from "./PlanTableBody";
 import PlanTableHeader from "./PlanTableHeader";
 import PlanFilterBar from "./PlanFilterBar";
+import Table from "../../ui/tables/Table";
+import RoundedCanvas from "../../ui/canvases/RoundedCanvas";
 
 const Plan = () => {
   const dishTypesController = useDishTypeController();
@@ -38,23 +40,21 @@ const Plan = () => {
 
     const dishTypes = await dishTypesController.getAllDishTypes();
     setDishTypes(dishTypes);
-  }, [days,planContext.startDate]);
+  }, [days, startDate, users]);
 
   return (
-    <div className="bg-gray-100 rounded-md">
+    <RoundedCanvas>
       <PlanFilterBar />
-      <div className="overflow-auto rounded-xl shadow-xl">
-        <table className="w-full">
-          <PlanTableHeader dishTypes={dishTypes} />
-          <PlanTableBody
-            dates={dates}
-            dishTypes={dishTypes}
-            users={users}
-            dishes={dishes}
-          />
-        </table>
-      </div>
-    </div>
+      <Table>
+        <PlanTableHeader dishTypes={dishTypes} />
+        <PlanTableBody
+          dates={dates}
+          dishTypes={dishTypes}
+          users={users}
+          dishes={dishes}
+        />
+      </Table>
+    </RoundedCanvas>
   );
 };
 

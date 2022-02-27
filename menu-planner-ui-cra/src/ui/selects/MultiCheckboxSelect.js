@@ -15,9 +15,6 @@ const MultiCheckboxSelect = (props) => {
   },[])
 
   const handleChange = (selectedItems) => {
-    if(selectedItems.length === 0){
-      return;
-    }
     setSelectedItems(selectedItems);
     setSelected(selectedItems.map(s => s.value));
   };

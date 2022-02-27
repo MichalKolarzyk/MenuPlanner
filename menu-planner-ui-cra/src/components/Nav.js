@@ -1,30 +1,27 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { useEffect, useState } from "react/cjs/react.development";
+import { useNavigate } from "react-router-dom";
 import useAccountController from "../hooks/controllers/useAccountController";
+import BoldTextButton from "../ui/buttons/BoldTextButton";
+import TextButton from "../ui/buttons/TextButton";
 
 const Nav = () => {
   const accountController = useAccountController();
-  const [user, setUser] = useState({});
-
-  useEffect(async () => {
-    const user = await accountController.getUser();
-    setUser(user);
-  }, []);
+  const navigate = useNavigate();
 
   const logoutHandler = () => {
     accountController.logout();
   };
 
+  const toPlanHandler = () => {
+    navigate('/plan')
+  }
+
   return (
     <div className="flex justify-between items-center px-4 pb-4 mb-4 border-b border-white">
-      <Link to="/plan" className="font-semibold text-white text-xl">
-        MenuPlannerApp
-      </Link>
-      <span className="text-white">{`${user && user.firstName} rola: ${user && user.roleName}`}</span>
-      <div onClick={logoutHandler} className="text-white cursor-pointer">
+      <BoldTextButton onClick={toPlanHandler}>MenuPlannerApp</BoldTextButton>
+      <TextButton onClick={logoutHandler}>
         Wyloguj
-      </div>
+      </TextButton>
     </div>
   );
 };

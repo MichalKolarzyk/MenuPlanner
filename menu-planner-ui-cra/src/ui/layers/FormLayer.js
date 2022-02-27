@@ -1,9 +1,10 @@
-import React, { useContext, useState } from "react";
+import React from "react";
 import classes from "./FormLayer.module.css";
 import ReactDom from "react-dom";
-import LayersContext from "../../store/LayersContext";
-import { FiXCircle } from "react-icons/fi";
 import CloseButton from "../buttons/CloseButton";
+import RequireTrue from "../../components/Requires/RequireTrue";
+import { useDispatch, useSelector } from "react-redux";
+import { formActions } from "../../store/formLayer/formSlice";
 
 const Backdrop = (props) => {
   return <div className={classes.backdrop} onClick={props.onClick} />;
@@ -20,35 +21,25 @@ const ModalOverlay = (props) => {
 const portalElement = document.getElementById("form");
 
 const FormLayer = () => {
-  const layerContext = useContext(LayersContext);
+  const dispach = useDispatch();
+  const formLayer = useSelector(store => store.formLayer)
 
-  let children = null;
-  if (layerContext.form) children = layerContext.form;
-  const onBackdropClick = () => {
-    layerContext.setIsVisibleFormLayer(false);
+  const closeButtonClickHandler = () => {
+    dispach(formActions.close());
   };
 
-  let result = null;
-
-  if (layerContext.isVisibleFormLayer) {
-    result = (
-      <React.Fragment>
-        {ReactDom.createPortal(
-          <Backdrop />,
-          portalElement
-        )}
-        {ReactDom.createPortal(
-          <ModalOverlay>
-            <CloseButton onClick={onBackdropClick}/>
-            {children}
-          </ModalOverlay>,
-          portalElement
-        )}
-      </React.Fragment>
-    );
-  }
-
-  return result;
+  return (
+    <RequireTrue value={formLayer.isVisible && formLayer.form}>
+      {ReactDom.createPortal(<Backdrop />, portalElement)}
+      {ReactDom.createPortal(
+        <ModalOverlay>
+          <CloseButton onClick={closeButtonClickHandler} />
+          {formLayer.form}
+        </ModalOverlay>,
+        portalElement
+      )}
+    </RequireTrue>
+  );
 };
 
 export default FormLayer;

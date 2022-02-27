@@ -1,7 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
 import classes from "./MessageLayer.module.css";
 import ReactDom from "react-dom";
-import LayersContext from "../../store/LayersContext";
+import { useDispatch, useSelector } from "react-redux";
+import { messageActions } from "../../store/messageLayer/messageSlice";
+import RequireTrue from "../../components/Requires/RequireTrue";
 
 const Backdrop = (props) => {
   return <div className={classes.backdrop} onClick={props.onClick} />;
@@ -18,36 +20,27 @@ const ModalOverlay = (props) => {
 const portalElement = document.getElementById("message");
 
 const MessageLayer = () => {
-  const layerContext = useContext(LayersContext);
+  const messageLayer = useSelector((store) => store.messageLayer);
+  const dispatch = useDispatch();
 
-
-  const title = layerContext.title;
-  const message = layerContext.message;
+  const title = messageLayer.title;
+  const message = messageLayer.message;
   const closeHandle = () => {
-    layerContext.setIsVisibleMessageLayer(false);
-  }
+    dispatch(messageActions.close());
+  };
 
-  let result = null;
-
-  if (layerContext.isVisibleMessageLayer) {
-    result = (
-      <React.Fragment>
-        {ReactDom.createPortal(
-          <Backdrop onClick={closeHandle} />,
-          portalElement
-        )}
-        {ReactDom.createPortal(
-          <ModalOverlay>
-            <div>{title}</div>
-            <div>{message}</div>
-          </ModalOverlay>,
-          portalElement
-        )}
-      </React.Fragment>
-    );
-  }
-
-  return result;
+  return (
+    <RequireTrue value={messageLayer.isVisible}>
+      {ReactDom.createPortal(<Backdrop onClick={closeHandle} />, portalElement)}
+      {ReactDom.createPortal(
+        <ModalOverlay>
+          <div>{title}</div>
+          <div>{message}</div>
+        </ModalOverlay>,
+        portalElement
+      )}
+    </RequireTrue>
+  );
 };
 
 export default MessageLayer;
