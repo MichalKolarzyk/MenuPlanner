@@ -1,9 +1,8 @@
 import React from "react";
 import classes from "./MessageLayer.module.css";
 import ReactDom from "react-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { messageActions } from "../../store/messageLayer/messageSlice";
 import RequireTrue from "../../components/Requires/RequireTrue";
+import useMessageLayer from "../../store/messageLayer/useMessageLayer";
 
 const Backdrop = (props) => {
   return <div className={classes.backdrop} onClick={props.onClick} />;
@@ -20,22 +19,18 @@ const ModalOverlay = (props) => {
 const portalElement = document.getElementById("message");
 
 const MessageLayer = () => {
-  const messageLayer = useSelector((store) => store.messageLayer);
-  const dispatch = useDispatch();
-
-  const title = messageLayer.title;
-  const message = messageLayer.message;
+  const messageLayerHook = useMessageLayer();
   const closeHandle = () => {
-    dispatch(messageActions.close());
+    messageLayerHook.close();
   };
 
   return (
-    <RequireTrue value={messageLayer.isVisible}>
+    <RequireTrue value={messageLayerHook.isVisible}>
       {ReactDom.createPortal(<Backdrop onClick={closeHandle} />, portalElement)}
       {ReactDom.createPortal(
         <ModalOverlay>
-          <div>{title}</div>
-          <div>{message}</div>
+          <div>{messageLayerHook.title}</div>
+          <div>{messageLayerHook.message}</div>
         </ModalOverlay>,
         portalElement
       )}

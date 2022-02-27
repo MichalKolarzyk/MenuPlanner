@@ -1,0 +1,13 @@
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    @apply mt-2 
+    px-4 
+    py-2 
+    w-full 
+    rounded-lg 
+    shadow-lg 
+    bg-gray-100 
+    text-gray-700;
+}

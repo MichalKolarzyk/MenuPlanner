@@ -1,6 +1,7 @@
 import DishRequestGetList from "../../requests/dishRequests/DishRequestGetList";
 import DishRequestCreate from "../../requests/dishRequests/DishRequestCreate";
 import useSender from "./useSender";
+import DishRequestDelete from "../../requests/dishRequests/DishRequestDelete";
 
 const useDishController = () => {
     const sender = useSender();
@@ -17,9 +18,15 @@ const useDishController = () => {
         return result;
     }
 
+    const deleteDish = async (dishId) => {
+        const request = new DishRequestDelete(dishId);
+        const result = await sender.sendCreate(request);
+    }
+
     return{
         getDishList,
         createDish,
+        deleteDish,
     };
 }
 

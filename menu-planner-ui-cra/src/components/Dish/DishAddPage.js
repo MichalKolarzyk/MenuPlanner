@@ -5,11 +5,13 @@ import Input from "../../ui/inputs/Input";
 import Label from "../../ui/labels/Label";
 import useValidation from '../../hooks/validators/useValidator'
 import DateExt from "../../extensions/DateExt";
+import DishList from "./DishList";
 
 const DishAddPage = (props) => {
   const user = props.user;
   const dishType = props.dishType;
   const date = props.date;
+  const dishes = props.dishes;
 
   const portions = useInput([
     useValidation((value) => value.length > 0)
@@ -42,6 +44,7 @@ const DishAddPage = (props) => {
 
   return (
     <form onSubmit={submitHandler}>
+      <DishList dishes={dishes}/>
       <Label text={user} description="User:"/>
       <Label text={dishType.name} description="dishType:"/>
       <Label text={DateExt.getDayName(date)} description="date:"/>
