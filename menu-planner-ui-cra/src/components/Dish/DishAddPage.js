@@ -1,4 +1,4 @@
-import useDishController from "../../hooks/controllers/useDishController";
+import useDishController from "../../controllers/useDishController";
 import useInput from "../../hooks/inputs/useInput";
 import SubmitButton from "../../ui/buttons/SubmitButton";
 import Input from "../../ui/inputs/Input";

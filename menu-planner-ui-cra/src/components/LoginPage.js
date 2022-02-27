@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import bcg from "../assets/bcg.jpg";
-import useAccountController from "../hooks/controllers/useAccountController";
+import useAccountController from "../controllers/useAccountController";
 import useInput from "../hooks/inputs/useInput";
 import Input from "../ui/inputs/Input";
 import LoginButton from "../ui/buttons/LoginButton";

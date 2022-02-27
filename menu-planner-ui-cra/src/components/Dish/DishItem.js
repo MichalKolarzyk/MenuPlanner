@@ -1,6 +1,6 @@
 import classes from "./DishItem.module.css";
 import RemoveButton from "../../ui/buttons/RemoveButton";
-import useDishController from "../../hooks/controllers/useDishController";
+import useDishController from "../../controllers/useDishController";
 import { useState } from "react";
 import RequireTrue from "../Requires/RequireTrue";
 

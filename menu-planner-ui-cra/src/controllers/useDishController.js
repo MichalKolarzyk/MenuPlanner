@@ -1,7 +1,7 @@
-import DishRequestGetList from "../../requests/dishRequests/DishRequestGetList";
-import DishRequestCreate from "../../requests/dishRequests/DishRequestCreate";
+import DishRequestGetList from "../requests/dishRequests/DishRequestGetList";
+import DishRequestCreate from "../requests/dishRequests/DishRequestCreate";
 import useSender from "./useSender";
-import DishRequestDelete from "../../requests/dishRequests/DishRequestDelete";
+import DishRequestDelete from "../requests/dishRequests/DishRequestDelete";
 
 const useDishController = () => {
     const sender = useSender();

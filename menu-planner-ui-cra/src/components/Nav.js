@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import useAccountController from "../hooks/controllers/useAccountController";
+import useAccountController from "../controllers/useAccountController";
 import useUser from "../store/user/useUser";
 import BoldTextButton from "../ui/buttons/BoldTextButton";
 import TextButton from "../ui/buttons/TextButton";

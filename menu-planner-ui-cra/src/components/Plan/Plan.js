@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
-import useDishController from "../../hooks/controllers/useDishController";
-import useDishTypeController from "../../hooks/controllers/useDishTypeController";
+import useDishController from "../../controllers/useDishController";
+import useDishTypeController from "../../controllers/useDishTypeController";
 import PlanContext from "./context/PlanContext";
 import PlanTableBody from "./PlanTableBody";
 import PlanTableHeader from "./PlanTableHeader";
