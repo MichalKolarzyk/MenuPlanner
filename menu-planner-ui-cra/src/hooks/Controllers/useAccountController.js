@@ -2,7 +2,7 @@ import AccountRequestLogin from "../../requests/accountRequests/AccountRequestLo
 import AccountRequestGetUser from "../../requests/accountRequests/AccountRequestGetUser";
 import useSender from "./useSender";
 import { useDispatch, useSelector } from "react-redux";
-import { connectionActions } from "../../store/connectionSlice";
+import { connectionActions } from "../../store/connection/connectionSlice";
 
 const useAccountController = () => {
   const dispatch = useDispatch();

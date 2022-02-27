@@ -2,8 +2,10 @@ import DishAddPage from "../Dish/DishAddPage";
 import PlanSingleDish from "./PlanSingleDish";
 import classes from "./PlanCell.module.css";
 import { useDispatch } from "react-redux";
-import { messageActions } from "../../store/messageSlice";
-import { formActions } from "../../store/formSlice";
+import { formActions } from "../../store/formLayer/formSlice";
+
+import useMessageLayer from "../../store/messageLayer/useMessageLayer";
+import useFormLayer from "../../store/formLayer/useformLayer";
 
 const PlanCell = (props) => {
   const dishType = props.dishType;
@@ -13,18 +15,15 @@ const PlanCell = (props) => {
 
   const dispatch = useDispatch();
 
+  const messageLayer = useMessageLayer();
+  const formLayer = useFormLayer();
   const onClickHandler = () => {
     if (dishes.length > 0) {
-      dispatch(
-        messageActions.show({
-          title: "Informacja",
-          message: "W obecnej wersji nie mozna dodac 2 posiłków",
-        })
-      );
+      messageLayer.show("Informacja", "W obecnej wersji nie mozna dodac 2 posiłków")
       return;
     }
     dispatch(
-      formActions.show(
+      formLayer.show(
         <DishAddPage user={user} date={date} dishType={dishType} />
       )
     );

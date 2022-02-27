@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./MessageLayer.module.css";
 import ReactDom from "react-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { messageActions } from "../../store/messageSlice";
+import { messageActions } from "../../store/messageLayer/messageSlice";
 import RequireTrue from "../../components/Requires/RequireTrue";
 
 const Backdrop = (props) => {

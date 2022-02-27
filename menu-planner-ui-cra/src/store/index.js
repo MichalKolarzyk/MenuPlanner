@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import connectionSlice from "./connectionSlice";
-import formSlice from "./formSlice";
-import messageSlice from "./messageSlice";
+import connectionSlice from "./connection/connectionSlice";
+import formSlice from "./formLayer/formSlice";
+import messageSlice from "./messageLayer/messageSlice"; 
 
 const store = configureStore({
   reducer: {
