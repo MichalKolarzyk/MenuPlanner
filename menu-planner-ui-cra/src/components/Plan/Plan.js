@@ -36,12 +36,11 @@ const Plan = () => {
       days: days,
       usersIds: users,
     });
-    console.log(dishesItems);
     setDishes(dishesItems.dishesDto);
 
     const dishTypes = await dishTypesController.getAllDishTypes();
     setDishTypes(dishTypes);
-  }, [days, planContext.startDate]);
+  }, [days, startDate, users]);
 
   return (
     <RoundedCanvas>
