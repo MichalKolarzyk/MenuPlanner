@@ -4,7 +4,6 @@ const RequireTrue = (props) => {
     if(value){
         return props.children
     }
-
     return null;
 }
 

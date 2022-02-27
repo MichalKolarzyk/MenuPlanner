@@ -1,16 +1,12 @@
-import { useDispatch, useSelector } from "react-redux";
-import { connectionActions } from "../../store/connection/connectionSlice";
-import { messageActions } from "../../store/messageLayer/messageSlice";
+import useConnection from "../../store/connection/useConnection";
 import useMessageLayer from "../../store/messageLayer/useMessageLayer";
 
 const useSender = () => {
-  const dispatch = useDispatch();
-  const connection = useSelector((store) => store.connection)
-
+  const connection = useConnection();
   const messageLayer = useMessageLayer();
 
   const send = async (request) => {
-    dispatch(connectionActions.setIsBusy(true));
+    connection.setIsBusy(true);
 
     const baseUrl = connection.baseUrl;
     const bodyJson = JSON.stringify(request.body);
@@ -53,13 +49,13 @@ const useSender = () => {
         messageLayer.show("Error", errorMessage.message);
       }
 
-      dispatch(connectionActions.setIsBusy(false));
+      connection.setIsBusy(false);
       return json;
     }
   };
 
   const sendCreate = async (request) => {
-    dispatch(connectionActions.setIsBusy(true));
+    connection.setIsBusy(true);
 
     const baseUrl = connection.baseUrl;
     const bodyJson = JSON.stringify(request.body);
@@ -101,7 +97,7 @@ const useSender = () => {
         messageLayer.show("Error", errorMessage.message);
       }
 
-      dispatch(connectionActions.setIsBusy(false));
+      connection.setIsBusy(false);
       return response;
     }
   };

@@ -7,22 +7,12 @@ const connectionSlice = createSlice({
     authorizationMethod: localStorage.authMethod,
     baseUrl: "http://localhost:5000",
     isBusy: false,
-    isLoggedIn: !!localStorage.token
   },
   reducers: {
-    test(state) {
-      alert(state.token);
-    },
     setToken(state, action) {
       const newToken = action.payload;
       state.token = newToken;
       localStorage.token = newToken;
-      if(!!newToken){
-        state.isLoggedIn = true;
-      } else{
-        state.isLoggedIn = false;
-      }
-
     },
     setAuthorizationMethod(state, action){
         const newAuthorizationMethod = action.payload;

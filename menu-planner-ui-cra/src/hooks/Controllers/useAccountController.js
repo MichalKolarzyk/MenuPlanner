@@ -1,30 +1,34 @@
 import AccountRequestLogin from "../../requests/accountRequests/AccountRequestLogin";
 import AccountRequestGetUser from "../../requests/accountRequests/AccountRequestGetUser";
 import useSender from "./useSender";
-import { useDispatch, useSelector } from "react-redux";
-import { connectionActions } from "../../store/connection/connectionSlice";
+import useUser from "../../store/user/useUser";
+import useConnection from "../../store/connection/useConnection";
 
 const useAccountController = () => {
-  const dispatch = useDispatch();
-  const connection = useSelector(state => state.connection);
   const sender = useSender();
+
+  const connection = useConnection();
+  const user = useUser();
 
   const login = async (loginRequest) => {
     const request = new AccountRequestLogin(loginRequest);
     const response = await sender.send(request);
-    dispatch(connectionActions.setToken(response.token));
-    dispatch(connectionActions.setAuthorizationMethod(response.authorizationMethod));
+    connection.login(response.token, response.authorizationMethod);
+
+    const userRequest = new AccountRequestGetUser(response.token);
+    const userResponse = await sender.send(userRequest);
+    console.log(userResponse);
+
+    user.setUser(userResponse)
   };
 
   const logout = () => {
-    dispatch(connectionActions.setToken(""));
+    user.setUser(null);
+    connection.logout();
   };
 
-  const getUser = async () => {
-    const request = new AccountRequestGetUser(connection.token);
-    const response = await sender.send(request);
-    //apiContext.setCurrentUser(response);
-    return response;
+  const getUser = () => {
+    return user.user;
   };
 
   return {
