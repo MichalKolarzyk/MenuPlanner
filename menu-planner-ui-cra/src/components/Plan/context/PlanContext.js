@@ -7,6 +7,13 @@ const PlanContext = React.createContext({
     setDayNumber: {},
     users: [],
     setUsers: {},
+    dishTypes: [],
+    setDishTypes: {},
+    dishes: [],
+    setDishes: {},
+    dish: {},
+    setDish: {},
+    dates: [],
 })
 
 export default PlanContext;

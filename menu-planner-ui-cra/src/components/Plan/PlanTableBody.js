@@ -1,28 +1,17 @@
 import PlanDay from "./PlanDay";
 import DateExt from "../../extensions/DateExt";
+import { useContext } from "react";
+import PlanContext from './context/PlanContext'
 
-const PlanTableBody = (props) => {
-  const dates = props.dates;
-  const dishTypes = props.dishTypes;
-  const dishes = props.dishes;
-  const users = props.users;
-
-  const dishesFilterHandler = (day) => {
-    if (!dishes) {
-      return [];
-    }
-    return dishes.filter((d) => DateExt.isEquas(new Date(d.date), day))
-  };
+const PlanTableBody = () => {
+  const planContext = useContext(PlanContext);
 
   return (
     <tbody className="divide-y divide-gray-100">
-      {dates.map((day, index) => (
+      {planContext.dates.map((day, index) => (
         <PlanDay
           key={index}
           date={day}
-          dishTypes={dishTypes}
-          users={users}
-          dishes={dishesFilterHandler(day)}
         />
       ))}
     </tbody>

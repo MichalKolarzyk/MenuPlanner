@@ -4,7 +4,6 @@ import PlanContext from "./context/PlanContext";
 const PlanTableHeader = (props) => {
   const planContext = useContext(PlanContext);
 
-  const dishTypes = props.dishTypes;
   const thStandard = "p-3 text-sm font-semibold tracking-wide text-left";
   
   return (
@@ -12,7 +11,7 @@ const PlanTableHeader = (props) => {
         <tr>
           <th className={thStandard}></th>
           {true && <th className={thStandard}>Użytkownik</th>}
-          {dishTypes.map((dt, i) => (
+          {planContext.dishTypes.map((dt, i) => (
             <th key={i} className={thStandard}>
               {dt.name}
             </th>
