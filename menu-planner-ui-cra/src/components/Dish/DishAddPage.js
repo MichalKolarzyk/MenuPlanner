@@ -37,9 +37,9 @@ const DishAddPage = (props) => {
       dishTypeId: dishType.id,
     });
 
-    if(result.ok){
-      window.location.reload(false);
-    }
+    // if(result.ok){
+    //   window.location.reload(false);
+    // }
   };
 
   return (
