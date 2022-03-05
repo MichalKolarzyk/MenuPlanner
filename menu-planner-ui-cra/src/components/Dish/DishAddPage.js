@@ -6,6 +6,7 @@ import Label from "../../ui/labels/Label";
 import useValidation from '../../hooks/validators/useValidator'
 import DateExt from "../../extensions/DateExt";
 import DishList from "./DishList";
+import FormAddItem from "../../ui/forms/FormAddItem";
 
 const DishAddPage = (props) => {
   const user = props.user;
@@ -28,22 +29,17 @@ const DishAddPage = (props) => {
   const dishController = useDishController();
 
   const submitHandler = async (event) => {
-    event.preventDefault();
-    const result = await dishController.createDish({
+    await dishController.createDish({
       recipeId: recipe.value,
       date: DateExt.toDateString(date),
       portions: portions.value,
       trustedUserId: user,
       dishTypeId: dishType.id,
     });
-
-    // if(result.ok){
-    //   window.location.reload(false);
-    // }
   };
 
   return (
-    <form onSubmit={submitHandler}>
+    <FormAddItem onSubmit={submitHandler}>
       <DishList dishes={dishes}/>
       <Label text={user} description="User:"/>
       <Label text={dishType.name} description="dishType:"/>
@@ -51,7 +47,7 @@ const DishAddPage = (props) => {
       <Input useInput={portions} placeholder="Portions" />
       <Input useInput={recipe} placeholder="Recipe" />
       <SubmitButton disabled={!formIsValid}>Dodaj</SubmitButton>
-    </form>
+    </FormAddItem>
   );
 };
 
