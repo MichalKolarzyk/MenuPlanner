@@ -9,6 +9,7 @@ import PlanContext from "./context/PlanContext";
 
 const PlanFilterBar = () => {
   const planContext = useContext(PlanContext);
+  
   const daysInput = useFilterInput(
     planContext.dayNumber,
     planContext.setDayNumber,
