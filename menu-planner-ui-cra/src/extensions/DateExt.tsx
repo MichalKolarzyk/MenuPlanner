@@ -1,12 +1,12 @@
 class DateExt{
     static toDateString = (date : Date) => {
       let day : number = date.getDate();
-      let dayString : string = "";
+      let dayString : string = day.toString();
       if(day < 10){
         dayString = `0${day}`
       }
       let month = date.getMonth() + 1;
-      let monthString : string = "";
+      let monthString : string = month.toString();
       if(month < 10){
         monthString = `0${month}`
       }
